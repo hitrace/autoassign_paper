@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=latex 2014.5.25)  15 NOV 2014 17:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=latex 2014.5.25)  15 NOV 2014 18:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -641,27 +641,6 @@ Underfull \hbox (badness 1701) in paragraph at lines 135--136
  []
 
 ) (./discussion.tex
-Underfull \hbox (badness 1888) in paragraph at lines 7--8
-\OT1/ptm/m/n/9 profile if needed; the distinctive robustness of the proposed
- []
-
-
-Underfull \hbox (badness 1210) in paragraph at lines 11--12
-[]\OT1/ptm/m/n/9 The proposed algorithm has order of $\OML/cmm/m/it/9 NK$ \OT1/
-ptm/m/n/9 time and space
- []
-
-
-Underfull \hbox (badness 7522) in paragraph at lines 11--12
-\OT1/ptm/m/n/9 was tolerable in our experiments. The proposed method
- []
-
-
-Underfull \hbox (badness 1383) in paragraph at lines 11--12
-\OT1/ptm/m/n/9 was implemented in the MATLAB programming environment
- []
-
-
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
  []
@@ -674,12 +653,28 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
  []
 
-[6]) (./conclusion.tex)
-Underfull \hbox (badness 1221) in paragraph at lines 1--83
-\OT1/ptm/m/n/9 identified the band positions matching the reference positions
+[6]
+Underfull \hbox (badness 1210) in paragraph at lines 11--12
+[]\OT1/ptm/m/n/9 The proposed algorithm has order of $\OML/cmm/m/it/9 NK$ \OT1/
+ptm/m/n/9 time and space
  []
 
-(./manuscript.bbl
+
+Underfull \hbox (badness 6047) in paragraph at lines 11--12
+\OT1/ptm/m/n/9 was resonable in our experiments. The proposed method
+ []
+
+
+Underfull \hbox (badness 1383) in paragraph at lines 11--12
+\OT1/ptm/m/n/9 was implemented in the MATLAB programming environment
+ []
+
+
+Underfull \hbox (badness 1540) in paragraph at lines 11--12
+\OT1/ptm/m/n/9 (The MathWorks, http://www.mathworks.com), and under the
+ []
+
+) (./conclusion.tex) (./manuscript.bbl
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
 
@@ -703,18 +698,30 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:29.44545pt when 508.98044pt
+Extra height:29.44545pt when 546.77168pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:29.44545pt when 509.98044pt
-Extra height:0.0pt when 510.98044pt
-(2)Left:510.98044pt Right:508.96089pt Output:510.98044pt
+Extra height:29.44545pt when 547.77168pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:29.44545pt when 548.77168pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:29.44545pt when 549.77168pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:29.44545pt when 550.77168pt
+Extra height:0.0pt when 551.77168pt
+(2)Left:551.77168pt Right:543.54338pt Output:551.77168pt
 - LAST -
 Extra skip:0.0pt
-Left:510.98044pt
-Right:508.96089pt
-Output:510.98044pt
+Left:551.77168pt
+Right:543.54338pt
+Output:551.77168pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -739,10 +746,10 @@ LaTeX Font Warning: Size substitutions with differences
 Here is how much of TeX's memory you used:
  3440 strings out of 493118
  44931 string characters out of 6135459
- 131876 words of memory out of 5000000
+ 134094 words of memory out of 5000000
  6765 multiletter control sequences out of 15000+600000
  42323 words of font info for 121 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  42i,14n,32p,2138b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on manuscript.dvi (7 pages, 66420 bytes).
+Output written on manuscript.dvi (7 pages, 67128 bytes).
