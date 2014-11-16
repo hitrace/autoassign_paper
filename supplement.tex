@@ -53,7 +53,7 @@ This step can be optionally applied as the last of the correlation optimized lin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
 \centering
-    \includegraphics[width=\linewidth]{../figures/Fig1S.pdf}
+    \includegraphics[width=\linewidth]{figures/Fig1S.pdf}
 \caption{Inter-batch alignment (step B.2). A representative profile is constructed for each batch that has been aligned in step B.1. All representatives are collected and then aligned by the intra-batch algorithm, as if these were from a single batch. The resulting scale and shift amounts for each batch are used for re-aligning the batch.
 }
 \label{f:fine-tuning}
@@ -68,7 +68,7 @@ The concept underlying the non-linear alignment step is depicted in Figure~\ref{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centering
-    \includegraphics[width=0.95\linewidth]{../figures/Fig2S.pdf}
+    \includegraphics[width=0.95\linewidth]{figures/Fig2S.pdf}
 \caption{Nonlinear alignment (step C). (A) We break the time axis of a non-reference profile into $m$-pixel windows and drift each window (in pixel units; each pixel is 0.1 seconds) within a predefined range over the reference profile to find the shift amount that maximizes the correlation of the window and the corresponding fragment of the reference profile. The `slack' is the amount by which we can extend or shrink each boundary of a window with respect to $m$, the default window size. The `max shift' is the largest difference possible between a window boundary in a non-reference profile and its corresponding boundary in the reference profile. The `sliding range' is the search region in the reference profile over which we compare a window from a non-reference profile. We find the optimal shift amount of each window by dynamic programming (DP). (B) Example of the score matrix for DP-based profile alignment. For each window, we determine its optimal shift offset using this matrix. The objective function is the total correlation coefficient value accumulated over all windows. Shown is the matrix for aligning the first and the sixteenth profile of the Medloop CMCT data (replicate 2) described in the result section. We set the window size $m$ to 100, producing 30 windows in total. The maximum amount of shifts allowed was 100, and the slack size used was 10. (C) A matrix to show the possible shift offsets of each window. Red circles indicate the optimal offsets determined by the backtracking procedure in (B).}
 \label{f:nonlinear}
 \end{figure}
@@ -81,7 +81,7 @@ The concept underlying the non-linear alignment step is depicted in Figure~\ref{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centering
-    \includegraphics[width=\linewidth]{../figures/Fig3S.pdf}
+    \includegraphics[width=\linewidth]{figures/Fig3S.pdf}
 \caption{Automated transfer of band annotation (step D.2; optional). (A) Some of the automatically found bands did not have a matching annotation in the reference profile. We name these extra bands \emph{inserts}. We do not find some sites in the manual annotation via automated peak fitting, and call these missing bands (\ie, false negatives) \emph{deletions}. Shown are the first and the 120-th profiles of the Medloop CMCT data (replicate 2) described in the result section. (B) Example of the score matrix $F(i,j)$ for dynamic-programming-based transfer of band annotation of the 120-th profile shown in (A). The optimal band assignments found by backtracking are shown using red circles.}
 \label{f:auto-anno}
 \end{figure}
@@ -99,7 +99,7 @@ The procedure of transferring the annotation from the reference profile to all o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centering
-    \includegraphics[width=\linewidth]{../figures/Fig4S.pdf}
+    \includegraphics[width=\linewidth]{figures/Fig4S.pdf}
 \caption{Correlation between peak areas quantified by HiTRACE and CAFA~\citep{mitra2008high} for an additional data set. (A) Each point on the plot indicates the correlation coefficient between the peak areas HiTRACE and CAFA computed for an identical profile. The data used was X20/H20 DMS (replicate 1), which has 98 profiles. The time demands for quantification by HiTRACE and CAFA were approximately 4 minutes and 7 hours, respectively. (B) The distribution of the correlation coefficients. The average value was high (0.9543), suggesting that the results obtained from HiTRACE and CAFA are highly correlated for this data set. (C) More detailed plots for four arbitrary profiles. %Due to the differences in signal range, the area values of HiTRACE and CAFA were scaled differently for visualization purpose: 1/1000 for HiTRACE and CAFA.
 }
 \label{f:corr-cafa-hitrace}
@@ -162,7 +162,7 @@ The $\mathrm{insertPenalty}$ was set to 1.5. To determine $\mathrm{deletionPenal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centering
-    \includegraphics[width=0.75\linewidth]{../figures/L-21ScaI_longprofile_example.pdf}
+    \includegraphics[width=0.75\linewidth]{figures/L-21ScaI_longprofile_example.pdf}
 \caption{Rapid  HiTRACE annotation for longer RNAs. (A) Capillary electropherograms for an experiment probing the ``unfolded'' L-21 ScaI ribozyme in 50 mM Na-HEPES, pH 8.0 (W.K., R.D., unpub. results). The fluorescence profiles (arbitrary units) are, from left to right, ddATP sequencing ladder, control reaction with no chemical modifier, and experiment with the NMIA reagent (for SHAPE acylation). (B) View in HiTRACE near the `top' of the data; note guidemark symbols in ddATP ladder. (C) View in HiTRACE near the `bottom' of the data.}
 \label{f:L21-400nt}
 \end{figure}
@@ -173,7 +173,7 @@ The $\mathrm{insertPenalty}$ was set to 1.5. To determine $\mathrm{deletionPenal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centering
-    \includegraphics[width=0.6\linewidth]{../figures/P4P6_differentprimers.pdf}
+    \includegraphics[width=0.6\linewidth]{figures/P4P6_differentprimers.pdf}
 \caption{Rapid HiTRACE annotation for reverse transcription from primers internal to an RNA sequnce. Data were collected for the P4-P6 RNA with primers to (A) the middle of this RNA's sequence (position 170) and to (B) the RNA's 3$^\prime$ end (position 270). For both sets, the fluorescence data are, from left to right, ddATP sequencing ladder, control reaction with no chemical modifier, and experiment with the NMIA reagent (for SHAPE acylation). (C) Correlation between the independent data sets.}
 \label{f:P4P6-internal-prim}
 \end{figure}
@@ -185,7 +185,7 @@ The $\mathrm{insertPenalty}$ was set to 1.5. To determine $\mathrm{deletionPenal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}
 \centering
-    \includegraphics[width=0.95\linewidth]{../figures/X20_DMS.pdf}
+    \includegraphics[width=0.95\linewidth]{figures/X20_DMS.pdf}
 \caption{Profiles from experimental replicates of X20/H20 DMS data after automated alignment refinement by dynamic-programming-based nonlinear adjustments ($x$-axis: profile, $y$-axis: band position).}
 \label{f:x20-dms}
 \end{figure*}
@@ -196,7 +196,7 @@ The $\mathrm{insertPenalty}$ was set to 1.5. To determine $\mathrm{deletionPenal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}
 \centering
-    \includegraphics[width=0.95\linewidth]{../figures/MedLoop_DMS.pdf}
+    \includegraphics[width=0.95\linewidth]{figures/MedLoop_DMS.pdf}
 \caption{Profiles from experimental replicates of Medloop DMS data.}
 \label{f:medloop-dms}
 \end{figure*}
@@ -208,7 +208,7 @@ The $\mathrm{insertPenalty}$ was set to 1.5. To determine $\mathrm{deletionPenal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}
 \centering
-    \includegraphics[width=0.95\linewidth]{../figures/MedLoop_CMCT.pdf}
+    \includegraphics[width=0.95\linewidth]{figures/MedLoop_CMCT.pdf}
 \caption{Profiles from experimental replicates of Medloop CMCT data.}
 \label{f:medloop-cmct}
 \end{figure*}
@@ -219,7 +219,7 @@ The $\mathrm{insertPenalty}$ was set to 1.5. To determine $\mathrm{deletionPenal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}
 \centering
-    \includegraphics[width=0.95\linewidth]{../figures/SRP_DMS.pdf}
+    \includegraphics[width=0.95\linewidth]{figures/SRP_DMS.pdf}
 \caption{Profiles from experimental replicates of SRP DMS data.}
 \label{f:srp-dms}
 \end{figure*}
@@ -230,7 +230,7 @@ The $\mathrm{insertPenalty}$ was set to 1.5. To determine $\mathrm{deletionPenal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}
 \centering
-    \includegraphics[width=0.95\linewidth]{../figures/SRP_CMCT.pdf}
+    \includegraphics[width=0.95\linewidth]{figures/SRP_CMCT.pdf}
 \caption{Profiles from experimental replicates of SRP CMCT data.}
 \label{f:srp-cmct}
 \end{figure*}

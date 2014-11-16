@@ -66,7 +66,7 @@ The $\Delta^-$ and $\Delta^+$ in (\ref{e:gamma}) approximate the slope of left a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centering
-\includegraphics[width=0.8\linewidth]{../figures/method_pred_mat}
+\includegraphics[width=0.8\linewidth]{figures/method_pred_mat}
 \caption{Prediction matrix. (\textbf{a}) Definition of the values appearing in the peak prediction matrix. 1 means that a band is expected in that residue position, whereas 0 means that no band is expected. (\textbf{b}) Example target sequence and its structure predicted by the Vienna RNA package~\citep{hofacker2003vienna}. (\textbf{c}) The prediction matrix for the example in (\textbf{b}).}
 \label{f:pred-mat}
 \end{figure}
@@ -104,7 +104,7 @@ The $\Delta^-$ and $\Delta^+$ in (\ref{e:gamma}) approximate the slope of left a
 	\psfrag{f}[][][0.8]{$\bF(n,k,p)$}
 	\psfrag{s}[][][0.7]{\shortstack[c]{Search range\\for best $k$,$p$}}
 	\psfrag{c}[][][0.7]{\shortstack[c]{Backtracking\\arrow for\\$\bF(n,k,p)$}}
-\includegraphics[width=0.85\linewidth]{../figures/method_dp_formulation}
+\includegraphics[width=0.85\linewidth]{figures/method_dp_formulation}
 \caption{Formulation as dynamic programming. (\textbf{a}) $\bF(n,k,p)$ depends on $\bF(n-1,k',p')$ in the previous column and the gap bonus $S(n,k',k,n)$ between them. The best tuple $(k',p')$ that maximizes $\bF(n,k,p)$ is searched for in the range $k-2.5\rho \le k' < k; k'+p' < k+p$ and is stored in the backtracking matrices $\bL_k(n,k,p)$, $\bL_p(n,k,p)$. The computation of $S(n,k',k,p)$ is based on the bonus matrix $\bB$ and the prediction matrix $\bP$ (Section~\ref{ss:cost}). (\textbf{b}) Example. The data set used is `FMN Apatamer with single binding site.' $N=88$, $M=5$, $K=1324$. The backtracking path is represented by a series of red circles superimposed on the score matrix $\bF$; since $\bF$ is 3-dimensional, the figure alternatively represents a reduced matrix $\bF'$ defined by $\bF'(n,k)=\max_{p'} \bF(n,k,p')$. The output array $\by_k$, which stores the position of each circle, indicates the band locations.}
 \label{f:dp-formulation}
 \end{figure}
