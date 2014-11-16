@@ -1,0 +1,242 @@
+\documentclass[letter]{bioinfo}
+\copyrightyear{2011}
+\pubyear{2011}
+
+%\usepackage{bibtex}
+%\usepackage[cmex10]{amsmath}
+\usepackage{amsmath}
+%\usepackage[tight,footnotesize,sc,normalsize]{subfigure}
+%\usepackage{stfloats}
+%\usepackage{url}
+
+
+% correct bad hyphenation here
+\hyphenation{HiTRACE}
+
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+%\usepackage{psfrag}
+%\usepackage{balance}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{multirow}
+
+\newcommand{\eg}{{\it e.g.}}
+\newcommand{\ie}{{\it i.e.}}
+\newcommand{\argmax}{\operatornamewithlimits{arg\,max}}
+\newtheorem{example}{Example}
+
+
+\begin{document}
+\firstpage{1}
+
+\title[High-throughput analysis for capillary electrophoresis]{Supplemental Material for ``HiTRACE:High-throughput robust analysis for capillary electrophoresis''}
+\author[Yoon \textit{et~al}]{Sungroh~Yoon\,$^{1*}$, Jinkyu~Kim\,$^{1}$, Justine~Hum\,$^{2}$, Hanjoo~Kim\,$^{1}$, Seunghyun~Park\,$^{1}$, Wipapat~Kladwang\,$^{2}$, and Rhiju~Das$^2$\footnote{to whom correspondence should be addressed}}
+\address{$^{1}$School of Electrical Engineering, Korea University, Seoul 136-713, Republic of Korea\\
+$^{2}$Departments of Biochemistry and Physics, Stanford University, Stanford, CA 94305, USA}
+
+\history{}
+
+\editor{Supplement}
+
+\maketitle
+
+\section{Additional details and examples}
+\subsection{Step B.2 (inter-batch alignment)}
+The alignment procedure in step B.1 can be considered as an \emph{intra-batch} step in that we separately align the fluorescence profiles in each batch without considering profiles in other batches. Due to variabilities between batches, performing only the intra-batch alignment above produces stratified alignment results, where a number of up-and-down `stairs' appear. To resolve this problem, we perform an additional \emph{inter-batch} alignment, as illustrated in Figure~\ref{f:fine-tuning}.
+
+\subsection{Binarization-based alignment (step B.3; optional )}
+This step can be optionally applied as the last of the correlation optimized linear alignment steps; because it did not improve precision assessed in cross-replicate correlation experiments, it is not performed in the default HiTRACE workflow. After inter-batch alignment, this step performs a peak detection on each profile and then binarize the profile so that the intensity at a peak position is set to 1 and the rest is set to 0. We then align the binarized profiles as before and use the resulting scale and shift information for re-aligning the original, non-binary profiles. This has the effect of low-pass filtering~\citep{oppenheim09} to suppress high-frequency noise components and aligns only peaks within each profile; it can give an improvement in alignment near the top of the data where multiple intense electrophoretic products overlap. For the peak detection process, we found that any reasonable peak detection method can be employed; we utilized the one described in~\citet{kim09}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIGURE 1S
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+\centering
+    \includegraphics[width=\linewidth]{../figures/Fig1S.pdf}
+\caption{Inter-batch alignment (step B.2). A representative profile is constructed for each batch that has been aligned in step B.1. All representatives are collected and then aligned by the intra-batch algorithm, as if these were from a single batch. The resulting scale and shift amounts for each batch are used for re-aligning the batch.
+}
+\label{f:fine-tuning}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Step C (nonlinear alignment)}
+The concept underlying the non-linear alignment step is depicted in Figure~\ref{f:nonlinear}A. Figure~\ref{f:nonlinear}B--C shows an example of determining the shift amount of each window edge for an actual fluorescence profile.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIGURE 2S
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+    \includegraphics[width=0.95\linewidth]{../figures/Fig2S.pdf}
+\caption{Nonlinear alignment (step C). (A) We break the time axis of a non-reference profile into $m$-pixel windows and drift each window (in pixel units; each pixel is 0.1 seconds) within a predefined range over the reference profile to find the shift amount that maximizes the correlation of the window and the corresponding fragment of the reference profile. The `slack' is the amount by which we can extend or shrink each boundary of a window with respect to $m$, the default window size. The `max shift' is the largest difference possible between a window boundary in a non-reference profile and its corresponding boundary in the reference profile. The `sliding range' is the search region in the reference profile over which we compare a window from a non-reference profile. We find the optimal shift amount of each window by dynamic programming (DP). (B) Example of the score matrix for DP-based profile alignment. For each window, we determine its optimal shift offset using this matrix. The objective function is the total correlation coefficient value accumulated over all windows. Shown is the matrix for aligning the first and the sixteenth profile of the Medloop CMCT data (replicate 2) described in the result section. We set the window size $m$ to 100, producing 30 windows in total. The maximum amount of shifts allowed was 100, and the slack size used was 10. (C) A matrix to show the possible shift offsets of each window. Red circles indicate the optimal offsets determined by the backtracking procedure in (B).}
+\label{f:nonlinear}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Step D.2 (automated transfer of band annotation; optional)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIGURE 3S
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+    \includegraphics[width=\linewidth]{../figures/Fig3S.pdf}
+\caption{Automated transfer of band annotation (step D.2; optional). (A) Some of the automatically found bands did not have a matching annotation in the reference profile. We name these extra bands \emph{inserts}. We do not find some sites in the manual annotation via automated peak fitting, and call these missing bands (\ie, false negatives) \emph{deletions}. Shown are the first and the 120-th profiles of the Medloop CMCT data (replicate 2) described in the result section. (B) Example of the score matrix $F(i,j)$ for dynamic-programming-based transfer of band annotation of the 120-th profile shown in (A). The optimal band assignments found by backtracking are shown using red circles.}
+\label{f:auto-anno}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Each band in a fluorescence profile corresponds to a position in the nucleic acid sequence. Given an annotation of one reference profile, HiTRACE can automatically annotate the other fluorescence profiles using a dynamic programming approach similar to the Needleman-Wunsch algorithm~\citep{needleman1970general}. This procedure was used before the development of nonlinear dynamic-programming-based alignment (step C); at that time, the final alignment of profiles was poorer in quality. With the current software including non-linear alignment, automated transfer of band annotation does not improve precision assessed in cross-replicate correlation experiments, so it is not performed in the default HiTRACE workflow. Nevertheless, we briefly summarize the annotation transfer algorithm here, as it can be carried out in HiTRACE (as the $guess\_all\_peaks$ script), and appears useful in a partially developed strategy for automated sequence assignment (R.D., unpub. results).
+
+The procedure of transferring the annotation from the reference profile to all other profiles starts with identification of bands in each profile by a peak detector. Due to noise and imperfections in experiments and analysis, some of the automatically detected bands do not have a matching annotation (these are called \emph{inserts}), whereas some bands assigned in the manual annotation do not correspond to any automatically detected bands (\emph{deletions}). See Supplementary Figure 3 for an example. Transferring band annotations requires accurate identification of which bands are extraneous or missing in each non-reference profile, a task that we carry out through a dynamic programming strategy.
+
+%After the previous alignment steps, profiles are typically well-aligned to the reference profile, and the locations of automatically detected bands closely match those of the pre-defined bands in the reference profile. However,
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIGURE 4S
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+    \includegraphics[width=\linewidth]{../figures/Fig4S.pdf}
+\caption{Correlation between peak areas quantified by HiTRACE and CAFA~\citep{mitra2008high} for an additional data set. (A) Each point on the plot indicates the correlation coefficient between the peak areas HiTRACE and CAFA computed for an identical profile. The data used was X20/H20 DMS (replicate 1), which has 98 profiles. The time demands for quantification by HiTRACE and CAFA were approximately 4 minutes and 7 hours, respectively. (B) The distribution of the correlation coefficients. The average value was high (0.9543), suggesting that the results obtained from HiTRACE and CAFA are highly correlated for this data set. (C) More detailed plots for four arbitrary profiles. %Due to the differences in signal range, the area values of HiTRACE and CAFA were scaled differently for visualization purpose: 1/1000 for HiTRACE and CAFA.
+}
+\label{f:corr-cafa-hitrace}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let sequence $R=\langle r_1, r_2,\ldots,r_i,\ldots \rangle$ denote the manually annotated band positions (in pixels) in the reference. Similarly, given a profile to be aligned to the reference profile, let sequence $A=\langle a_1, a_2,\ldots,a_j,\ldots \rangle$ denote the band locations. For dynamic programming, we build a score matrix $F$ indexed by $i$ and $j$ ($i$ for $R$ and $j$ for $A$), where the value $F(i,j)$ indicates the score of the best alignment between the prefix $\langle r_1,r_2,\ldots r_i\rangle$ of $R$ and the prefix $\langle a_1,a_2,\ldots, a_j\rangle$ of $A$. The matrix $F$ can be filled recursively by the following formula
+%
+\begin{equation}
+F(i,j) = \min
+    \begin{cases}
+        F(i - 1, j - 1) + \mathrm{matchScore}(i,j)\\
+        F(i - 1, j ) + \mathrm{deletionPenalty}(i)\\
+        F(i, j - 1) + \mathrm{insertPenalty}
+    \end{cases}
+\end{equation}
+after a trivial initialization process. Backtracking on the matrix $F$ reveals the optimal assignment of automatically found bands to manual annotations (Figure~\ref{f:auto-anno}). For any deletions, we estimated band locations missing in the non-reference profile based on linear interpolation between the nearest bands that match in the reference and non-reference profile.
+
+We considered a few factors to define $\mathrm{matchScore}(i,j)$; these functional forms and presented parameter settings were defined based on empirical results on one large-scale data set (P4-P6 SHAPE; see Table~1 in the main article); the other data sets present independent tests of these parameters. The match penalty is a weighted sum of four factors:
+\begin{equation}
+\mathrm{matchScore}(i,j) = \sum_{k=1}^4 w_k\cdot\mathrm{matchScore}_k(i,j)
+\end{equation}
+where $w_k$ is the weight of factor $k$. First, we let the match penalty proportional to the distance between $r_i$ and $a_j$, penalizing distant matches. The first component is thus given by
+\begin{equation}
+\mathrm{matchScore}_1(i,j) =\left|\frac{r_i-a_j}{d_R} \right|^2
+\end{equation}
+%
+where $d_R$ is the average distance between two adjacent reference peaks in sequence $R$.
+%
+Second, we consider the degree of peak-to-peak separation as follows:
+\begin{equation}
+\mathrm{matchScore}_2(i,j)=\left|\frac{ (r_i-r_{i^*})-(a_j-a_{j^*})}{d_R\cdot(i-i^*)}\right|^2
+\end{equation}
+where $i^*$ and $j^*$ represent the position of the previous matching pair.
+%
+Third, we consider the difference between the intensity of $r_i$ and $a_j$ relative to the previous matching location:
+\begin{equation}
+\mathrm{matchScore}_3(i,j) = \left | \log\frac{I(r_i)}{I(r_{i^*})} - \log\frac{I(a_j)}{I(a_{j^*})} \right |
+\end{equation}
+where $I(\cdot)$ represents the profile intensity.
+%
+Lastly, we reward band assignments to points of greater intensity up to a point by defining the last component:
+\begin{equation}
+\mathrm{matchScore}_4(i,j) = 1 - \min \left\{ \frac{I(a_j)}{I_R}, 1 \right\}
+\end{equation}
+where $I_R$ is the median intensity of the reference profile. The weights used are $w_1=1$, $w_2=4$, $w_3=0.25$ and $w_4=2$.
+
+The $\mathrm{insertPenalty}$ was set to 1.5. To determine $\mathrm{deletionPenalty}(i)$, we used an expectation-maximization (EM) approach~\citep{bishop06}. After a first run with an initial constant value (4.5) for deletion penalty, we carried out a second run with deletion penalties inversely proportional to deletion frequencies at each peak position $i$ seen in the first run.
+
+
+\bibliographystyle{natbib}
+%\bibliographystyle{reference}
+%\bibliographystyle{unsrt}
+\bibliography{hitrace}
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIGURE 5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+    \includegraphics[width=0.75\linewidth]{../figures/L-21ScaI_longprofile_example.pdf}
+\caption{Rapid  HiTRACE annotation for longer RNAs. (A) Capillary electropherograms for an experiment probing the ``unfolded'' L-21 ScaI ribozyme in 50 mM Na-HEPES, pH 8.0 (W.K., R.D., unpub. results). The fluorescence profiles (arbitrary units) are, from left to right, ddATP sequencing ladder, control reaction with no chemical modifier, and experiment with the NMIA reagent (for SHAPE acylation). (B) View in HiTRACE near the `top' of the data; note guidemark symbols in ddATP ladder. (C) View in HiTRACE near the `bottom' of the data.}
+\label{f:L21-400nt}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIGURE 6
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+    \includegraphics[width=0.6\linewidth]{../figures/P4P6_differentprimers.pdf}
+\caption{Rapid HiTRACE annotation for reverse transcription from primers internal to an RNA sequnce. Data were collected for the P4-P6 RNA with primers to (A) the middle of this RNA's sequence (position 170) and to (B) the RNA's 3$^\prime$ end (position 270). For both sets, the fluorescence data are, from left to right, ddATP sequencing ladder, control reaction with no chemical modifier, and experiment with the NMIA reagent (for SHAPE acylation). (C) Correlation between the independent data sets.}
+\label{f:P4P6-internal-prim}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIGURE 7
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\centering
+    \includegraphics[width=0.95\linewidth]{../figures/X20_DMS.pdf}
+\caption{Profiles from experimental replicates of X20/H20 DMS data after automated alignment refinement by dynamic-programming-based nonlinear adjustments ($x$-axis: profile, $y$-axis: band position).}
+\label{f:x20-dms}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIGURE 8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\centering
+    \includegraphics[width=0.95\linewidth]{../figures/MedLoop_DMS.pdf}
+\caption{Profiles from experimental replicates of Medloop DMS data.}
+\label{f:medloop-dms}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIGURE 9
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\centering
+    \includegraphics[width=0.95\linewidth]{../figures/MedLoop_CMCT.pdf}
+\caption{Profiles from experimental replicates of Medloop CMCT data.}
+\label{f:medloop-cmct}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIGURE 10
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\centering
+    \includegraphics[width=0.95\linewidth]{../figures/SRP_DMS.pdf}
+\caption{Profiles from experimental replicates of SRP DMS data.}
+\label{f:srp-dms}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIGURE 11
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\centering
+    \includegraphics[width=0.95\linewidth]{../figures/SRP_CMCT.pdf}
+\caption{Profiles from experimental replicates of SRP CMCT data.}
+\label{f:srp-cmct}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
+
+

@@ -1,0 +1,355 @@
+\subsection{Experimental setup}
+
+\iffalse
+RNA synthesis and structure mapping
+RNA sequences were prepared by in vitro transcription with T7 RNA polymerase from DNA templates encoding the sequence designs, and probed with N-methylisatoic anhydride (selective 2´-OH acylation with primer extension, SHAPE chemistry18) using previously described 96-well protocols.20 All RNAs contained a shared primer binding site AAAGAAACAACAACAACAAC at their 3´ end, which was included as a fixed sequence in Eterna puzzles. Measurements included SHAPE reactions (final concentration of N-methyl isatoic anhydride of 6 mg/mL, with 20\% DMSO) or dimethyl sulfate reactions (final concentration: 0.2\%) at 24 °C with 60 nM RNA in two solution conditions, 10 mM MgCl2 and 1 M NaCl, with 50 mM Na-HEPES, pH 8.0; control measurements without SHAPE reagent; and control measurements using 2´-3´-dideoxythymidine triphosphate in primer extension to generate reference ladders at adenosine residues. All data were aligned and quantitated with the HiTRACE software28, corrected for attenuation of long reverse transcription products, and background-subtracted.20 SHAPE-directed secondary structure models and confidence estimates were obtained with data-derived pseudo-energy terms and non-parametric bootstrapping20. Binding titrations to flavin mononucleotide (FMN) were monitored with dimethyl sulfate alkylation, which gave a strong protection signal upon FMN binding to the aptamer. Titrations were analyzed with likelihood-based fits and error estimation29.
+\fi
+
+
+
+\newcommand{\bA}{{\mathbf{D}}}
+\newcommand{\bB}{{\mathbf{B}}}
+\newcommand{\bC}{{\mathbf{P}}}
+\newcommand{\bP}{{\mathbf{P}}}
+\newcommand{\bF}{{\mathbf{F}}}
+\newcommand{\bL}{{\mathbf{L}}}
+\newcommand{\ba}{{\mathbf{d}}}
+\newcommand{\bp}{{\mathbf{p}}}
+\newcommand{\bs}{{\mathbf{s}}}
+\newcommand{\by}{{\mathbf{y}}}
+
+\subsection{Problem definition}
+Given an RNA sequence $\bs$ of length $N$, assume that we carry out the chemical structure probing of this sequence using $M$ different treatments, each of which is run by a separate capillary lane. Assume that the fluorescence intensity of each capillary is measured over $K$ time points. We define a \emph{profile} as the sequence of intensity values from a capillary. The entire CE measurement can then be arranged in a $K \times M$ matrix $\bA$. Normally, $N \ll K$. Based on the characteristic of the chemical agent used in each treatment and the secondary structure computationally inferred from the input sequence, we can predict the fluorescence intensity at each position of $\bs$ for each of $M$ treatments. This prediction can be arranged in a $N \times M$ binary matrix $\bC$ called the \emph{prediction matrix}.
+
+
+We formulate the problem of band annotation as selecting $N$ out of the $K$ rows of $\bA$ using the information in $\bC$ in such a way that a certain objective is optimized over all possible ${K \choose N}$ possibilities. The selected $N$ points map to the locations of the nucleotides of the sequence $\bs$ in the CE measurement.
+
+The input of the proposed method consists of the following:
+\begin{itemize}
+\item $\bA \in \mathbb{R}^{K \times M}$: the fluorescence intensity matrix
+\item $\bC \in \{0,1\}^{N \times M}$: the prediction matrix
+\item $\bs \in \{\mathtt{A}, \mathtt{C}, \mathtt{G}, \mathtt{U}\}^N$: the nucleotide sequence
+\end{itemize}
+and the output is an array $\by \in \mathbb{Z}_+^N$ representing $N$ points selected out of $K$.
+
+
+%Assume that we use $l$ capillaries in our experiment and measure the fluorescence intensity of each capillary over $z$ time points.
+
+%The measurement can be arranged in an $\mathbb{R}^{z \times l}$ matrix. Given
+
+
+\subsection{Prediction matrix construction}\label{ss:pred_mat}
+Given an RNA sequence, we computationally predict its secondary structure using the Vienna RNA package~\citep{hofacker2003vienna}. Based on the predicted structure and the properties of the chemical probing used, we construct the prediction matrix $\bP$ that stores the expected chemical reactivity for individual residues. The element $p_{ij} \in \bP$ indicates such reactivity information of residue $i$ to reagent $j$.
+
+We assume the use of three chemical probing strategies in this paper: dimethyl sulfate alkylation \citep{tijerina2007dms} [DMS], carbodiimide modification \citep{walczak} [CMCT], and $2^{\prime}$-OH acylation [the SHAPE strategy \citep{wilkinson2005}].
+%
+Figure~\ref{f:pred-mat}(a) defines the expected reactivity of each type of nucleotide to chemical reagents used for chemical probing under the (un)paired condition. The value of one means the reactivity to a reagent (\ie, the existence of a band in the fluorescence profile), whereas zero indicates no reactivity (\ie, no band). For instance, in the unpaired condition, the DMS chemical modifies \texttt{A} and \texttt{C} but not \texttt{U} and \texttt{G}, and the entries for \texttt{A} and \texttt{C} are one, while those for \texttt{U} and \texttt{G} are zero.
+
+Figure~\ref{f:pred-mat}(b) shows an example RNA sequence with its secondary structure. Figure~\ref{f:pred-mat}(c) shows the corresponding prediction matrix $\bP$.
+
+
+%The objective of the algorithm is to select $N$ points out of the $z$ points in such a way that a certain score is minimized over all possible
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{../figures/pred_mat}
+\caption{Prediction matrix. (\textbf{a}) Definition of the values appearing in the peak prediction matrix. 1 means that a band is expected in that residue position, whereas 0 means that no band is expected. (\textbf{b}) Example target sequence and its structure predicted by the Vienna RNA package~\citep{hofacker2003vienna}. (\textbf{c}) The prediction matrix for the example in (\textbf{b}).}
+\label{f:pred-mat}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Preprocessing intensity data}\label{ss:preproc}
+%\subsubsection{Processing intensity matrix}
+Let $\ba_j$ be the $j$-th column vector of $\bA, 1 \le j \le M$. We carry out the following procedures.
+%
+\begin{enumerate}
+\item For normalization, we divide $\ba_j$ by 2 times its average.
+
+\item We find peaks in $\ba_j$ using the procedure described in~\citet{Yoon2011} and then remove tailing peaks as follows: Identify 5 tailing peaks. Select the peak with the highest intensity. Denote $i_j$ be the time index of this peak ($1 \le i_j \le K$). Let $i^*=\max_{1 \le j \le M} i_j$. For each $\ba_j$, remove all peaks appearing after $i^*$. Additionally, we remove peaks with excessive amplitude, for they are not real peaks but artifacts generated by experiments.
+
+\item Based on the remaining peak locations, we construct a matrix called the \emph{bonus matrix} $\bB \in \mathbb{Z}^{K \times M}$. We initialize $\bB$ to all zero. If $\bA(i,j)$ represents a peak, then we add one to $\bB(i-1,j)$, $\bB(i,j)$, and $\bB(i+1,j)$. The maximum of $\bB(i,j)$ is 5.
+
+%After the previous steps, assume that there remain $P$ peaks in $\ba_j$.
+
+\item To emphasize the intensity levels at the peak locations, we carry out the convolution of each column of $\bA$ with a Gaussian probability density function (pdf). Let $f(t; \mu, \sigma^2)$ denote the pdf of a Gaussian random variable with mean $\mu$ and variance $\sigma^2$, where $\rho \triangleq K / (N-1)$ represents ideal separation between bands. We replace $\ba_j$ with $\ba_j'$ defined as
+    \begin{equation}
+\ba_j' = \ba_j \ast f(t; \mu, \sigma^2)
+    \end{equation}
+    where $\mu = K/2$, $\sigma^2= \rho / 6$, and $*$ indicates the time-domain convolution~\citep{oppenheim09}.
+\end{enumerate}
+
+
+
+%\subsubsection{Constructing bonus matrix}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+	\psfrag{Z}[][][0.8]{$\mathbf{B}$}
+	\psfrag{P}[][][0.8]{$\mathbf{P}^T$}
+	\psfrag{Q}[][][0.8]{$\mathbf{P}^T$}
+	\psfrag{D}[][][0.8]{$\mathbf{D}$}
+	\psfrag{F}[][][0.8]{$\mathbf{F}$}
+	\psfrag{L}[][][0.8]{$\mathbf{L}$}
+	\psfrag{o}[][][0.8]{$1$}
+	\psfrag{k}[][][0.8]{$k$}
+	\psfrag{K}[][][0.8]{$K$}
+	\psfrag{i}[][][0.8]{$i$}
+	\psfrag{M}[][][0.8]{$M$}
+	\psfrag{n}[][][0.8]{$n$}
+	\psfrag{m}[][][0.8]{$n-1$}
+	\psfrag{N}[][][0.8]{$N$}
+	\psfrag{y}[][][0.8]{$\mathbf{y}$}
+	\psfrag{f}[][][0.8]{$\bF(i,n)$}
+	\psfrag{s}[][][0.7]{\shortstack[c]{Search range\\for best $k$}}
+	\psfrag{b}[][][0.7]{\shortstack[c]{Backtracking\\arrow for $\bF(i,n)$}}
+\includegraphics[width=\linewidth]{../figures/dp_formulation}
+\includegraphics[width=\linewidth]{../figures/dp-example}
+\caption{Formulation as dynamic programming. (\textbf{a}) $\bF(i,n)$ depends on $\bF(k,n-1)$ in the previous column and the gap penalty $S(i,k,n)$ between them. The best $k$ that minimizes $\bF(i,n)$ is searched for in the range $\lfloor i-1.5\rho\rfloor \le k \le \lfloor i-0.5\rho\rfloor$ and is stored in the backtracking matrix $\bL(i,n)$. The computation of $S(i,k,n)$ is based on the bonus matrix $\bB$, the intensity matrix $\bA$, and the prediction matrix $\bP$ (Section~\ref{ss:cost}). (\textbf{b}) Example. The data set used is xxx. $N=yy$, $M=5$, $K=zzzz$. The backtracking path is represented by a series of red circles superimposed on the distance matrix $\bF$. The output array $\by$, which stores the position of each circle, indicates the band locations.
+}
+\label{f:dp-formulation}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Formulation as dynamic programming}
+
+% time series (1...z)와 sequence (1...N)을 align하는 문제와 유사함
+% ("score"보다는 "distance"개념으로 보아 minimization 문제로 품)
+% 하나 both series에서 gap을 허용하지 않음
+% 따라서 대각선방향 화살표만 고려하면 됨.
+% 그런데 z >> N이고 z개에서 N개를 취하는 것이므로
+% (N개 각각은 등장해야하나, z개 일부만 등장하며 됨)
+% 각 n에 대해 이전 xx개의 row를 보는 식으로 formulate됨
+% 하지만 in practice, 아래 heuristic을 쓰면 search space를 더 줄일 수 있음
+% ideal separation을 정의하고, 현재 i보다 (i-ideal_sep) +/- neighborhood 만 고려
+
+% edge weight 구하기 위해
+% 옛날 내 논문 (tri-clustering) 처럼 3개 pane있는 그림 그리기 가능
+% 왼편: zxl matrix ("D"); 가운데: zxN matrix ("F"); 위: lxN matrix ("Ptranspose")
+% edge weight는 왼편 D matrix의 row vector와, 위편 P' matrix의 column vector를 이용해서 구해짐
+
+%%
+%\begin{align*}
+%\texttt{12-34}\\
+%\texttt{1-234}
+%\end{align*}
+%%
+
+
+In essence, the band annotation problem is to select $N$ out of $K$ points in an optimal way. This is similar to the problem of aligning two sequences $(1,2,\ldots,N)$ and $(1,2,\ldots,K)$ without allowing gaps for the latter. In this setup, each (mis)match reveals the band location. For example, in the following alignment (symbol \texttt{-} represents a gap):
+\begin{align*}
+\texttt{RNA sequence index: -1--2---3...N...-}\\
+\texttt{measurement  index: 123456789.......K}
+\end{align*}
+%
+the locations of the first 3 bands are located at 2, 5, and 9 time units. We can thus use dynamic programming to align two sequences, which will reveal the locations of bands.
+
+%Thus, we can use dynamic programming in order to solve the band annotation problem. One difference between this alignment setup and the ordinary alignment problem is that no indel (or gap) is allowed in either sequence. Consequently, in the recurrence of the dynamic programming formulation, we check only diagonal dependency. Figure~\ref{} presents the idea.
+
+%For column $n$ in $\bP'$, we try to find row $i$ in $\bA$ that best matches column $n$.
+
+%Initial value:
+%$4 \sum_i \sum_j \mathbf{D}_{ij} + ( 1.5 \rho )^2 \sum_n^N betaSEP(n)$
+
+
+More formally, we construct a distance matrix $\bF$ indexed by $i$ and $n$ ($1 \le i \le K$; $1 \le n \le N+1$), where the value $\bF(i,n)$ indicates the minimum distance up to position $i$ and band $n$. We fill up the matrix $\bF$ recursively:
+%
+\begin{equation}\label{e:dp-score}
+\bF(i,n) = \min\limits_{\lfloor i-1.5\rho\rfloor \le k \le \lfloor i-0.5\rho\rfloor}\quad \left\{ \bF(k,n-1) + S(i,k,n) \right\}
+\end{equation}
+%
+where $S(i,k,n)$ is the cost incurred by going from position $k$ to $i$ for band $n$. Note that $\bF(i,n)$ comes from the sum of $\bF(k,n-1)$ in the previous column and the gap cost $S(i,k,n)$ determined by the distance between $i$ and $k$. Instead of finding the best value of $k$ over $1 \le k \le i-1$, we consider only over a certain range (\ie, $\lfloor i-1.5\rho\rfloor \le k \le \lfloor i-0.5\rho\rfloor$) that is believed to have the best location of $k$. See the next section for more details of $S(i,k,n)$. The first row and column of $\bF$ is filled with an identical value, namely $4 \sum_i \sum_j \mathbf{D}_{ij} + ( 1.5 \rho )^2 \sum_{n}^N \beta_n$, where $\beta_n$ is defined in Eq.~(\ref{e:beta}).
+
+The backtracking matrix $\bL$ for finding the alignment itself is given by
+\begin{equation}
+\bL(i,n) = \argmin\limits_{\lfloor i-1.5\rho\rfloor \le k \le \lfloor i-0.5\rho\rfloor}\quad \left\{ \bF(k,n-1) + S(i,k,n) \right\}
+\end{equation}
+and stores the position $k$ from which $\bF(i,n)$ is derived in (\ref{e:dp-score}). The output array $\by$ is derived from $\bL$ as follows:
+%
+\begin{equation}
+\by(n) =
+\left\{
+  \begin{array}{ll}
+    \bL(\argmin\limits_{i} \left\{\bF(i,N+1)\right\}, N+1), & \hbox{if $n = N$;} \\
+    \bL(\by(n+1),n+1), & \hbox{$1 \le n \le N-1$.}
+  \end{array}
+\right.
+\end{equation}
+%
+The value of $\by(n)$ corresponds to the location of the $n$-th band in the input sequence $\bs$. Figure~\ref{f:dp-formulation} illustrates the proposed dynamic-programming formulation with an example.
+
+%\begin{eqnarray}
+%y(n) = L_{y(n+1),n+1} \quad \mathrm{for} \ 1 \leq n \leq N \nonumber\\
+%\mathrm{with} \  y(N+1) = \argmin\limits_{i} S_{i,N+1}. \nonumber
+%\end{eqnarray}
+
+%\begin{eqnarray}
+%\begin{array}{rl}
+%\bF(i,n) = & \min\limits_{k \in [i-1.5\rho, i-0.5\rho]}\quad \bF(k,n-1) + S(i,k,n)\\
+%\bL(i,n) = & \argmin\limits_{k \in [i-1.5\rho, i-0.5\rho]} \quad \bF(k,n-1)+ S(i,k,n)
+%\end{array}\nonumber
+%\end{eqnarray}
+
+%\begin{eqnarray}
+%\begin{array}{rcl}
+%\mathrm{LocalScore}(i,k,n) & = & \mathrm{overlap}(i-k,n) + \mathrm{barrier}(i-k,n) \\
+%                                           & & - \mathrm{bonus}(k,n), \\
+%\end{array}\nonumber
+%\end{eqnarray}
+
+
+
+%fill the output vector $y$ with the following backtracking procedure.
+
+
+
+
+\subsection{Description of cost term}\label{ss:cost}
+The cost term in (\ref{e:dp-score}) consists of the following three components:
+%
+\begin{equation}
+S(i,k,n) = S_{\textrm{overlap}}(i-k,n) + S_{\textrm{barrier}}(i-k,n)-S_\textrm{bonus}(k,n)
+\end{equation}
+%
+where each term is a bivariate function returning nonnegative values. The examples in Figure~\ref{f:cost-terms} show how $\bF(i,n)$ is computed on top of $\bF(k,n-1)$ and the three components of $S(i,k,n)$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\centering
+	\psfrag{a}[][][0.7]{$\bF(k,39)$, $486 \le k \le 500$}
+	 \psfrag{c}[][][0.7]{\shortstack[c]{$S_{\textrm{overlap}}(507-k,40)+$\\ $S_{\textrm{barrier}}(507-k,40)$}}
+	\psfrag{e}[][][0.7]{$S_\textrm{bonus}(k,40)$}
+	\psfrag{d}[][][0.7]{$\bF(k,39)+S(507,k,40)$}
+	 \psfrag{s}[][][0.7]{\shortstack[c]{$\bF(507,40)$\\$\bL(507,40) = 500$}}
+	 \psfrag{t}[][][0.7]{\shortstack[c]{$\bF(843,49)$\\$\bL(843,49) = 826$}}
+	\psfrag{x}[][][0.7]{$\bF(k,48)$, $822 \le k \le 836$}
+	 \psfrag{y}[][][0.7]{\shortstack[c]{$S_{\textrm{overlap}}(843-k,49)+$\\ $S_{\textrm{barrier}}(843-k,49)$}}
+	\psfrag{z}[][][0.7]{$S_\textrm{bonus}(k,49)$}
+	\psfrag{w}[][][0.7]{$\bF(k,48)+S(843,k,49)$}
+	\psfrag{f}[][][0.7]{$\bF$}
+\includegraphics[width=0.9\linewidth]{../figures/cost-example}
+\caption{Example showing how $\bF(i,n)$ is computed on top of $\bF(k,n-1)$ and $S(i,k,n)$. (\textbf{a}) Computing $\bF(507,40)$ [$i=507,n=40$]. The value of $k$ that gives the minimum is 500, and $\bL(507,40)=500$. (\textbf{b}) Computing $\bF(843,49)$ [$i=843,n=49$]. $\bL(843,49)=826$ because $\bF(k,48)+S(843,k,49)$ is the minimum at $k=826$. (\textbf{c}) The distance matrix $\bF$, whose elements are computed as in (\textbf{a}) and (\textbf{b}).
+}
+\label{f:cost-terms}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% overlap과 barrier term은 사실 (i-k)에 의해 거의 전적으로 결정됨.
+% 단, barrier의 경우 직전 nt가 G인경우와 아닌 경우를 조절해줌
+% 앞에 곱해지는 상수를 제외하고 (i-k)에 의한 영향 term은
+% 미리 deterministically알 수 있음
+
+% k값은 i-1.5rho <= k <= i-0.5rho이므로
+% (i-k) 값은 0.5rho <= (i-k) <= 1.5rho
+% (0이되지는 않음)
+
+% overlap의 경우 (i-k)가 커지면 작아지게 설계하고, 앞에 상수 term으로 P_{n-1} \cdot P_{n}을 사용함 (n-1번째와 n번째 overlap의 의미)
+% 다른 해석: n-1번째와 n번째 overlap을 고려해주되, 멀리 있을 수록 overlap의 영향을 작게 만듬
+
+% barrier의 경우 원칙적으로는 (i-k)가 커지면 같이 커지게 설계함.  그러나 sequence가 무엇이냐에 따라 barrier penalty가 (i-k)에 대해 단조증가 안할 수도 있다?
+% pathological case가 GGGG 같은 건가? 아니면 GXGXGXGXGX 같은 꼴?
+
+\subsubsection{Overlap term}
+% P_{n-1}과 P_{n}이 유사할수록 overlap penalty는 커짐
+% 그런데 P_{n-1} \cdot P_{n}은 모든 i, k에 대해 고정되어있음
+% 따라서 i-k에 dependent한 term을 곱해서 조정해줌
+% (멀수록 P_{n-1} \cdot P_{n} penalty가 작아지게)
+%
+
+This term is to penalize selecting two time points as consecutive band locations. We define a maximum penalty value in such a way that it increases as the predictions for the two band locations are more similar. We let decay the maximum penalty value as the distance between two mapped time points increases.
+
+For formally, let $i$ and $k$ indicate the time points for the $n$-th and $(n-1)$-th band locations, respectively. We then set the maximum overlap penalty as $\bC_{n} \cdot \bC_{n-1}$, which represents the correlation between the prediction entries for annotations $n$ and $n-1$, respectively. We then multiply a decaying factor defined in terms of a Gaussian: the overlap penalty $S_\textrm{overlap}$ is defined by
+%
+\begin{equation}
+S_\textrm{overlap}(i-k,n)  =  2 g(i-k) \bC_{n} \cdot \bC_{n-1}
+\end{equation}
+where $\bC_n \in \mathbb{R}^M$ is the $n$-th row vector of the prediction matrix $\bC$ and $g(i-k)$ is the expectation of the product of two Gaussian random variables (with the same variance) whose centers are $(i-k)$ away. That is,
+%
+\begin{equation}
+g(t) = E[XY]
+\end{equation}
+%
+where two random variables $X\sim \mathcal{N}(0,\rho/6)$ and $Y\sim\mathcal{N}(t,\rho/6)$.
+
+
+\subsubsection{Barrier term}
+%(i-k)에 비례하는 penalty임
+%즉, 현재 i에서 멀수록 커지는 penalty
+%[Q: Fig 4 아래 그림에서 이게 말굽모양이 되는 것이 어떻게 가능하지?]
+%more precisely, (i-k)가 gamma 대비 얼마나 큰지로 결정
+%gamma는 ideal separation과 관련됨
+%이전 residue가 G였다면 ideal separation이 좁아짐
+%[한주, 이거 왜그렇다고 그랬지?]
+%beta는 적절히 잡아주기 위한 상수
+
+This term is to penalize the locations of $k$ that are too far from the current position $i$. The barrier penalty $S_\textrm{barrier}(i-k,n)$ is calculated by
+\begin{equation}
+S_\textrm{barrier}(i-k,n) = \beta_n (i-k - \gamma_n)^2
+\end{equation}
+where
+\begin{equation}\label{e:beta}
+\beta_n = \left\{
+\begin{array}{ll} 0.05, & \hbox{if $\bs(n-1)=\mathtt{G}$;}\\
+0.1, & \hbox{\textrm{otherwise}}
+\end{array} \right.
+\end{equation}
+and
+\begin{equation}
+\gamma_n = \left\{
+\begin{array}{ll} \rho/3, & \hbox{if $\bs(n-1)=\mathtt{G}$;}\\
+\rho, & \hbox{\textrm{otherwise}.}
+\end{array} \right.
+\end{equation}
+That is, we measure how $(i-k)$ is far from $\gamma_n$ or the ideal separation gap, square the measurement and multiply it by $\beta_n$, which depends on the $(n-1)$-th residue.
+
+\subsubsection{Bonus term}
+% 첫번쨰: 현재 nt의 profile (Pn, size l vector)와 유사한 data (D의 k-th row)를 가지는 만큼 보너스지급. (왜 P_{n-1}이 아니지?)
+% 두번째: Pn과 비교해서 k번째  줄의 peak 양상이 유사한 만큼 bonus (왜 P_{n-1}이 아니지?)
+% 세번째: k번째 줄에 peak가 많을 수록 bonus
+
+This bonus term consists of three components. We measure the similarity between the $n$-th row in the predication matrix and the $k$-th row in the data matrix. We also measure the similarity between the $n$-th row in the prediction matrix and the $k$-th row in the bonus matrix. Lastly we add up the elements in the $k$-th row in the bonus matrix, which means that we prefer such locations of $k$ that have as many peaks as possible.
+
+The bonus score $S_\textrm{bonus}(k,n)$ utilizes $\bB \in \mathbb{Z}^{K \times M}$, an intermediate matrix called the \emph{bonus matrix} (see Section~\ref{ss:preproc}), and is computed by
+\begin{equation}
+S_\textrm{bonus}(k,n)  =  \bA_{k} \cdot \bC_{n} + \bB_{k} \cdot \bC_{n} + \bB_{k} \cdot \mathbf{1}_M
+\end{equation}
+where $\bA_k, \bB_k \in \mathbb{R}^M$ are the $k$-th row vectors of $\bA$ and $\bB$, respectively, and $\mathbf{1}_M$ is the $M$-dimensional vector of all ones.
+
+
+
+
+\subsection{Implementation and data preparation}
+To be completed.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLE 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}
+\processtable{High-throughput RNA structure mapping data sets analyzed by the proposed method (total 522 profiles and 47210 bands). More details of the data sets are described in \citet{lee2012eterna}.
+\label{t:data}}
+{\begin{tabular}{lcccc}
+\toprule
+Name& \# profiles & \# nt & \# bands per profile & \# total bands \\
+\midrule
+R45$^a$  &60&	108&	88&	5280\\
+R46$^a$  &80&	108&	88&	7040\\
+R47$^b$  &90&	112&	92&	8280\\
+R47B$^b$  &36&	112&	92&	3312\\
+R48$^b$  &96&	112&	92&	8832\\
+R49$^b$  &18&	112&	92&	1656\\
+R49B$^c$  &48&	115&	95&	4560\\
+R50$^c$  &54&	115&	95&	5130\\
+R43$^d$  &40&	98&	78&	3120\\
+\botrule
+\end{tabular}}
+{$^a$Flavin mononucleotide (FMN) aptamer with single binding site~\citep{lee2012eterna}; $^b$FMN aptamer with single binding site II; $^c$FMN binding branches; $^d$The backwards C\\
+%Abbreviations: FMN, flavin mononucleotide
+}
+%Abbreviations: SRP, signal recognition particle conserved domain; P4-P6, P4-P6 domain of the Tetrahymena group I ribozyme; DMS, dimethyl sulfate; CMCT, 1-cyclohexyl-3-(2-morpholinoethyl) carbodiimide metho-p-toluenesulfonate; SHAPE, selective hydroxyl acylation analyzed by primer extension.}
+\end{table}
+
+
+

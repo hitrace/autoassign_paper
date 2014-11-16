@@ -1,0 +1,99 @@
+\documentclass[letter]{bioinfo}
+\copyrightyear{2012}
+\pubyear{2012}
+
+%\usepackage{bibtex}
+%\usepackage[cmex10]{amsmath}
+\usepackage{amsmath}
+\usepackage{color}
+%\usepackage[tight,footnotesize,sc,normalsize]{subfigure}
+%\usepackage{stfloats}
+%\usepackage{url}
+
+
+% correct bad hyphenation here
+%\hyphenation{HiTRACE}
+
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{psfrag}
+%\usepackage{balance}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{verbatim}
+\usepackage{epstopdf}
+
+\newcommand{\eg}{{\it e.g.}}
+\newcommand{\ie}{{\it i.e.}}
+%\newcommand{\argmax}{\operatornamewithlimits{arg\,max}}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\newtheorem{example}{Example}
+
+\newcommand{\escore}{{\emph{E}}}
+
+\begin{document}
+\firstpage{1}
+
+\title[Automated band annotation for capillary electrophoresis]{Automated band annotation for capillary electrophoresis based high-throughput RNA structure probing}
+\author[Lee \textit{et~al}]
+{
+Seungmyung~Lee$^{1}$,
+Hanjoo~Kim$^{1}$,
+Siqi~Tian$^{2,4}$,
+Sungroh~Yoon$^{1,3,*}$,
+Rhiju~Das$^{2,4,}$\footnote{to whom correspondence should be addressed}
+}
+\address{
+$^{1}$Department of ECE, Seoul National University, Seoul 151-744, Korea, 
+$^{2}$School of Medicine, Stanford, CA 94305, USA,
+$^{3}$Interdisciplinary program in Bionformatics, Seoul National University, Seoul 151-744, Korea,
+$^{4}$Departments of Biochemistry and Physics, Stanford, CA 94305, USA
+}
+
+%\history{Received on XXXXX; revised on XXXXX; accepted on XXXXX}
+\history{}
+
+%\editor{Associate Editor: XXXXXXX}
+\editor{}
+
+\maketitle
+
+\input{abstract}
+
+
+\section{Introduction}\label{s:introduction}
+\input{introduction}
+
+\begin{methods}
+\section{Methods}\label{s:method}
+\input{methods}
+\end{methods}
+
+\section{Results}\label{s:result}
+\input{result}
+
+\section{Discussion}\label{s:discussion}
+\input{discussion}
+
+\section{Conclusion}\label{s:conclusion}
+\input{conclusion}
+
+
+\section*{Acknowledgments}
+%The authors thank Menashe Elazar at the Glenn Laboratory at Stanford University for providing the HDV ribozyme data.
+
+\paragraph{Funding\textcolon}
+This work was supported in part by the National Research Foundation of Korea funded by the Ministry of Education, Science and Technology (Grant No. 2011-0009963 and No. 2011-0000158 to SY) and in part by a Burroughs-Wellcome Foundation Career Award at the Scientific Interface (to RD for computational work).
+
+\bibliographystyle{natbib}
+%\bibliographystyle{reference}
+%\bibliographystyle{unsrt}
+\bibliography{reference}
+
+
+\end{document}
+
+

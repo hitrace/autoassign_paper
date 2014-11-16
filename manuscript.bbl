@@ -1,0 +1,180 @@
+\begin{thebibliography}{}
+
+\bibitem[Bagby {\em et~al.}(2009)Bagby, Bergman, Shechner, Yen, and
+  Bartel]{Bagby01122009}
+Bagby, S.~C., Bergman, N.~H., Shechner, D.~M., Yen, C., and Bartel, D.~P.
+  (2009).
+\newblock A class i ligase ribozyme with reduced mg2+ dependence: Selection,
+  sequence analysis, and identification of functional tertiary interactions.
+\newblock {\em RNA\/}, {\bf 15}(12), 2129--2146.
+
+\bibitem[Cruz {\em et~al.}(2012)Cruz, Blanchet, Boniecki, Bujnicki, Chen, Cao,
+  Das, Ding, Dokholyan, Flores, Huang, Lavender, Lisi, Major, Mikolajczak,
+  Patel, Philips, Puton, Santalucia, Sijenyi, Hermann, Rother, Rother,
+  Serganov, Skorupski, Soltysinski, Sripakdeevong, Tuszynska, Weeks, Waldsich,
+  Wildauer, Leontis, and Westhof]{Cruz01042012}
+Cruz, J.~A., Blanchet, M.-F., Boniecki, M., Bujnicki, J.~M., Chen, S.-J., Cao,
+  S., Das, R., Ding, F., Dokholyan, N.~V., Flores, S.~C., Huang, L., Lavender,
+  C.~A., Lisi, V., Major, F., Mikolajczak, K., Patel, D.~J., Philips, A.,
+  Puton, T., Santalucia, J., Sijenyi, F., Hermann, T., Rother, K., Rother, M.,
+  Serganov, A., Skorupski, M., Soltysinski, T., Sripakdeevong, P., Tuszynska,
+  I., Weeks, K.~M., Waldsich, C., Wildauer, M., Leontis, N.~B., and Westhof, E.
+  (2012).
+\newblock Rna-puzzles: A casp-like evaluation of rna three-dimensional
+  structure prediction.
+\newblock {\em RNA\/}, {\bf 18}(4), 610--625.
+
+\bibitem[Das {\em et~al.}(2010)Das, Karanicolas, and
+  Baker]{daskaranicolasbaker2010}
+Das, R., Karanicolas, J., and Baker, D. (2010).
+\newblock Atomic accuracy in predicting and designing noncanonical {RNA}
+  structure.
+\newblock {\em Nature Methods\/}, {\bf 7}(4), 291--294.
+
+\bibitem[Hofacker(2003)Hofacker]{hofacker2003vienna}
+Hofacker, I. (2003).
+\newblock {Vienna RNA secondary structure server}.
+\newblock {\em Nucleic Acids Research\/}, {\bf 31}(13), 3429--3431.
+
+\bibitem[Karabiber {\em et~al.}(2013)Karabiber, McGinnis, Favorov, and
+  Weeks]{Karabiber2013}
+Karabiber, F., McGinnis, J.~L., Favorov, O.~V., and Weeks, K.~M. (2013).
+\newblock Qushape: Rapid, accurate, and best-practices quantification of
+  nucleic acid probing information, resolved by capillary electrophoresis.
+\newblock {\em RNA\/}, {\bf 19}(1), 63--73.
+
+\bibitem[Kladwang {\em et~al.}(2011)Kladwang, VanLang, Cordero, and
+  Das]{kladwangmutatemap2011}
+Kladwang, W., VanLang, C.~C., Cordero, P., and Das, R. (2011).
+\newblock A two-dimensional mutate-and-map strategy for non-coding rna
+  structure.
+\newblock {\em Nat Chem\/}, {\bf 3}(12), 954--962.
+\newblock 10.1038/nchem.1176.
+
+\bibitem[Kladwang {\em et~al.}(2014)Kladwang, Mann, Becka, Tian, Kim, Yoon, and
+  Das]{Kladwang2014}
+Kladwang, W., Mann, T.~H., Becka, A., Tian, S., Kim, H., Yoon, S., and Das, R.
+  (2014).
+\newblock Standardization of rna chemical mapping experiments.
+\newblock {\em Biochemistry\/}, {\bf 53}(19), 3063--3065.
+
+\bibitem[Lee {\em et~al.}(2012)Lee, Kladwang, Lee, Cantu, Azizyan, Kim,
+  Limpaecher, Yoon, Treuille, and Das]{lee2012eterna}
+Lee, J., Kladwang, W., Lee, M., Cantu, D., Azizyan, M., Kim, H., Limpaecher,
+  A., Yoon, S., Treuille, A., and Das, R. (2012).
+\newblock {RNA} design rules from a massively multiplayer cloud laboratory.
+\newblock {\em under review\/}.
+
+\bibitem[Lee {\em et~al.}(2014)Lee, Kladwang, Lee, Cantu, Azizyan, Kim,
+  Limpaecher, Yoon, Treuille, Das, and Participants]{lee2014pnas}
+Lee, J., Kladwang, W., Lee, M., Cantu, D., Azizyan, M., Kim, H., Limpaecher,
+  A., Yoon, S., Treuille, A., Das, R., and Participants, E. (2014).
+\newblock Rna design rules from a massive open laboratory.
+\newblock {\em Proceedings of the National Academy of Sciences\/}, {\bf
+  111}(6), 2122--2127.
+
+\bibitem[McGinnis and Weeks(2014)McGinnis and Weeks]{weeksbiochemistry}
+McGinnis, J.~L. and Weeks, K.~M. (2014).
+\newblock Ribosome rna assembly intermediates visualized in living cells.
+\newblock {\em Biochemistry\/}, {\bf 53}(19), 3237--3247.
+\newblock PMID: 24818530.
+
+\bibitem[Merino {\em et~al.}(2005)Merino, Wilkinson, Coughlan, and
+  Weeks]{wilkinson2005}
+Merino, E., Wilkinson, K., Coughlan, J., and Weeks, K. (2005).
+\newblock {Advances in RNA structure analysis by chemical probing}.
+\newblock {\em J. Am. Chem. Soc.}, {\bf 127}, 4223--4231.
+
+\bibitem[Mitra {\em et~al.}(2008)Mitra, Shcherbakova, Altman, Brenowitz, and
+  Laederach]{mitra2008high}
+Mitra, S., Shcherbakova, I., Altman, R., Brenowitz, M., and Laederach, A.
+  (2008).
+\newblock {High-throughput single-nucleotide structural mapping by capillary
+  automated footprinting analysis}.
+\newblock {\em Nucleic Acids Research\/}, {\bf 36}(11), e63.
+
+\bibitem[Pang {\em et~al.}(2011)Pang, Elazar, Pham, and Glenn]{Pang2011}
+Pang, P.~S., Elazar, M., Pham, E.~a., and Glenn, J.~S. (2011).
+\newblock {Simplified RNA secondary structure mapping by automation of SHAPE
+  data analysis.}
+\newblock {\em Nucleic Acids Research\/}, {\bf 39}(22), e151.
+
+\bibitem[Shi {\em et~al.}(2009)Shi, Mollova, Pljevaljčić, Millar, and
+  Herschlag]{Shi2009}
+Shi, X., Mollova, E.~T., Pljevaljčić, G., Millar, D.~P., and Herschlag, D.
+  (2009).
+\newblock Probing the dynamics of the p1 helix within the tetrahymena group i
+  intron.
+\newblock {\em Journal of the American Chemical Society\/}, {\bf 131}(27),
+  9571--9578.
+\newblock PMID: 19537712.
+
+\bibitem[Tian {\em et~al.}(2014)Tian, Cordero, Kladwang, and
+  Das]{tian2014nature}
+Tian, S., Cordero, P., Kladwang, W., and Das, R. (2014).
+\newblock High-throughput mutate-map-rescue evaluates shape-directed rna
+  structure and uncovers excited states.
+\newblock {\em RNA\/}.
+
+\bibitem[Tijerina {\em et~al.}(2007)Tijerina, Mohr, and
+  Russell]{tijerina2007dms}
+Tijerina, P., Mohr, S., and Russell, R. (2007).
+\newblock {DMS footprinting of structured RNAs and RNA--protein complexes}.
+\newblock {\em Nature Protocols\/}, {\bf 2}(10), 2608--2623.
+
+\bibitem[Vasa {\em et~al.}(2008)Vasa, Guex, Wilkinson, Weeks, and
+  Giddings]{vasa2008shapefinder}
+Vasa, S., Guex, N., Wilkinson, K., Weeks, K., and Giddings, M. (2008).
+\newblock {ShapeFinder: A software system for high-throughput quantitative
+  analysis of nucleic acid reactivity information resolved by capillary
+  electrophoresis}.
+\newblock {\em RNA\/}, {\bf 14}(10), 1979--1990.
+
+\bibitem[Walczak {\em et~al.}(1996)Walczak, Westhof, Carbon, and Krol]{walczak}
+Walczak, R., Westhof, E., Carbon, P., and Krol, A. (1996).
+\newblock {A novel RNA structural motif in the selenocysteine insertion element
+  of eukaryotic selenoprotein mRNAs}.
+\newblock {\em Current opinion in structural biology\/}, {\bf 2}, 367--379.
+
+\bibitem[Watts {\em et~al.}(2009)Watts, Dang, Gorelick, Leonard, Bess,
+  Swanstrom, Burch, and Weeks]{weeksnature2009}
+Watts, J.~M., Dang, K.~K., Gorelick, R.~J., Leonard, C.~W., Bess, J.~W.,
+  Swanstrom, R., Burch, C.~L., and Weeks, K.~M. (2009).
+\newblock Architecture and secondary structure of an entire hiv-1 rna genome.
+\newblock {\em Nature\/}, {\bf 460}(7256), 711--716.
+
+\bibitem[Weeks(2010a)Weeks]{weeks2010}
+Weeks, K. (2010a).
+\newblock {Advances in RNA structure analysis by chemical probing}.
+\newblock {\em Current opinion in structural biology\/}, {\bf 20}, 295--304.
+
+\bibitem[Weeks(2010b)Weeks]{Weeks2010295}
+Weeks, K.~M. (2010b).
+\newblock Advances in \{RNA\} structure analysis by chemical probing.
+\newblock {\em Current Opinion in Structural Biology\/}, {\bf 20}(3), 295 --
+  304.
+\newblock Nucleic acids / Sequences and topology.
+
+\bibitem[Wilkinson {\em et~al.}(2008)Wilkinson, Gorelick, Vasa, Guex, Rein,
+  Mathews, Giddings, and Weeks]{weeksplos2009}
+Wilkinson, K.~A., Gorelick, R.~J., Vasa, S.~M., Guex, N., Rein, A., Mathews,
+  D.~H., Giddings, M.~C., and Weeks, K.~M. (2008).
+\newblock High-throughput {SHAPE} analysis reveals structures in {HIV-1}
+  genomic {RNA} strongly conserved across distinct biological states.
+\newblock {\em PLoS Biol\/}, {\bf 6}(4), e96+.
+
+\bibitem[Wochner {\em et~al.}(2011)Wochner, Attwater, Coulson, and
+  Holliger]{Wochner08042011}
+Wochner, A., Attwater, J., Coulson, A., and Holliger, P. (2011).
+\newblock Ribozyme-catalyzed transcription of an active ribozyme.
+\newblock {\em Science\/}, {\bf 332}(6026), 209--212.
+
+\bibitem[Yoon {\em et~al.}(2011)Yoon, Kim, Hum, Kim, Park, Kladwang, and
+  Das]{Yoon2011}
+Yoon, S., Kim, J., Hum, J., Kim, H., Park, S., Kladwang, W., and Das, R.
+  (2011).
+\newblock {HiTRACE: high-throughput robust analysis for capillary
+  electrophoresis.}
+\newblock {\em Bioinformatics\/}, {\bf 27}(13), 1798--805.
+
+\end{thebibliography}

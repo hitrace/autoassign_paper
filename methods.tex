@@ -1,0 +1,263 @@
+\newcommand{\bA}{{\mathbf{D}}}
+\newcommand{\bB}{{\mathbf{B}}}
+\newcommand{\bC}{{\mathbf{P}}}
+\newcommand{\bP}{{\mathbf{P}}}
+\newcommand{\bF}{{\mathbf{F}}}
+\newcommand{\bL}{{\mathbf{L}}}
+\newcommand{\ba}{{\mathbf{d}}}
+\newcommand{\bp}{{\mathbf{p}}}
+\newcommand{\bs}{{\mathbf{s}}}
+\newcommand{\by}{{\mathbf{y}}}
+
+\subsection{Problem definition}
+Given an RNA sequence $\bs$ of length $N$, assume that we carry out the chemical structure probing of this sequence using $M$ different treatments, each of which is run by a separate capillary lane. Assume that the fluorescence intensity of each capillary is measured over $K$ time points. We define a \emph{profile} as the sequence of intensity values from a capillary. The entire CE measurement can then be arranged in a $K \times M$ matrix $\bA$. Normally, $N \ll K$, i.e. each electrophoretic trace is finely sampled in time. Based on the characteristic of the chemical agent used in each treatment and the secondary structure computationally inferred from the input sequence, we can predict the fluorescence intensity at each position of $\bs$ for each of $M$ treatments. This prediction can be arranged in a $N \times M$ matrix $\bC$ called the \emph{prediction matrix}.
+
+The problem of band annotation is formulated as selecting $N$ out of the $K$ rows of $\bA$ using the information in $\bC$ in such a way that a certain objective is optimized over all possible ${K \choose N}$ possibilities. The selected $N$ points map to the locations of the nucleotides of the sequence $\bs$ in the CE measurement.
+
+The input of the proposed method consists of the following:
+\begin{itemize}
+\item $\bA \in \mathbb{R}^{K \times M}$: the fluorescence intensity matrix
+\item $\bC \in \{0,1\}^{N \times M}$: the prediction matrix
+\item $\bs \in \{\mathtt{A}, \mathtt{C}, \mathtt{G}, \mathtt{U}\}^N$: the nucleotide sequence
+\end{itemize}
+and the output is an array $\by \in \mathbb{Z}_+^N$ representing $N$ points selected out of $K$.
+
+
+
+
+\subsection{Prediction matrix construction}\label{ss:pred_mat}
+Figure~\ref{f:pred-mat}(a) defines the expected reactivity of each type of nucleotide to chemical reagents used for chemical probing under the (un)paired condition. The value of one means the reactivity to a reagent (\ie, the existence of a band in the fluorescence profile), whereas zero indicates no reactivity (\ie, no band). For instance,  the DMS chemical modifies \texttt{A} and \texttt{C} but not \texttt{U} and \texttt{G}, and the entries for \texttt{A} and \texttt{C} are one, while those for \texttt{U} and \texttt{G} are zero. We allow the use of three chemical probing strategies in this paper: dimethyl sulfate alkylation \citep{tijerina2007dms} [DMS], carbodiimide modification \citep{walczak} [CMCT], and `others' that can produce bands at all locations, including $2^{\prime}$-OH acylation [the SHAPE strategy \citep{wilkinson2005}]. We also allow input of a secondary structure in dot-parenthese notation, if known. Nucleotides forming base pairs are not expected to show bands in DMS, CMCT, SHAPE, and other structure mapping profiles. Based on this information, we construct the prediction matrix $\bP$ that stores the expected chemical reactivity for individual residues. The element $p_{ij} \in \bP$ indicates such reactivity information of residue $i$ to reagent $j$.
+
+%
+
+Figure~\ref{f:pred-mat}(b) shows an example RNA sequence with its secondary structure. Figure~\ref{f:pred-mat}(c) shows the corresponding prediction matrix $\bP$.
+
+
+\subsection{Preprocessing intensity data}\label{ss:preproc}
+The first step is to locate prominent peaks on each profile, that is, on each column of $\bA$; these peaks are matched with bands afterwards. Let $\ba_j$ be the $j$-th column vector of $\bA, 1 \le j \le M$. Briefly, the following procedure is executed.
+%
+\begin{enumerate}
+\item Select candidates for the peaks in $\ba_j$ that can be mapped into elements of the sequence $\bs$. These peaks are selected to satisfy the following conditions. First, a peak $\ba_j(k)$ must have a higher intensity (a fundamental property of a peak) than those of its neighbors, $\ba_j(k-1)$ and $\ba_j(k+1)$. Second, a peak must be with a significant curvature which can be measured by the second derivative of time series; since the time series given are discrete, the curvature is estimated as belows:
+%
+\begin{equation}\label{e:gamma}
+\Gamma = \Delta^- - \Delta^+
+\end{equation}
+%
+where
+%
+\begin{eqnarray}
+\Delta^- = \max( \ba_j(k)-\ba_j(k-1), {{(\ba_j(k)-\ba_j(k-2))}/{2}}) \nonumber \\
+\Delta^+ = \max( \ba_j(k+1)-\ba_j(k), {{(\ba_j(k+2)-\ba_j(k))}/{2}}) \nonumber
+\end{eqnarray}
+%
+The $\Delta^-$ and $\Delta^+$ in (\ref{e:gamma}) approximately evaluate the slope of left and right side of peak respectively, and $\Gamma$ is the difference between them; thus, the magnitude of $\Gamma$ represents how abrubtly the curve has turned from upwards to downwards. Now we choose $n$ peaks with highest $\Gamma$ from the points satisfying the first condition, while $n$ may vary according to configurations.
+
+%\item In order to remove the influence of noise that every $\ba_j$ has in common near the end of the time series, eliminate a portion of tailing peaks as follows: Identify 5 tailing peaks and select one with the hightest intensity among them. Denote $i_j$ be the time index of this peak $(1 \le i_j \le K)$. Let $i^*=\max_{1 \le j \le M} i_j$. For each $\ba_j$, remove all peaks appearing after $i^*$.
+
+\item Based on the remaining peak locations, construct a matrix called the \emph{bonus matrix} $\bB \in \mathbb{Z}^{K \times M}$. Let $\bar{\Gamma}$ be the mean value of $\Gamma$ of the remaining peaks. Initialize $\bB$ to all zero. If $\bA(i,j)$ represents a peak, then we set $\bB$ to be the negative gamma of the corresponding peak added by $\bar{\Gamma}/2$.
+
+\item Determine the ideal separation between bands based on the remaining peak locations: $\rho \triangleq (k_r - k_f) / (N-1)$, where $k_f$ and $k_r$ are the locations of the foremost peak and the rearmost peak respectively.% The ideal separation calculated here is used when shifting the window in dynamic programming.
+\end{enumerate}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Prediction Matrix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth]{../figures/method_pred_mat}
+\caption{Prediction matrix. (\textbf{a}) Definition of the values appearing in the peak prediction matrix. 1 means that a band is expected in that residue position, whereas 0 means that no band is expected. (\textbf{b}) Example target sequence and its structure predicted by the Vienna RNA package~\citep{hofacker2003vienna}. (\textbf{c}) The prediction matrix for the example in (\textbf{b}).}
+\label{f:pred-mat}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dynamic Programming - Formulation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+	\psfrag{6}[][][0.6]{$\mathbf{p}_1$}
+	\psfrag{7}[][][0.6]{$\mathbf{p}_2$}
+	\psfrag{8}[][][0.6]{$\mathbf{p}_3$}
+	\psfrag{9}[][][0.6]{$\mathbf{p}_4$}
+	\psfrag{x}[][][0.6]{$\mathbf{p}_5$}
+	\psfrag{a}[][][0.6]{$\mathbf{p}_6$}				
+	\psfrag{b}[][][0.6]{$\cdots$}				
+	\psfrag{Z}[][][0.8]{$\mathbf{B}$}
+	\psfrag{P}[][][0.8]{$\mathbf{P}^T$}
+	\psfrag{Q}[][][0.8]{$\mathbf{P}^T$}
+	\psfrag{D}[][][0.8]{$\mathbf{D}$}
+	\psfrag{F}[][][0.8]{$\mathbf{F}$}
+	\psfrag{L}[][][0.8]{$\mathbf{L}$}
+	\psfrag{o}[][][0.8]{$1$}
+	\psfrag{k}[][][0.8]{$k$}
+	\psfrag{p}[][][0.8]{$p$}
+	\psfrag{K}[][][0.8]{$K$}
+	\psfrag{i}[][][0.8]{$k'$}
+	\psfrag{M}[][][0.8]{$M$}
+	\psfrag{n}[][][0.8]{$n$}
+	\psfrag{m}[][][0.8]{$n-1$}
+	\psfrag{N}[][][0.8]{$N$}
+	\psfrag{y}[][][0.8]{$\mathbf{y}$}
+	\psfrag{f}[][][0.8]{$\bF(n,k,p)$}
+	\psfrag{s}[][][0.7]{\shortstack[c]{Search range\\for best $k$,$p$}}
+	\psfrag{c}[][][0.7]{\shortstack[c]{Backtracking\\arrow for\\$\bF(n,k,p)$}}
+\includegraphics[width=0.85\linewidth]{../figures/method_dp_formulation}
+\caption{Formulation as dynamic programming. (\textbf{a}) $\bF(n,k,p)$ depends on $\bF(n-1,k',p')$ in the previous column and the gap bonus $S(n,k',k,n)$ between them. The best tuple $(k',p')$ that maximizes $\bF(n,k,p)$ is searched for in the range $k-2.5\rho \le k' < k; k'+p' < k+p$ and is stored in the backtracking matrices $\bL_k(n,k,p)$, $\bL_p(n,k,p)$. The computation of $S(n,k',k,p)$ is based on the bonus matrix $\bB$ and the prediction matrix $\bP$ (Section~\ref{ss:cost}). (\textbf{b}) Example. The data set used is `FMN Apatamer with single binding site.' $N=88$, $M=5$, $K=1324$. The backtracking path is represented by a series of red circles superimposed on the score matrix $\bF$; since $\bF$ is 3-dimensional, the figure alternatively represents a reduced matrix $\bF'$ defined by $\bF'(n,k)=\max_{p'} \bF(n,k,p')$. The output array $\by_k$, which stores the position of each circle, indicates the band locations.}
+\label{f:dp-formulation}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Formulation as dynamic programming}
+
+\subsubsection{Basic motivation}
+In essence, the band annotation problem is to select $N$ out of $K$ points and match them to peak locations (if at all possible) in an optimal way. This is similar to the problem of aligning two sequences $(1,2,\ldots,N)$ and $(1,2,\ldots,K)$ without allowing gaps for the latter.
+\begin{align*}
+\texttt{RNA sequence index    : -1--2---3...N...-}\\
+\texttt{Measurement  index    : 123456789.......K}\\
+\end{align*}
+In the example above, the first three bands are located at 2, 5, and 9 time units. In order to find the most probable one among all such alignments, each possible alignment is given a score that represents its probabilistic likelihood. Dynamic programming can be utilized to find the solution set with the highest score, which in turn leads to the most likely locations of bands. More formally, define a matrix $\bF$ indexed by $n$ and $k$ ($1 \le n \le N$; $1 \le k \le K$) where the value $\bF(n,k)$ indicates the maximum score up to the band $n$ and position $k$. The matrix $\bF$ is filled up recursively:
+%
+\begin{equation}\label{e:F}
+\bF(n,k) = \max_{\substack{k-2.5\rho \le k' < k}}\quad \left\{ \bF(n-1,k') + S(n,k',k) \right\}
+\end{equation}
+%
+where $S(n,k',k)$ is the score attained by going from position $k'$ to $k$ for band $n$. The constraint on $k'$ in (\ref{e:F}) implies that a jump from $k'$ to $k$ is forward and its width is capped by a reasonable upper bound so that the entire search space can be narrowed down for efficient implementation. The search space is reduced even further into the trace of a moving window as shown in Figure~\ref{f:dp-formulation}, during our implementation.
+
+\subsubsection{Primary profile}\label{sss:primary_profile}
+In the previous section, our problem was formularized, but it fails to guarantee that the mapping from bands to peaks is an one-to-one function. If there are two bands close to each other and only one peak is available for matching, the previous method does allow both bands to be matched with the single peak at the same time. In order to prevent such circumstances, a new term $p$ is introduced: the relative position of the matched peak to the band position $k$. The tuple $(n,k,p)$ corresponds to the instance in which the band $n$ is located at position $k$, and matched with the peak at $k+p$. The matrix $\bF$ is now redefined as a 3-dimensional matrix as follows:
+%
+\begin{equation}\label{e:F2}
+\bF(n,k,p) = \max_{\substack{k-2.5\rho \le k' < k\\|p| < \rho/2\\k'+p' < k+p}}\quad \left\{ \bF(n-1,k',p') + S(n,k',k,p) \right\}
+\end{equation}
+%
+The constraint $|p| < \rho/2$ is to restrict bands to be matched only with nearby peaks, and the last constraint $k'+p'<k+p$ means that two distinct bands cannot share the same peak. One problem that arises with the use of $p$ is that there should be $M$ such $p$'s for $M$ profiles, implying that the matrix $\bF$ should not be 3-dimensional but actually ($M+2$)-dimensional. However, this would make solving this problem too costly, so the problem is compromised by choosing a primary profile among $M$ profiles so that $p$ is applied only to it; therefore $\bF$ may remain as a 3-dimensional matrix. Our software determine primary profile by itself depending on the data type. For our data sets, the last one (ddTTP) out of $M$ profiles is always chosen to be the primary profile, thus $\ba_M$ will be considered as the primary profile in the rest of this paper.
+
+\subsubsection{Backtracking}
+The backtracking matrices $\bL_k$, $\bL_p$ for finding the solution itself are given by
+\begin{eqnarray}\label{e:L}
+\bL(n,k,p)&=&(\bL_k(n,k,p), \bL_p(n,k,p)) \\
+&=&\argmax_{\substack{k-2.5\rho \le k' < k\\|p| < \rho/2\\k'+p' < k+p}}\quad \left\{ \bF(n-1,k',p') + S(n,k',k,p) \right\} \nonumber
+\end{eqnarray}
+and respectively store the position $k$ and the relative peak location $p$ from which $\bF(n,k,p)$ is derived as in (\ref{e:F2}). The output array $\by$ is derived from $\bL_k$ and $\bL_p$ as follows:
+%
+\begin{eqnarray}\label{e:y}
+\by(n) & = & (\by_k(n), \by_p(n)) \\
+& = & \left\{
+  \begin{array}{ll} \nonumber
+    \argmax\limits_{k,p} \left\{\bF(N,k,p)\right\}, & \hbox{if $n = N$;} \\
+    \bL(n+1, \by_k(n+1), \by_p(n+1)), & \hbox{$1 \le n \le N-1$.}
+  \end{array}
+\right.
+\end{eqnarray}
+%
+The value of $\by_k(n)$ corresponds to the location of the $n$-th band in the input sequence $\bs$. Figure~\ref{f:dp-formulation} illustrates the proposed dynamic-programming formulation with an example.
+
+
+\subsection{Description of score term}\label{ss:cost}
+The score term in (\ref{e:F2}) consists of the following two components:
+%
+\begin{equation}\label{e:score-term}
+S(n,k',k,p) = S_{\textrm{dist}}(n,k-k') + w_{\textrm{peak}} \cdot S_{\textrm{peak}} (k,p) \cdot \bC(n, :)
+\end{equation}
+%
+where $S_\textrm{dist}$ and $S_\textrm{peak}$ are functions returning nonnegative values and $\bC(n,:)$ is the $n$-th row of the prediction matrix $\bC$. 
+
+
+\subsubsection{Distance bonus term}
+
+It is empirically supported that the length between consecutive locations, $k'$ and $k$, is quite evenly distributed. $S_{\textrm{dist}}$ is the bonus term that utilizes this fact and induces the dynamic programming to end up with regularly stretched output. In addition, observations on reference annotations suggest that a gap between two consecutive locations tends to be shorter when the preceding location corresponds to  `$\mathtt{G}$' in the RNA sequence. These observations lead to the definition of distance bonus term as follows:
+%
+\begin{equation}
+S_{\textrm{dist}} (n,d) = {{f_{(\rho', {\rho \over 2})}(d)} \over {f_{(\rho', {\rho \over 2})}(0)}}
+\end{equation}
+%
+where
+%
+\begin{equation}\nonumber
+\rho' = \left\{
+  \begin{array}{ll}
+    {2 \over 3}\rho, &\hbox{if $\bs(n-1)=\mathtt{G}$;} \\
+    \rho, &\hbox{otherwise}
+  \end{array}
+\right.
+\end{equation}
+%
+and $f_{(\mu, \sigma)}$ is the density function of $N(\mu, \sigma)$. That is, $S_{\textrm{dist}}(n,d)$ reaches its maximum value 1 when $d = \rho'$ and decreases along a Gaussian curve as $d$ deviates from $\rho'$.
+
+
+\subsubsection{Peak bonus term}
+Another bonus term used in this method is the peak bonus term which is used to incline our output to locate bands near peaks with a significant curvature. As the peak bonus is granted only for the profiles with a band at the location, $P(n,:)$ must be referred before actually adding up the bonuses as demonstrated in the equation (\ref{e:score-term}).
+$S_{\textrm{peak}}$ is a function that returns a nonnegative $M$-dimensional value where each of its entries represents the peak bonus from each profile:
+%
+\begin{equation}
+S_{\textrm{peak}}(k,p) = (S^1_{\textrm{peak}}(k), \ldots, S^{M-1}_{\textrm{peak}}(k), S^M_{\textrm{peak}}(k,p))
+\end{equation}
+%
+where $S^m_{\textrm{peak}}$ stands for the bonus from matching a peak to a band in $\ba_m$, assuming such a band exists. The bonus is boosted for a greater curvature at the peak and the proximity of the peak to the band, so $S^m_{\textrm{peak}}$ is defined as the product of a Gaussian density function and an entry of $\bB$ corresponding to the peak:
+%
+\begin{equation}
+S^m_{\textrm{peak}}(k) = \max_{\substack{|q| < \rho/2}} {{f_{(0, {\rho \over 5})}(q)} \over {f_{(0, {\rho \over 5})}(0)}} \cdot \bB(k+q, m)
+\end{equation}
+%
+for $m < M$, and
+%
+\begin{equation}
+S^M_{\textrm{peak}}(k,p) = {{f_{(0, {\rho \over 5})}(p)} \over {f_{(0, {\rho \over 5})}(0)}} \cdot \bB(k+p, m) \cdot (M-1)
+\end{equation}
+%
+As shown above, the peak bonus from the primary profile is given more weight because it plays an important role in finding the optimal solution with dynamic programming.
+
+\subsubsection{Peak bonus weight coefficient}
+Two distinct bonus terms are normalized by a linear combination where an optimal selection of weight coefficient is crucial. An overvalued weight on peak bonus is most likely to result in solutions with exact matches of bands to peaks and uneven distribution of gaps whereas an undervalued weight $w_{\textrm{peak}}$ would bring about output with uniform distances neglecting peak-band matching. An optimal coefficient $w_{\textrm{peak}}$ was discovered to be 1 through iterative experiments.
+
+
+\subsection{Reliability evaluation}\label{ss:reliability-evaluation}
+Regardless of how accurately the automated band annotation works, it may always return a misleading output. Thus, it must be supported by a method to assess the reliability of automatically determined band locations prior to practical application. The mean squared error (MSE) may be a good index to the accuracy of our result, but it is measurable only when a reference is provided; in practice, the reliability of the a result needs to be evaluated by itself, so MSE cannot be counted on. Accordingly, an alternative called $\escore$-score is devised to predict the quality of results. The focus is on the intuition that when the dynamic programming fails to approach the desirable solution for any reason, the balance between two bonus terms is broken as the value of the weight coefficient $w_{\textrm{peak}}$ originates from the nature of the data and its correct answer. There are two possible consequences when $w_{\textrm{peak}}$ fails to arbitrate between the distance bonus term and the peak bonus term: extraordinarily short or long distances between consecutive locations, or bands on the primary profile without proper matching to peaks. $\escore$-score is defined with the following terms:
+\begin{itemize}
+\item $n_1$: number of bands on the primary profile without corresponding peak
+\item $n_2$: number of gaps with length less than $\rho/4$, or greater than $2\rho$
+\item $p_M$: number of bands on the primary profile predicted by $\bC$
+\item $\escore = 1 - {\max({{n_1} \over {p_M}}, {{n_2} \over {K-1}})}$
+\end{itemize}
+$\escore$-score is a value between 0 and 1 and conservatively estimates the number of normalities in the output relative to the number of bands and locations. Greater $\escore$-score means less abnormalities in the output which is believed to result from output digressing from the correct answer, so it can be expected that output with $\escore$ closer to 1 would be more reliable than output with smaller $\escore$. The actual relationship between $\escore$-score and reliability of output is discussed in the result section.
+
+\begin{comment}
+\subsection{Implementation}
+We implemented the proposed method in the MATLAB programming environment (The MathWorks, http://www.mathworks.com) and are making it freely available for download at http://hitrace.stanford.edu.
+(To be filled with data preparation...)
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLE 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}
+\processtable{High-throughput RNA structure mapping data sets analyzed by the proposed method (total 522 profiles and 47210 bands). Excluding the last line, there are 95 data sets. More details of these 95 data sets are described in \citet{lee2012eterna}. %The last data set is from a study on a 187-nt ribozyme.
+\label{t:data}}
+{\begin{tabular}{lcccc}
+\toprule
+Name& \# profiles & \# nt & \# bands per profile & \# total bands \\
+\midrule
+R45$^a$  &60&	108&	88&	5280\\
+R46$^a$  &80&	108&	88&	7040\\
+R47$^b$  &90&	112&	92&	8280\\
+R47B$^b$  &36&	112&	92&	3312\\
+R48$^b$  &96&	112&	92&	8832\\
+R49$^b$  &18&	112&	92&	1656\\
+R49B$^c$  &48&	115&	95&	4560\\
+R50$^c$  &54&	115&	95&	5130\\
+R43$^d$  &40&	98&	78&	3120\\
+%HDV$^e$ & 4& 187 & 187 & 748\\
+\botrule
+\end{tabular}}
+{$^a$Flavin mononucleotide (FMN) aptamer with single binding site~\citep{lee2012eterna}; $^b$FMN aptamer with single binding site II; $^c$FMN binding branches; $^d$The backwards C%; $^e$NMIA (SHAPE) modification of the hepatitis delta virus (HDV) ribozyme
+%Abbreviations: FMN, flavin mononucleotide
+}
+%Abbreviations: SRP, signal recognition particle conserved domain; P4-P6, P4-P6 domain of the Tetrahymena group I ribozyme; DMS, dimethyl sulfate; CMCT, 1-cyclohexyl-3-(2-morpholinoethyl) carbodiimide metho-p-toluenesulfonate; SHAPE, selective hydroxyl acylation analyzed by primer extension.}
+\end{table}
+
+
+

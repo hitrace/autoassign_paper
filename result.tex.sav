@@ -1,0 +1,29 @@
+\subsection{Robust determination of band positions}
+To verify quantitatively the accuracy of automated band annotation, we computed the mean squared error (MSE) of the band locations determined by the proposed method with respect to the reference locations. In addition, we 
+
+For comparison, we also computed the MSE of the band locations determined by ShapeFinder~\citep{vasa2008shapefinder}. In MSE computation, \emph{(describe how to compute MSE).}
+
+Fig.~\ref{f:band-pos}(A) shows 
+
+\subsection{Accurate peak-area quantification}
+
+\subsection{Consistency in synthesis scoring}
+
+\subsection{Additional results in longer RNAs}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIGURE 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+\subfigure[] {
+\includegraphics[width=0.45\linewidth]{../figures/fig1}
+}
+\subfigure[] {
+\includegraphics[width=0.45\linewidth]{../figures/fig3}
+}
+\caption{(A) (B)}
+\label{f:band-pos}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
