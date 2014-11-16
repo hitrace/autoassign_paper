@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=latex 2014.5.25)  15 NOV 2014 16:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=latex 2014.5.25)  15 NOV 2014 16:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -406,6 +406,11 @@ pproach
  []
 
 
+Underfull \hbox (badness 1163) in paragraph at lines 5--7
+\OT1/phv/m/n/8 project, the method outperforms prior tools (QuSHAPE, FAST)
+ []
+
+
 Underfull \hbox (badness 1132) in paragraph at lines 8--10
 \OT1/phv/b/n/8 Availability: \OT1/phv/m/n/8 The implementation of the proposed 
 algorithm as
@@ -474,6 +479,11 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 29.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
+Underfull \hbox (badness 1009) in paragraph at lines 29--30
+\OT1/ptm/m/n/8 individual residues. The element $\OML/cmm/m/it/8 p[] \OMS/cmsy/
+m/n/8 2 \OT1/cmr/bx/n/8 P$ \OT1/ptm/m/n/8 indicates such reactivity
+ []
+
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <8> not available
 (Font)              Font shape `OT1/phv/b/it' tried instead on input line 57.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
@@ -525,19 +535,7 @@ Package amsmath Warning: Foreign command \over;
 (amsmath)                 on input line 174.
 
 
-Underfull \hbox (badness 1107) in paragraph at lines 209--212
-\OT1/ptm/m/n/8 computational expense. (A separate dynamic-programming-based ban
-d
- []
-
-
-Underfull \hbox (badness 1038) in paragraph at lines 209--212
-\OT1/ptm/m/n/8 matching of eq. 10[]. This `fast' band annotation gave slightly 
-worse
- []
-
-
-Underfull \hbox (badness 1874) in paragraph at lines 257--257
+Underfull \hbox (badness 1874) in paragraph at lines 254--254
 []\OT1/ptm/b/n/8 Table 1. \OT1/ptm/m/n/8 High-throughput RNA structure mapping 
 data sets
  []
@@ -711,32 +709,44 @@ Overfull \vbox (1.0pt too high) has occurred while \output is active []
  [7])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 60.22272pt
+Extra height:10.0pt when 33.22272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 61.22272pt
+Extra height:10.0pt when 34.22272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 62.22272pt
+Extra height:10.0pt when 35.22272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 63.22272pt
+Extra height:10.0pt when 36.22272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:0.0pt when 64.22272pt
+Extra height:10.0pt when 37.22272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-(2)Left:64.22272pt Right:57.44545pt Output:64.22272pt
+Extra height:10.0pt when 38.22272pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 39.22272pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:0.0pt when 40.22272pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+(2)Left:40.22272pt Right:39.44545pt Output:40.22272pt
 - LAST -
 Extra skip:0.0pt
-Left:64.22272pt
-Right:57.44545pt
-Output:64.22272pt
+Left:40.22272pt
+Right:39.44545pt
+Output:40.22272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -764,10 +774,10 @@ LaTeX Font Warning: Size substitutions with differences
 Here is how much of TeX's memory you used:
  3437 strings out of 493118
  44911 string characters out of 6135459
- 118061 words of memory out of 5000000
+ 117927 words of memory out of 5000000
  6762 multiletter control sequences out of 15000+600000
  41804 words of font info for 120 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  42i,14n,32p,2451b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on manuscript.dvi (8 pages, 69116 bytes).
+Output written on manuscript.dvi (8 pages, 68600 bytes).

@@ -10,7 +10,7 @@
 \newcommand{\by}{{\mathbf{y}}}
 
 \subsection{Problem definition}
-Given an RNA sequence $\bs$ of length $N$, assume that we carry out the chemical structure probing of this sequence using $M$ different treatments, each of which is run by a separate capillary lane. Assume that the fluorescence intensity of each capillary is measured over $K$ time points. We define a \emph{profile} (same as a \emph{trace}) as the sequence of intensity values from a capillary. The entire CE measurement can then be arranged in a $K \times M$ matrix $\bA$. Normally, $N \ll K$, i.e. each electrophoretic profile is finely sampled in time. Based on the characteristic of the chemical agent used in each treatment and the secondary structure computationally inferred from the input sequence, we can predict the fluorescence intensity at each position of $\bs$ for each of $M$ treatments. This prediction can be arranged in a $N \times M$ matrix $\bC$ called the \emph{prediction matrix} (see below).
+Given an RNA sequence $\bs$ of length $N$, assume that we carry out the chemical structure probing of this sequence using $M$ different treatments, each of which is run by a separate capillary lane. Assume that the fluorescence intensity of each capillary is measured over $K$ time points. We define a \emph{profile} (also called a \emph{trace}) as the sequence of intensity values from a capillary. The entire CE measurement can then be arranged in a $K \times M$ matrix $\bA$. Normally, $N \ll K$, i.e. each electrophoretic profile is finely sampled in time. Based on the characteristic of the chemical agent used in each treatment and the secondary structure computationally inferred from the input sequence, we can predict the fluorescence intensity at each position of $\bs$ for each of $M$ treatments. This prediction can be arranged in a $N \times M$ matrix $\bC$ called the \emph{prediction matrix} (see below).
 
 The problem of band annotation is formulated as selecting $N$ out of the $K$ rows of $\bA$ using the information in $\bC$ in such a way that a certain objective is optimized over all possible ${K \choose N}$ possibilities. The selected $N$ points map to the locations of the nucleotides of the sequence $\bs$ in the CE measurement.
 
@@ -26,7 +26,7 @@ and the output is an array $\by \in \mathbb{Z}_+^N$ representing $N$ band locati
 
 
 \subsection{Prediction matrix construction}\label{ss:pred_mat}
-Figure~\ref{f:pred-mat}(a) defines the expected reactivity of each type of nucleotide to chemical reagents used for chemical probing under the (un)paired condition. The value of one means the reactivity to a reagent (\ie, the existence of a band in the fluorescence profile), whereas zero indicates no reactivity (\ie, no band). For instance,  the DMS chemical modifies \texttt{A} and \texttt{C} but not \texttt{U} and \texttt{G}, and the entries for \texttt{A} and \texttt{C} are one, while those for \texttt{U} and \texttt{G} are zero. We allow the use of three chemical probing strategies in this paper: dimethyl sulfate alkylation \citep{tijerina2007dms} [DMS], carbodiimide modification \citep{walczak} [CMCT], and `others' that can produce bands at all locations, including $2^{\prime}$-OH acylation [the SHAPE strategy \citep{wilkinson2005}]. We also allow input of a secondary structure in dot-parenthese notation, if known. Nucleotides forming base pairs are not expected to show bands in DMS, CMCT, SHAPE, and other structure mapping profiles. Sequencing experiments that terminate reverse transcription of the RNA with ddNTP incorporation produce bands after nucleotides complementary to the terminating nucleotide. Based on this information, we construct the prediction matrix $\bP$ that stores the expected chemical reactivity for individual residues. The element $p_{ij} \in \bP$ indicates such reactivity information of residue $i$ to reagent $j$.
+Figure~\ref{f:pred-mat}(a) defines the expected reactivity of each type of nucleotide to chemical reagents used for chemical probing under the (un)paired condition. The value of one means the reactivity to a reagent (\ie, the existence of a band in the fluorescence profile), whereas zero indicates no reactivity (\ie, no band). For instance,  the DMS chemical modifies \texttt{A} and \texttt{C} but not \texttt{U} and \texttt{G}, and the entries for \texttt{A} and \texttt{C} are one, while those for \texttt{U} and \texttt{G} are zero. We allow the use of numerous chemical probing strategies: dimethyl sulfate alkylation \citep{tijerina2007dms} [DMS], carbodiimide modification \citep{walczak} [CMCT], and `others' that can produce bands at all locations, including $2^{\prime}$-OH acylation [the SHAPE strategy \citep{wilkinson2005}]. We also allow input of a secondary structure in dot-parentheses notation, if known. Nucleotides forming base pairs are not expected to show bands in DMS, CMCT, SHAPE, and other structure mapping profiles. Sequencing experiments that terminate reverse transcription of the RNA with ddNTP incorporation produce bands after nucleotides complementary to the terminating nucleotide. Based on this information, we construct the prediction matrix $\bP$ that stores the expected chemical reactivity for individual residues. The element $p_{ij} \in \bP$ indicates such reactivity information of residue $i$ to reagent $j$.
 
 %
 
@@ -50,10 +50,10 @@ where
 \Delta^+ = \min( \ba_j(k+1)-\ba_j(k), {{(\ba_j(k+2)-\ba_j(k))}/{2}}) \nonumber
 \end{eqnarray}
 %
-The $\Delta^-$ and $\Delta^+$ in (\ref{e:gamma}) approximately evaluate the slope of left and right side of peak respectively, and $\Gamma$ is the difference between them; thus, the magnitude of $\Gamma$ represents how abruptly the curve has turned from upwards to downwards. Now we choose $N^{peak}_j$ peaks with highest $\Gamma$ from the points satisfying the first condition, while $N^{peak}_j$ may vary according to configurations. Call these locations $A^i$ $(1 \le i \le N^{peak}_j$). 
+The $\Delta^-$ and $\Delta^+$ in (\ref{e:gamma}) approximate the slope of left and right side of peak respectively, and $\Gamma$ is the difference between them; thus, the magnitude of $\Gamma$ represents how abruptly the curve has turned from upwards to downwards. Now we choose $N^\textrm{peak}_j$ peaks with highest $\Gamma$ from the points satisfying the first condition, while $N^\textrm{peak}_j$ may vary according to configurations. Call these locations $A^i$ $(1 \le i \le N^\textrm{peak}_j$). 
 
 %\item In order to remove the influence of noise that every $\ba_j$ has in common near the end of the time series, eliminate a portion of tailing peaks as follows: Identify 5 tailing peaks and select one with the hightest intensity among them. Denote $i_j$ be the time index of this peak $(1 \le i_j \le K)$. Let $i^*=\max_{1 \le j \le M} i_j$. For each $\ba_j$, remove all peaks appearing after $i^*$.
-\item Based on these candidate peak locations, construct a matrix called the \emph{bonus matrix} $\bB \in \mathbb{Z}^{K \times M}$. Let $\bar{\Gamma}$ be the mean value of $\Gamma_i$ of the candidate peaks. Initialize $\bB$ to all zero. At each peak $k = p^i$, we apply a uniform bonus, supplemented by a stronger bonus at strongly curved peaks: $\bB(A^i,m) = \bar{\Gamma} + \Gamma_i$.
+\item Based on these candidate peak locations, construct a matrix called the \emph{bonus matrix} $\bB \in \mathbb{Z}^{K \times M}$. Let $\bar{\Gamma}$ be the mean value of $\Gamma_i$ of the candidate peaks. Initialize $\bB$ to all zero. At each peak $k = p^i$, we apply a uniform bonus, supplemented by a stronger bonus at sharp peaks: $\bB(A^i,m) = \bar{\Gamma}/2 + \Gamma_i$.
 
 \item Determine the ideal separation between bands based on the remaining peak locations: $\rho \triangleq (k_r - k_f) / (N-1)$, where $k_f$ and $k_r$ are the locations of the foremost peak and the rearmost peak respectively.% The ideal separation calculated here is used when shifting the window in dynamic programming.
 \end{enumerate}
@@ -163,7 +163,7 @@ The score term in (\ref{e:F2}) consists of the following two components:
 S(n,k',k,p) = S_{\textrm{dist}}(n,k-k') + w_{\textrm{peak}} \cdot \bold{S}_{\textrm{peak}} (k,p) \cdot \bC(n, :)
 \end{equation}
 %
-where $S_\textrm{dist}$ and $\bold{S}_\textrm{peak}$ are functions returning nonnegative values and $\bC(n,:)$ is the $n$-th row of the prediction matrix $\bC$. The dot product in the second term is a sum over all lanes $m$ from 1 to $M$.
+where $S_\textrm{dist}$ and $\bold{S}_\textrm{peak}$ are functions returning nonnegative values and $\bC(n,:)$ is the $n$-th row of the prediction matrix $\bC$. The dot product in the second term is a sum over all lanes $m$ from 1 to $M$. A coefficient $w_{\textrm{peak}}$ of 1.0 was discovered to give acceptable annotations in initial tests.
 
 
 \subsubsection{Distance bonus term}
@@ -208,19 +208,16 @@ for $m < M$, and
 S^M_{\textrm{peak}}(k,p) = {{f_{(0, {\rho \over 5})}(p)} \over {f_{(0, {\rho \over 5})}(0)}} \cdot \bB(k+p, m) \cdot (M-1)
 \end{equation}
 %
-As shown above, the peak bonus is taken from the primary profile (typically a sequencing ladder) rather than searching for optimal peak/band matches across all profiles to allow inclusion of peak information at reasonable computational expense. (A separate dynamic-programming-based band annotation algorithm was also tested which does not carry out the peak/band matching of eq. \ref{e:peak-matching}. This `fast' band annotation gave slightly worse performance (see Supplemental Figure S1).)
-
-\subsubsection{Peak bonus weight coefficient}
-Two distinct bonus terms are normalized by a linear combination where an optimal selection of weight coefficient is crucial. An overvalued weight on peak bonus is most likely to result in solutions with exact matches of bands to peaks and uneven distribution of gaps whereas an undervalued weight $w_{\textrm{peak}}$ would bring about output with uniform distances neglecting peak-band matching. An optimal coefficient $w_{\textrm{peak}}$ was discovered to be 1 through iterative experiments.
+As described above, this highly weighted peak bonus is taken from the primary profile (typically a sequencing ladder) rather than searching for optimal peak/band matches across all profiles to allow inclusion of peak information at reasonable computational expense. [A separate dynamic-programming-based band annotation algorithm was also tested which does not carry out the peak/band matching of eq. (\ref{e:peak-matching}) but gave slightly worse performance; see Supplemental Figure S1.]
 
 
 \subsection{Reliability evaluation}\label{ss:reliability-evaluation}
-While the presented band annotation method was found to be quite accurate, it was not perfect. We therefore sought a method to assess the reliability of automatically determined band locations prior to practical application. We devised a score to predict the quality of results. The idea behind the score is that when optimization of eq. (\ref{e:score-term}) fails to achieve the desirable solution, we typically see extraordinarily short or long distances between consecutive locations (little information from $S_{dist}$) or bands on the primary profile without proper matching to peaks (little information from $S_{peak}$). The $\escore$-score is defined with the following terms:
+While the presented band annotation method was found to be quite accurate, it was not perfect. We therefore sought a method to assess the reliability of automatically determined band locations prior to practical application. We devised a score to predict the quality of results. The idea behind the score is that when optimization of eq. (\ref{e:score-term}) fails to achieve the desirable solution, we typically see extraordinarily short or long distances between consecutive locations (little information from $S_\textrm{dist}$) or bands on the primary profile without proper matching to peaks (little information from $S_\textrm{peak}$). The $\escore$-score is defined with the following terms:
 \begin{itemize}
 \item $n_1$: number of bands on the primary profile without corresponding peak
 \item $n_2$: number of gaps with length less than $\rho/4$, or greater than $2\rho$
-\item $p_M$: number of bands on the primary profile predicted by $\bC$
-\item $\escore = 1 - {\max({{n_1} \over {p_M}}, {{n_2} \over {K-1}})}$
+\item $N^\textrm{peak}_M$: number of bands on the primary profile predicted by $\bC$
+\item $\escore = 1 - {\max({{n_1} \over N^\textrm{peak}_M}, {{n_2} \over {K-1}})}$
 \end{itemize}
 $\escore$-score is a value between 0 and 1 and conservatively estimates the number of normalities in the output relative to the number of bands and locations. Greater $\escore$-score means less abnormalities in the output which is believed to result from output digressing from the correct answer, so it can be expected that output with $\escore$ closer to 1 would be more reliable than output with smaller $\escore$. The relationship between $\escore$-score and accuracy is presented in the Results section.
 
@@ -234,7 +231,7 @@ We implemented the proposed method in the MATLAB programming environment (The Ma
 % TABLE 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}
-\processtable{High-throughput RNA structure mapping data sets analyzed by the proposed method (total 522 profiles and 47210 bands). Excluding the last line, there are 95 data sets. More details of these 95 data sets are described in \citet{lee2012eterna}. %The last data set is from a study on a 187-nt ribozyme.
+\processtable{High-throughput RNA structure mapping data sets analyzed by the proposed method (total 522 profiles and 47210 bands). Excluding the last line, there are 95 data sets. More details of these 95 data sets are described in \citet{lee2014eterna}. %The last data set is from a study on a 187-nt ribozyme.
 \label{t:data}}
 {\begin{tabular}{lcccc}
 \toprule
