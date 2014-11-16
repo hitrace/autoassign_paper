@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=latex 2014.5.25)  15 NOV 2014 16:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=latex 2014.5.25)  15 NOV 2014 16:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -420,55 +420,13 @@ Underfull \hbox (badness 4805) in paragraph at lines 8--10
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 67.
  (./introduction.tex
-Underfull \hbox (badness 2762) in paragraph at lines 2--3
-\OT1/ptm/m/n/9 to the formation of intricate RNA structures. To this end,
+Underfull \hbox (badness 1189) in paragraph at lines 2--3
+\OT1/ptm/m/n/9 probing methodologies provide a general and rapid means to
  []
 
 
-Underfull \hbox (badness 1490) in paragraph at lines 4--5
-\OT1/ptm/m/n/9 and CMCT (Weeks, 2010b). Subsequent reverse transcription
- []
-
-
-Underfull \hbox (badness 1142) in paragraph at lines 4--5
-\OT1/ptm/m/n/9 detects the modification sites as stops to primer extension at
- []
-
-
-Underfull \hbox (badness 1297) in paragraph at lines 4--5
-\OT1/ptm/m/n/9 in sequencing gels followed by individually quantifying band
- []
-
-
-Underfull \hbox (badness 2781) in paragraph at lines 6--7
-\OT1/ptm/m/n/9 probing can easily produce tens of thousands of individual
- []
-
-
-Underfull \hbox (badness 2012) in paragraph at lines 6--7
-\OT1/ptm/m/n/9 breakthroughs in two-dimensional mapping of complex RNA
- []
-
-
-Underfull \hbox (badness 2096) in paragraph at lines 6--7
-\OT1/ptm/m/n/9 structures  (Kladwang \OT1/ptm/m/it/9 et al.\OT1/ptm/m/n/9 , 201
-1) and their excited states
- []
-
-
-Underfull \hbox (badness 1342) in paragraph at lines 8--9
-[]\OT1/ptm/m/n/9 Analyzing a large number of electrophoretic traces from a
- []
-
-
-Underfull \hbox (badness 3849) in paragraph at lines 8--9
-\OT1/ptm/m/it/9 et al.\OT1/ptm/m/n/9 , 2008), high-throughput robust analysis f
-or capillary
- []
-
-
-Underfull \hbox (badness 1577) in paragraph at lines 10--11
-[]\OT1/ptm/m/n/9 A typical high-throughput CE analysis pipeline consists of
+Underfull \hbox (badness 1082) in paragraph at lines 8--9
+\OT1/ptm/m/n/9 embedded in these traces. Software methods for CE analysis
  []
 
 
@@ -486,26 +444,13 @@ LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <7> not available
 
 
 ]
-Underfull \hbox (badness 4595) in paragraph at lines 12--14
-\OT1/ptm/m/n/9 to automated band annotation for high-throughput capillary
- []
-
-
-Underfull \hbox (badness 1005) in paragraph at lines 12--14
-\OT1/ptm/m/n/9 SHAPE, and/or chemical modification under different solution
- []
-
-
-Underfull \hbox (badness 1297) in paragraph at lines 12--14
-\OT1/ptm/m/n/9 conditions or with different mutations. The main increase in
- []
-
 File: ../figures/intro_overview2.eps Graphic file (type eps)
+
 <../figures/intro_overview2.eps>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 22.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 21.
 
-Underfull \hbox (badness 2409) in paragraph at lines 22--22
+Underfull \hbox (badness 2409) in paragraph at lines 21--21
 []\OT1/ptm/b/n/8 Fig. 1. \OT1/ptm/m/n/8 Overview of the proposed dynamic-progra
 mming-based band
  []
@@ -529,19 +474,10 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 29.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-File: ../figures/method_pred_mat.eps Graphic file (type eps)
-
-<../figures/method_pred_mat.eps>
-File: ../figures/method_dp_formulation.eps Graphic file (type eps)
- <../figures/method_dp_formulation.eps>
-
-LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 108.
-
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 118.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 57.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 118.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 57.
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
@@ -556,13 +492,19 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
  []
 
 [2]
-Underfull \hbox (badness 1484) in paragraph at lines 131--133
+File: ../figures/method_pred_mat.eps Graphic file (type eps)
+ <../figures/method_pred_mat.eps>
+File: ../figures/method_dp_formulation.eps Graphic file (type eps)
+ <../figures/method_dp_formulation.eps>
+
+LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 107.
+
+
+Underfull \hbox (badness 1484) in paragraph at lines 130--132
  \OT1/ptm/m/it/9 2.4.2 Primary profile[] \OT1/ptm/m/n/8 In the previous section
 , our problem was
  []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
@@ -574,12 +516,28 @@ Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
  [3]
 
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 163.
+
+
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 175.
+(amsmath)                 on input line 174.
 
 
-Underfull \hbox (badness 1874) in paragraph at lines 258--258
+Underfull \hbox (badness 1107) in paragraph at lines 209--212
+\OT1/ptm/m/n/8 computational expense. (A separate dynamic-programming-based ban
+d
+ []
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 209--212
+\OT1/ptm/m/n/8 matching of eq. 10[]. This `fast' band annotation gave slightly 
+worse
+ []
+
+
+Underfull \hbox (badness 1874) in paragraph at lines 257--257
 []\OT1/ptm/b/n/8 Table 1. \OT1/ptm/m/n/8 High-throughput RNA structure mapping 
 data sets
  []
@@ -753,44 +711,32 @@ Overfull \vbox (1.0pt too high) has occurred while \output is active []
  [7])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 33.22272pt
+Extra height:10.0pt when 60.22272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 34.22272pt
+Extra height:10.0pt when 61.22272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 35.22272pt
+Extra height:10.0pt when 62.22272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 36.22272pt
+Extra height:10.0pt when 63.22272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 37.22272pt
+Extra height:0.0pt when 64.22272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 38.22272pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:10.0pt when 39.22272pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:0.0pt when 40.22272pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-(2)Left:40.22272pt Right:39.44545pt Output:40.22272pt
+(2)Left:64.22272pt Right:57.44545pt Output:64.22272pt
 - LAST -
 Extra skip:0.0pt
-Left:40.22272pt
-Right:39.44545pt
-Output:40.22272pt
+Left:64.22272pt
+Right:57.44545pt
+Output:64.22272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -818,10 +764,10 @@ LaTeX Font Warning: Size substitutions with differences
 Here is how much of TeX's memory you used:
  3437 strings out of 493118
  44911 string characters out of 6135459
- 124119 words of memory out of 5000000
+ 118061 words of memory out of 5000000
  6762 multiletter control sequences out of 15000+600000
  41804 words of font info for 120 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  42i,14n,32p,2451b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on manuscript.dvi (8 pages, 68320 bytes).
+Output written on manuscript.dvi (8 pages, 69116 bytes).

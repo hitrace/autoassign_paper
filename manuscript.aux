@@ -14,32 +14,34 @@
 \citation{Pang2011}
 \citation{Karabiber2013}
 \citation{Yoon2011}
+\citation{Karabiber2013}
+\citation{Kladwang2014}
 \newlabel{^_1}{{}{1}}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
 \newlabel{s:introduction}{{1}{1}}
 \citation{tijerina2007dms}
 \citation{walczak}
 \citation{wilkinson2005}
-\citation{hofacker2003vienna}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of the proposed dynamic-programming-based band annotation methodology. Given an RNA sequence, we carry out high-throughput structure-mapping experiments, producing a number of capillary electrophoresis (CE) profiles. Additionally, we computationally predict the secondary structure of the input sequence. From the predicted structure and the characteristics of the chemical probing method used, we drive a prediction matrix that stores expected interaction patterns between the residues. Based on the aligned CE profiles and prediction matrix, we apply a dynamic-programming approach that finds the optimal selection of the band locations under the predetermined scoring scheme.}}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of the proposed dynamic-programming-based band annotation methodology. Given an RNA sequence, we carry out high-throughput structure-mapping experiments, producing a number of capillary electrophoresis (CE) traces. If available or estimated through computational prediction, we also provide the RNA's secondary structure. From this information and the characteristics of the chemical probing method used, we derive a prediction matrix that stores expected interaction patterns across the residues and traces. Based on the aligned CE traces and prediction matrix, we apply a dynamic-programming approach that finds the optimal selection of the band locations under a well-defined scoring scheme.}}{2}}
 \newlabel{f:overview}{{1}{2}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Methods}{2}}
 \newlabel{s:method}{{2}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {{2.1}}Problem definition}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {{2.2}}Prediction matrix construction}{2}}
 \newlabel{ss:pred_mat}{{{2.2}}{2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {{2.3}}Preprocessing intensity data}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {{2.3}}Initialization of candidate peaks from profiles}{2}}
 \newlabel{ss:preproc}{{{2.3}}{2}}
 \newlabel{e:gamma}{{1}{2}}
+\citation{hofacker2003vienna}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Prediction matrix. (\textbf  {a}) Definition of the values appearing in the peak prediction matrix. 1 means that a band is expected in that residue position, whereas 0 means that no band is expected. (\textbf  {b}) Example target sequence and its structure predicted by the Vienna RNA package\nobreakspace  {}\citep  {hofacker2003vienna}. (\textbf  {c}) The prediction matrix for the example in (\textbf  {b}).}}{3}}
 \newlabel{f:pred-mat}{{2}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {{2.4}}Formulation as dynamic programming}{3}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.4}.1}}Basic motivation}{3}}
 \newlabel{e:F}{{2}{3}}
-\newlabel{sss:primary_profile}{{{{2.4}.2}}{3}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.4}.2}}Primary profile}{3}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Formulation as dynamic programming. (\textbf  {a}) ${\mathbf  {F}}(n,k,p)$ depends on ${\mathbf  {F}}(n-1,k',p')$ in the previous column and the gap bonus $S(n,k',k,n)$ between them. The best tuple $(k',p')$ that maximizes ${\mathbf  {F}}(n,k,p)$ is searched for in the range $k-2.5\rho \le k' < k; k'+p' < k+p$ and is stored in the backtracking matrices ${\mathbf  {L}}_k(n,k,p)$, ${\mathbf  {L}}_p(n,k,p)$. The computation of $S(n,k',k,p)$ is based on the bonus matrix ${\mathbf  {B}}$ and the prediction matrix ${\mathbf  {P}}$ (Section\nobreakspace  {}{2.5}\hbox {}). (\textbf  {b}) Example. The data set used is `FMN Apatamer with single binding site.' $N=88$, $M=5$, $K=1324$. The backtracking path is represented by a series of red circles superimposed on the score matrix ${\mathbf  {F}}$; since ${\mathbf  {F}}$ is 3-dimensional, the figure alternatively represents a reduced matrix ${\mathbf  {F}}'$ defined by ${\mathbf  {F}}'(n,k)=\qopname  \relax m{max}_{p'} {\mathbf  {F}}(n,k,p')$. The output array ${\mathbf  {y}}_k$, which stores the position of each circle, indicates the band locations.}}{3}}
 \newlabel{f:dp-formulation}{{3}{3}}
+\newlabel{sss:primary_profile}{{{{2.4}.2}}{3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.4}.2}}Primary profile}{3}}
 \newlabel{e:F2}{{3}{3}}
 \citation{lee2012eterna}
 \citation{lee2012eterna}
@@ -54,6 +56,7 @@
 \newlabel{e:score-term}{{6}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.5}.1}}Distance bonus term}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.5}.2}}Peak bonus term}{4}}
+\newlabel{e:peak-matching}{{10}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.5}.3}}Peak bonus weight coefficient}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {{2.6}}Reliability evaluation}{4}}
 \newlabel{ss:reliability-evaluation}{{{2.6}}{4}}
@@ -104,12 +107,12 @@
 \bibcite{weeksnature2009}{{19}{2009}{{Watts {\em  et~al.}}}{{Watts, Dang, Gorelick, Leonard, Bess, Swanstrom, Burch, and Weeks}}}
 \bibcite{weeks2010}{{20}{2010a}{{Weeks}}{{Weeks}}}
 \bibcite{Weeks2010295}{{21}{2010b}{{Weeks}}{{Weeks}}}
-\bibcite{weeksplos2009}{{22}{2008}{{Wilkinson {\em  et~al.}}}{{Wilkinson, Gorelick, Vasa, Guex, Rein, Mathews, Giddings, and Weeks}}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Discussion}{7}}
 \newlabel{s:discussion}{{4}{7}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{7}}
 \newlabel{s:conclusion}{{5}{7}}
 \@writefile{toc}{\contentsline {paragraph}{Funding\text  {\rm  :}}{7}}
+\bibcite{weeksplos2009}{{22}{2008}{{Wilkinson {\em  et~al.}}}{{Wilkinson, Gorelick, Vasa, Guex, Rein, Mathews, Giddings, and Weeks}}}
 \bibcite{Wochner08042011}{{23}{2011}{{Wochner {\em  et~al.}}}{{Wochner, Attwater, Coulson, and Holliger}}}
 \bibcite{Yoon2011}{{24}{2011}{{Yoon {\em  et~al.}}}{{Yoon, Kim, Hum, Kim, Park, Kladwang, and Das}}}
 \global\@namedef{@lastpage@}{8}
