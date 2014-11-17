@@ -598,7 +598,7 @@ abstract = "\{RNA\} is arguably the most versatile biological macromolecule beca
 
 @article{Bagby01122009,
 author = {Bagby, Sarah C. and Bergman, Nicholas H. and Shechner, David M. and Yen, Catherine and Bartel, David P.},
-title = {A class I ligase ribozyme with reduced Mg2+ dependence: Selection, sequence analysis, and identification of functional tertiary interactions},
+title = {A class I ligase ribozyme with reduced {Mg^{2+}} dependence: Selection, sequence analysis, and identification of functional tertiary interactions},
 volume = {15},
 number = {12},
 pages = {2129-2146},
@@ -674,4 +674,32 @@ volume = {53},
 number = {19},
 pages = {3063-3065},
 year = {2014},
+}
+
+@article{Kim2013,
+author = {Kim, Hanjoo and Cordero, Pablo and Das, Rhiju and Yoon, Sungroh},
+title = {HiTRACE-Web: an online tool for robust analysis of high-throughput capillary electrophoresis},
+volume = {41},
+number = {W1},
+pages = {W492-W498},
+year = {2013},
+doi = {10.1093/nar/gkt501},
+abstract ={To facilitate the analysis of large-scale high-throughput capillary electrophoresis data, we previously proposed a suite of efficient analysis software named HiTRACE (High Throughput Robust Analysis of Capillary Electrophoresis). HiTRACE has been used extensively for quantitating data from RNA and DNA structure mapping experiments, including mutate-and-map contact inference, chromatin footprinting, the Eterna RNA design project and other high-throughput applications. However, HiTRACE is based on a suite of command-line MATLAB scripts that requires nontrivial efforts to learn, use and extend. Here, we present HiTRACE-Web, an online version of HiTRACE that includes standard features previously available in the command-line version and additional features such as automated band annotation and flexible adjustment of annotations, all via a user-friendly environment. By making use of parallelization, the on-line workflow is also faster than software implementations available to most users on their local computers. Free access: http://hitrace.org.},
+URL = {http://nar.oxfordjournals.org/content/41/W1/W492.abstract},
+eprint = {http://nar.oxfordjournals.org/content/41/W1/W492.full.pdf+html},
+journal = {Nucleic Acids Research}
+}
+
+@article{Lucks2011,
+author = {Lucks, Julius B. and Mortimer, Stefanie A. and Trapnell, Cole and Luo, Shujun and Aviran, Sharon and Schroth, Gary P. and Pachter, Lior and Doudna, Jennifer A. and Arkin, Adam P.},
+title = {Multiplexed RNA structure characterization with selective 2′-hydroxyl acylation analyzed by primer extension sequencing (SHAPE-Seq)},
+volume = {108},
+number = {27},
+pages = {11063-11068},
+year = {2011},
+doi = {10.1073/pnas.1106501108},
+abstract ={New regulatory roles continue to emerge for both natural and engineered noncoding RNAs, many of which have specific secondary and tertiary structures essential to their function. Thus there is a growing need to develop technologies that enable rapid characterization of structural features within complex RNA populations. We have developed a high-throughput technique, SHAPE-Seq, that can simultaneously measure quantitative, single nucleotide-resolution secondary and tertiary structural information for hundreds of RNA molecules of arbitrary sequence. SHAPE-Seq combines selective 2′-hydroxyl acylation analyzed by primer extension (SHAPE) chemistry with multiplexed paired-end deep sequencing of primer extension products. This generates millions of sequencing reads, which are then analyzed using a fully automated data analysis pipeline, based on a rigorous maximum likelihood model of the SHAPE-Seq experiment. We demonstrate the ability of SHAPE-Seq to accurately infer secondary and tertiary structural information, detect subtle conformational changes due to single nucleotide point mutations, and simultaneously measure the structures of a complex pool of different RNA molecules. SHAPE-Seq thus represents a powerful step toward making the study of RNA secondary and tertiary structures high throughput and accessible to a wide array of scientific pursuits, from fundamental biological investigations to engineering RNA for synthetic biological systems.},
+URL = {http://www.pnas.org/content/108/27/11063.abstract},
+eprint = {http://www.pnas.org/content/108/27/11063.full.pdf+html},
+journal = {Proceedings of the National Academy of Sciences}
 }

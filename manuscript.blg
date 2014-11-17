@@ -3,44 +3,46 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: manuscript.aux
 The style file: natbib.bst
 Database file #1: reference.bib
-You've used 24 entries,
+Warning--I didn't find a database entry for "lee2012eterna"
+You've used 25 entries,
             2378 wiz_defined-function locations,
-            686 strings with 9746 characters,
-and the built_in function-call counts, 13946 in all, are:
-= -- 1169
-> -- 1083
+            690 strings with 9857 characters,
+and the built_in function-call counts, 14777 in all, are:
+= -- 1233
+> -- 1153
 < -- 4
-+ -- 336
-- -- 331
-* -- 1475
-:= -- 2512
-add.period$ -- 120
-call.type$ -- 24
-change.case$ -- 145
++ -- 359
+- -- 353
+* -- 1576
+:= -- 2656
+add.period$ -- 125
+call.type$ -- 25
+change.case$ -- 151
 chr.to.int$ -- 23
-cite$ -- 24
-duplicate$ -- 470
-empty$ -- 799
-format.name$ -- 357
-if$ -- 2680
-int.to.chr$ -- 2
+cite$ -- 25
+duplicate$ -- 491
+empty$ -- 849
+format.name$ -- 380
+if$ -- 2842
+int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 24
-newline$ -- 127
-num.names$ -- 96
-pop$ -- 139
+missing$ -- 25
+newline$ -- 132
+num.names$ -- 100
+pop$ -- 142
 preamble$ -- 1
-purify$ -- 145
+purify$ -- 151
 quote$ -- 0
-skip$ -- 290
+skip$ -- 301
 stack$ -- 0
-substring$ -- 845
-swap$ -- 90
+substring$ -- 919
+swap$ -- 95
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 216
+type$ -- 225
 warning$ -- 0
-while$ -- 99
+while$ -- 104
 width$ -- 0
-write$ -- 320
+write$ -- 334
+(There was 1 warning)

@@ -46,11 +46,11 @@ The first step is to locate prominent peaks on each profile. That is, on each co
 where
 %
 \begin{eqnarray}
-\Delta^- = \max( \ba_j(k)-\ba_j(k-1), {{(\ba_j(k)-\ba_j(k-2))}/{2}}) \nonumber \\
-\Delta^+ = \min( \ba_j(k+1)-\ba_j(k), {{(\ba_j(k+2)-\ba_j(k))}/{2}}) \nonumber
+\Delta^- = \max( \ba_j(k)-\ba_j(k-1), {{(\ba_j(k)-\ba_j(k-2))}\over{2}}) \nonumber \\
+\Delta^+ = \min( \ba_j(k+1)-\ba_j(k), {{(\ba_j(k+2)-\ba_j(k))}\over{2}}) \nonumber
 \end{eqnarray}
 %
-The $\Delta^-$ and $\Delta^+$ in (\ref{e:gamma}) approximate the slope of left and right side of peak respectively, and $\Gamma$ is the difference between them; thus, the magnitude of $\Gamma$ represents how abruptly the curve has turned from upwards to downwards. Now we choose $N^\textrm{peak}_j$ peaks with highest $\Gamma$ from the points satisfying the first condition, while $N^\textrm{peak}_j$ may vary according to configurations. Call these locations $A^i$ $(1 \le i \le N^\textrm{peak}_j$). 
+The $\Delta^-$ and $\Delta^+$ in (\ref{e:gamma}) approximate the slope of left and right side of peak respectively, and $\Gamma$ is the difference between them; thus, the magnitude of $\Gamma$ represents how abruptly the curve has turned from upwards to downwards. Now we choose $N^\textrm{peak}_j$ peaks with highest $\Gamma$ from the points satisfying the first condition, while $N^\textrm{peak}_j$ is set proportionally to the total number of bands on the $j$-th profile. Call these locations $A^i$ $(1 \le i \le N^\textrm{peak}_j$). 
 
 %\item In order to remove the influence of noise that every $\ba_j$ has in common near the end of the time series, eliminate a portion of tailing peaks as follows: Identify 5 tailing peaks and select one with the hightest intensity among them. Denote $i_j$ be the time index of this peak $(1 \le i_j \le K)$. Let $i^*=\max_{1 \le j \le M} i_j$. For each $\ba_j$, remove all peaks appearing after $i^*$.
 \item Based on these candidate peak locations, construct a matrix called the \emph{bonus matrix} $\bB \in \mathbb{Z}^{K \times M}$. Let $\bar{\Gamma}$ be the mean value of $\Gamma_i$ of the candidate peaks. Initialize $\bB$ to all zero. At each peak $A^i$, we apply a uniform bonus, supplemented by a stronger bonus at sharp peaks: $\bB(A^i,m) = \bar{\Gamma}/2 + \Gamma_i$.
@@ -67,7 +67,7 @@ The $\Delta^-$ and $\Delta^+$ in (\ref{e:gamma}) approximate the slope of left a
 \begin{figure}
 \centering
 \includegraphics[width=0.8\linewidth]{figures/method_pred_mat}
-\caption{Prediction matrix. (\textbf{a}) Definition of the values appearing in the peak prediction matrix. 1 means that a band is expected in that residue position, whereas 0 means that no band is expected. (\textbf{b}) Example target sequence and its structure predicted by the Vienna RNA package~\citep{hofacker2003vienna}. (\textbf{c}) The prediction matrix for the example in (\textbf{b}).}
+\caption{Prediction matrix. (\textbf{a}) Definition of the values appearing in the peak prediction matrix. 1 means that a band is expected in that residue position, whereas 0 means that no band is expected. $^a$The bands on ddTTP are expected to be at positions right before where $\mathtt{A}$s are located. (\textbf{b}) Example target sequence and its structure predicted by the Vienna RNA package~\citep{hofacker2003vienna}. (\textbf{c}) The prediction matrix for the example in (\textbf{b}).}
 \label{f:pred-mat}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -249,7 +249,7 @@ R43$^d$  &40&	98&	78&	3120\\
 %HDV$^e$ & 4& 187 & 187 & 748\\
 \botrule
 \end{tabular}}
-{$^a$Flavin mononucleotide (FMN) aptamer with single binding site~\citep{lee2012eterna}; $^b$FMN aptamer with single binding site II; $^c$FMN binding branches; $^d$The backwards C%; $^e$NMIA (SHAPE) modification of the hepatitis delta virus (HDV) ribozyme
+{$^a$Flavin mononucleotide (FMN) aptamer with single binding site~\citep{lee2014eterna}; $^b$FMN aptamer with single binding site II; $^c$FMN binding branches; $^d$The backwards C%; $^e$NMIA (SHAPE) modification of the hepatitis delta virus (HDV) ribozyme
 %Abbreviations: FMN, flavin mononucleotide
 }
 %Abbreviations: SRP, signal recognition particle conserved domain; P4-P6, P4-P6 domain of the Tetrahymena group I ribozyme; DMS, dimethyl sulfate; CMCT, 1-cyclohexyl-3-(2-morpholinoethyl) carbodiimide metho-p-toluenesulfonate; SHAPE, selective hydroxyl acylation analyzed by primer extension.}

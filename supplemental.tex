@@ -58,15 +58,16 @@
 {
 Seungmyung~Lee$^{1}$,
 Hanjoo~Kim$^{1}$,
-Siqi~Tian$^{2,4}$,
+Siqi~Tian$^{2}$,
+Taehoon~Lee$^{2}$,
 Sungroh~Yoon$^{1,3,*}$,
-Rhiju~Das$^{2,4,}$\footnote{to whom correspondence should be addressed}
+Rhiju~Das$^{2,4,}$\footnote{To whom correspondence should be addressed}
 }
 \address{
-$^{1}$Department of ECE, Seoul National University, Seoul 151-744, Korea, 
-$^{2}$School of Medicine, Stanford, CA 94305, USA,
-$^{3}$Interdisciplinary program in Bionformatics, Seoul National University, Seoul 151-744, Korea,
-$^{4}$Departments of Biochemistry and Physics, Stanford, CA 94305, USA
+$^{1}$Department of ECE, Seoul National University, Seoul 151-744, Korea
+$^{2}$Department of Biochemistry, Stanford University School of Medicine, Stanford, CA 94305, USA
+$^{3}$Interdisciplinary Program in Bionformatics, Seoul National University, Seoul 151-744, Korea
+$^{4}$Department of Physics, Stanford University, Stanford, CA 94305, USA
 }
 
 %\history{Received on XXXXX; revised on XXXXX; accepted on XXXXX}
@@ -84,20 +85,35 @@ $^{4}$Departments of Biochemistry and Physics, Stanford, CA 94305, USA
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{figures/eterna_comparison}
+\includegraphics[width=\linewidth]{figures/supp_eterna_comparison}
 \caption{Reactivity results from CE analysis and illumina-based sequencing experiments, over 38 data sets. The heatmap presents results from two methods alternatingly from left to right; CE analysis results are presented on odd numbered x-positions and MySeq results are shown on even numbered x-positions.}
 \label{f:eterna_comparison}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{ADDITIONAL DETAILS AND RESULTS}
 
-\subsection{ Rectification step in the preparation of reference band location }
+\section{ Rectification step in the preparation of reference band location }
 As discussed in Section 3.1, the reference band locations were prepared by manual annotation followed by the rectification step where possible human errors are discovered and corrected through a comparison between two separate experiments. One example of such process is well illustrated by Figure~\ref{f:eterna_comparison}. Visual inspection suggests that in the rectangular region, CE analysis and MySeq consistently show the highest intensity at residue 41 and 39 respectively. This discrepancy gave us an inkling of inaccurate determination of band locations around the corresponding sequence position, leading to rectification of such errors.
 
 
-\subsection{ Band annotation over all prepared data sets }
-The accuracy of band locations determined by the proposed method was discussed and assessed with 95 data sets in Section 3.1 and with additional data sets in Section 3.5. All the results from experiments in Section 3.1 and Section 3.5 are provided respectively in Table~\ref{t:95_data_sets} and in Table~\ref{t:additional_data_sets}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% HDV RESULT DETAIL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+	\psfrag{r}[][][0.5]{$\rho$}
+\includegraphics[width=\linewidth]{figures/result_hdv_result_detail2}
+\caption{Error in band positions with respect to the reference band locations for 187-nt HDV data. Upper plot: error over residue positions for the proposed method; middle: mapping between the reference and computationally predicted band locations; lower: error over residue positions for FAST.}
+\label{f:hdv-result-detail}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{ Band annotation over all prepared data sets }
+The accuracy of band locations determined by the proposed method was discussed and assessed with 95 data sets in Section 3.1 and with additional data sets in Section 3.4. Figure~\ref{f:hdv-result-detail} visualizes the distribution of errors in predicted band locations over the position of residues in the HDV data set.
+All other results from experiments in Section 3.1 and Section 3.4 are provided respectively in Table~\ref{t:95_data_sets} and in Table~\ref{t:additional_data_sets}.
+
+
 
 
 
@@ -113,11 +129,11 @@ The accuracy of band locations determined by the proposed method was discussed a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\subsection{ Proposed method vs. Earlier HiTrace band annotation method }
+\section{ Proposed method vs. Earlier HiTrace band annotation method }
 With $\escore$-score as a quality indicator for its results, the proposed method becomes more practical compared to the original method provided by HiTrace-Web~\citep{Kim2013}. Furthermore, the accuracy of results improved (about 40\% in terms of median MSE) in the proposed method as shown in Figure~\ref{f:old_vs_new}.
 
 
-\subsection{ Peak-area quantification experiment results }
+\section{ Peak-area quantification experiment results }
 The influence of accuracy in band annotation on the results of peak deconvolution was discussed in Section 3.3 and a representative result was presented in Fig.4. All the results are listed in Table~\ref{t:peak_deconvolution}.
 
 

@@ -4,8 +4,9 @@
   Bartel]{Bagby01122009}
 Bagby, S.~C., Bergman, N.~H., Shechner, D.~M., Yen, C., and Bartel, D.~P.
   (2009).
-\newblock A class i ligase ribozyme with reduced mg2+ dependence: Selection,
-  sequence analysis, and identification of functional tertiary interactions.
+\newblock A class {I} ligase ribozyme with reduced {Mg}${^{2+}}$ dependence:
+  Selection, sequence analysis, and identification of functional tertiary
+  interactions.
 \newblock {\em RNA\/}, {\bf 15}(12), 2129--2146.
 
 \bibitem[Cruz {\em et~al.}(2012)Cruz, Blanchet, Boniecki, Bujnicki, Chen, Cao,
@@ -58,20 +59,30 @@ Kladwang, W., Mann, T.~H., Becka, A., Tian, S., Kim, H., Yoon, S., and Das, R.
 \newblock Standardization of rna chemical mapping experiments.
 \newblock {\em Biochemistry\/}, {\bf 53}(19), 3063--3065.
 
-\bibitem[Lee {\em et~al.}(2012)Lee, Kladwang, Lee, Cantu, Azizyan, Kim,
-  Limpaecher, Yoon, Treuille, and Das]{lee2012eterna}
-Lee, J., Kladwang, W., Lee, M., Cantu, D., Azizyan, M., Kim, H., Limpaecher,
-  A., Yoon, S., Treuille, A., and Das, R. (2012).
-\newblock {RNA} design rules from a massively multiplayer cloud laboratory.
-\newblock {\em under review\/}.
-
-\bibitem[Lee {\em et~al.}(2014)Lee, Kladwang, Lee, Cantu, Azizyan, Kim,
+\bibitem[Lee {\em et~al.}(2014a)Lee, Kladwang, Lee, Cantu, Azizyan, Kim,
   Limpaecher, Yoon, Treuille, Das, and Participants]{lee2014pnas}
 Lee, J., Kladwang, W., Lee, M., Cantu, D., Azizyan, M., Kim, H., Limpaecher,
-  A., Yoon, S., Treuille, A., Das, R., and Participants, E. (2014).
+  A., Yoon, S., Treuille, A., Das, R., and Participants, E. (2014a).
 \newblock Rna design rules from a massive open laboratory.
 \newblock {\em Proceedings of the National Academy of Sciences\/}, {\bf
   111}(6), 2122--2127.
+
+\bibitem[Lee {\em et~al.}(2014b)Lee, Kladwang, Lee, Cantu, Azizyan, Kim,
+  Limpaecher, Yoon, Treuille, Das, and Participants]{lee2014eterna}
+Lee, J., Kladwang, W., Lee, M., Cantu, D., Azizyan, M., Kim, H., Limpaecher,
+  A., Yoon, S., Treuille, A., Das, R., and Participants, E. (2014b).
+\newblock Rna design rules from a massive open laboratory.
+\newblock {\em Proceedings of the National Academy of Sciences\/}, {\bf
+  111}(6), 2122--2127.
+
+\bibitem[Lucks {\em et~al.}(2011)Lucks, Mortimer, Trapnell, Luo, Aviran,
+  Schroth, Pachter, Doudna, and Arkin]{Lucks2011}
+Lucks, J.~B., Mortimer, S.~A., Trapnell, C., Luo, S., Aviran, S., Schroth,
+  G.~P., Pachter, L., Doudna, J.~A., and Arkin, A.~P. (2011).
+\newblock Multiplexed rna structure characterization with selective
+  2′-hydroxyl acylation analyzed by primer extension sequencing (shape-seq).
+\newblock {\em Proceedings of the National Academy of Sciences\/}, {\bf
+  108}(27), 11063--11068.
 
 \bibitem[McGinnis and Weeks(2014)McGinnis and Weeks]{weeksbiochemistry}
 McGinnis, J.~L. and Weeks, K.~M. (2014).

@@ -1,15 +1,25 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=latex 2014.5.25)  15 NOV 2014 18:38
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=latex 2013.3.9)  17 NOV 2014 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**manuscript.tex
+**manuscript
 (./manuscript.tex
-LaTeX2e <2014/05/01>
-Babel <3.9k> and hyphenation patterns for 78 languages loaded.
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
+ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
+rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
+kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
+ piedmontese, polish, portuguese, romanian, romansh, russian, sanskrit, serbian
+, serbianc, slovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, u
+ppersorbian, welsh, loaded.
 (./bioinfo.cls
 Document Class: bioinfo 2003/02/08 0.1
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2014/04/30 v1.2b Input encoding file
+(c:/usr/texlive/2012/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 ) (./crop.sty
@@ -18,71 +28,69 @@ Package: crop 2001/11/16 v1.6 cropmarks (mf)
 \CROP@height=\dimen103
 \CROP@index=\count79
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
+(c:/usr/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
+(c:/usr/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
+(c:/usr/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: dvips.def on input line 91.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/dvips.def
-File: dvips.def 2014/04/23 v3.0j Driver-dependant file (DPC,SPQR)
+(c:/usr/texlive/2012/texmf-dist/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 \CROP@offset=\count80
 Package crop Info: Local config file crop.cfg used on input line 344.
 
-(/usr/local/texlive/2014/texmf-dist/tex/xelatex/xetexconfig/crop.cfg))
+(c:/usr/texlive/2012/texmf-dist/tex/xelatex/xetexconfig/crop.cfg))
 Package crop Info: using dvips graphics driver on input line 33.
 
 (./graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+ (c:/usr/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
-)
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2013/01/14 v2.14 AMS math features
+) (c:/usr/texlive/2012/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip41
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amstext.sty
+(c:/usr/texlive/2012/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsgen.sty
+(c:/usr/texlive/2012/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
 \ex@=\dimen106
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(c:/usr/texlive/2012/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen107
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
+(c:/usr/texlive/2012/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count81
-LaTeX Info: Redefining \frac on input line 210.
+LaTeX Info: Redefining \frac on input line 211.
 \uproot@=\count82
 \leftroot@=\count83
-LaTeX Info: Redefining \overline on input line 306.
+LaTeX Info: Redefining \overline on input line 307.
 \classnum@=\count84
 \DOTSCASE@=\count85
-LaTeX Info: Redefining \ldots on input line 378.
-LaTeX Info: Redefining \dots on input line 381.
-LaTeX Info: Redefining \cdots on input line 466.
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
 \big@size=\dimen108
-LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \macc@depth=\count86
 \c@MaxMatrixCols=\count87
 \dotsspace@=\muskip10
@@ -103,8 +111,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \multlinegap=\skip42
 \multlinetaggap=\skip43
 \mathdisplay@stack=\toks21
-LaTeX Info: Redefining \[ on input line 2665.
-LaTeX Info: Redefining \] on input line 2666.
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
 ) (./array.sty
 Package: array 1998/05/13 v2.3m Tabular extension package (FMi)
 \col@sep=\dimen115
@@ -112,21 +120,21 @@ Package: array 1998/05/13 v2.3m Tabular extension package (FMi)
 \NC@list=\toks22
 \extratabsurround=\skip44
 \backup@length=\skip45
-) (./color.sty
+)
+(./color.sty
 Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/color.cfg
+ (c:/usr/texlive/2012/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: dvips.def on input line 125.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/dvipsnam.def
-File: dvipsnam.def 2014/04/23 v3.0j Driver-dependant file (DPC,SPQR)
+(c:/usr/texlive/2012/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(c:/usr/texlive/2012/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(c:/usr/texlive/2012/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
@@ -147,7 +155,7 @@ Package: stfloats 1999/10/22
 \@dblbotnum=\count93
 \c@dblbotnumber=\count94
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amscls/amsthm.sty
+(c:/usr/texlive/2012/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2004/08/06 v2.20
 \thm@style=\toks24
 \thm@bodyfont=\toks25
@@ -158,12 +166,12 @@ Package: amsthm 2004/08/06 v2.20
 \thm@postskip=\skip47
 \thm@headsep=\skip48
 \dth@everypar=\toks29
-)
-(./chngpage.sty
+) (./chngpage.sty
 Package: chngpage 2001/01/31 v1.1b change page layout
 \c@cp@cnt=\count95
 \c@cp@tempcnt=\count96
-) (./times.sty
+)
+(./times.sty
 Package: times 2000/01/12 PSNFSS-v8.1 Times font as default roman (SPQR) 
 )
 \c@section=\count97
@@ -188,16 +196,16 @@ Package: natbib 2000/07/24 7.0a (PWD)
 LaTeX Info: Redefining \cite on input line 508.
 \c@NAT@ctr=\count104
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psfrag/psfrag.sty
+(c:/usr/texlive/2012/texmf-dist/tex/latex/psfrag/psfrag.sty
 Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
 \pfg@pcount=\count105
 \pfg@scount=\count106
 \pfg@temp=\write3
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/multirow/multirow.sty
+(c:/usr/texlive/2012/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen121
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/subfigure/subfigure.sty
+(c:/usr/texlive/2012/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 
 
@@ -224,44 +232,44 @@ Package subfigure Warning: Your document class has a bad definition
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-(/usr/local/texlive/2014/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+(c:/usr/texlive/2012/texmf-dist/tex/latex/subfigure/subfigure.cfg)
 \subfig@top=\skip60
 \subfig@bottom=\skip61
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/verbatim.sty
+(c:/usr/texlive/2012/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks30
 \verbatim@line=\toks31
 \verbatim@in@stream=\read1
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+(c:/usr/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf.sty
 Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(c:/usr/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(c:/usr/texlive/2012/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
+(c:/usr/texlive/2012/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+(c:/usr/texlive/2012/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(c:/usr/texlive/2012/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(c:/usr/texlive/2012/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(c:/usr/texlive/2012/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+(c:/usr/texlive/2012/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+(c:/usr/texlive/2012/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -270,11 +278,11 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+(c:/usr/texlive/2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+(c:/usr/texlive/2012/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is not detected.
 )
@@ -305,94 +313,94 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
 LaTeX Font Info:    ... okay on input line 37.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 37.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+(c:/usr/texlive/2012/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 62.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 63.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1phv.fd
+(c:/usr/texlive/2012/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 62.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 63.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <9> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 62.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 63.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <9> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 62.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 63.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <19> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 62.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 63.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <19> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 62.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 63.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 62.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 63.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 62.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 63.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <16> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 62.
-LaTeX Font Info:    Calculating math sizes for size <13> on input line 62.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 63.
+LaTeX Font Info:    Calculating math sizes for size <13> on input line 63.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 62.
+(Font)              size <12> substituted on input line 63.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 62.
+(Font)              size <6> substituted on input line 63.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <13> not available
-(Font)              size <12> substituted on input line 62.
+(Font)              size <12> substituted on input line 63.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.5> not available
-(Font)              size <6> substituted on input line 62.
+(Font)              size <6> substituted on input line 63.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 62.
+(Font)              size <12> substituted on input line 63.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 62.
+(Font)              size <6> substituted on input line 63.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 62.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
+LaTeX Font Info:    Try loading font information for U+msa on input line 63.
+(c:/usr/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 62.
+LaTeX Font Info:    Try loading font information for U+msb on input line 63.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
+(c:/usr/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Calculating math sizes for size <9.09996> on input line 62.
+LaTeX Font Info:    Calculating math sizes for size <9.09996> on input line 63.
 
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 62.
+(Font)              size <5> substituted on input line 63.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.54997> not available
-(Font)              size <5> substituted on input line 62.
+(Font)              size <5> substituted on input line 63.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 62.
+(Font)              size <5> substituted on input line 63.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 62.
+(Font)              size <7> substituted on input line 63.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <7.5> not available
-(Font)              size <7> substituted on input line 62.
+(Font)              size <7> substituted on input line 63.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 62.
+(Font)              size <7> substituted on input line 63.
 
 
-Underfull \hbox (badness 10000) detected at line 62
+Underfull \hbox (badness 10000) detected at line 63
 []
  []
 
@@ -423,17 +431,11 @@ Underfull \hbox (badness 4805) in paragraph at lines 8--10
 
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 67.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 68.
  (./introduction.tex
 Underfull \hbox (badness 1189) in paragraph at lines 2--3
 \OT1/ptm/m/n/9 probing methodologies provide a general and rapid means to
  []
-
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
-
-Package natbib Warning: Citation `Lucks2011' on page 1 undefined on input line 
-6.
 
 
 Underfull \hbox (badness 1082) in paragraph at lines 8--9
@@ -445,7 +447,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Font Info:    Try loading font information for OMS+phv on input line 11.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsphv.fd
+(c:/usr/texlive/2012/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <7> not available
@@ -482,7 +484,7 @@ LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <6.5> not available
 (Font)              size <6> substituted on input line 19.
 
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 29.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+(c:/usr/texlive/2012/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 Underfull \hbox (badness 1009) in paragraph at lines 29--30
@@ -490,10 +492,15 @@ Underfull \hbox (badness 1009) in paragraph at lines 29--30
 m/n/8 2 \OT1/cmr/bx/n/8 P$ \OT1/ptm/m/n/8 indicates such reactivity
  []
 
+
+Package amsmath Warning: Foreign command \over;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 49.
+
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 57.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 54.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 57.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 54.
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
@@ -536,43 +543,20 @@ Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
 d on input line 163.
 
 
-Package amsmath Warning: Foreign command \over;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 174.
-
-
-Package natbib Warning: Citation `lee2014eterna' on page 4 undefined on input l
-ine 254.
-
-
 Underfull \hbox (badness 1874) in paragraph at lines 254--254
 []\OT1/ptm/b/n/8 Table 1. \OT1/ptm/m/n/8 High-throughput RNA structure mapping 
 data sets
  []
 
 ) (./result.tex
-File: figures/result_band_assign4.eps Graphic file (type eps)
- <figures/result_band_assign4.eps>
+File: figures/result_band_assign5.eps Graphic file (type eps)
+ <figures/result_band_assign5.eps>
 File: figures/result_peak_area4.eps Graphic file (type eps)
 
 <figures/result_peak_area4.eps>
 Underfull \hbox (badness 1895) in paragraph at lines 19--19
 \OT1/ptm/m/n/8 the distribution of the Pearson's correlation coefficients betwe
 en the
- []
-
-
-Package natbib Warning: Citation `lee2014eterna' on page 4 undefined on input l
-ine 28.
-
-
-Underfull \hbox (badness 1184) in paragraph at lines 30--31
-\OT1/ptm/m/n/9 proposed method is 1.92 times closer to 1, and the average
- []
-
-
-Underfull \hbox (badness 1237) in paragraph at lines 30--31
-\OT1/ptm/m/n/9 confirm what we observed qualitatively on using these tools:
  []
 
 
@@ -589,6 +573,16 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
  []
 
 [4]
+Underfull \hbox (badness 1184) in paragraph at lines 30--31
+\OT1/ptm/m/n/9 proposed method is 1.68 times closer to 1, and the average
+ []
+
+
+Underfull \hbox (badness 1237) in paragraph at lines 30--31
+\OT1/ptm/m/n/9 confirm what we observed qualitatively on using these tools:
+ []
+
+
 Underfull \hbox (badness 1062) in paragraph at lines 34--35
 \OT1/ptm/m/n/9 coefficients between band areas quantified based on the band
  []
@@ -624,8 +618,13 @@ LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <7.5> not available
 (Font)              size <7> substituted on input line 90.
 
 
-Underfull \hbox (badness 1701) in paragraph at lines 135--136
-\OT1/ptm/m/n/9 of sequencing ladders, the maximum of MSE is only 0.68.
+Underfull \hbox (badness 1033) in paragraph at lines 135--136
+\OT1/ptm/m/n/9 In an effort to test the proposed method's compatibility with
+ []
+
+
+Underfull \hbox (badness 1005) in paragraph at lines 135--136
+\OT1/ptm/m/n/9 derived RNAs. These additional 21 data sets include Class I
  []
 
 ) (./discussion.tex
@@ -664,15 +663,18 @@ Underfull \hbox (badness 1540) in paragraph at lines 11--12
 
 ) (./conclusion.tex) (./manuscript.bbl
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 10.
 
-Underfull \hbox (badness 1436) in paragraph at lines 41--45
+Underfull \hbox (badness 1436) in paragraph at lines 42--46
 []\OT1/ptm/m/n/7 Karabiber, F., McGinnis, J. L., Favorov, O. V., and Weeks, K. 
 M. (2013).
  []
 
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ≤ in font ptmr7t!
 
-Underfull \hbox (badness 1755) in paragraph at lines 90--95
+Underfull \hbox (badness 1755) in paragraph at lines 101--106
 \OT1/ptm/m/n/7 High-throughput single-nucleotide structural mapping by capillar
 y automated
  []
@@ -681,44 +683,24 @@ Missing character: There is no ƒ in font ptmr7t!
 Missing character: There is no ç in font ptmr7t!
 Missing character: There is no ƒ in font ptmr7t!
 Missing character: There is no á in font ptmr7t!
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 153.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 164.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsptm.fd
+(c:/usr/texlive/2012/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 153.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 164.
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:29.44545pt when 530.27168pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:29.44545pt when 531.27168pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:29.44545pt when 532.27168pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:11.44545pt when 533.27168pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:11.44545pt when 534.27168pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:11.44545pt when 535.27168pt
-Extra height:0.0pt when 536.27168pt
-(2)Left:536.27168pt Right:525.54338pt Output:536.27168pt
+Extra height:11.44545pt when 615.98044pt
+Extra height:0.0pt when 616.98044pt
+(2)Left:616.98044pt Right:616.96089pt Output:616.98044pt
 - LAST -
 Extra skip:0.0pt
-Left:536.27168pt
-Right:525.54338pt
-Output:536.27168pt
+Left:616.98044pt
+Right:616.96089pt
+Output:616.98044pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -731,25 +713,19 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
  [7]
-
-Package natbib Warning: There were undefined citations.
-
 (./manuscript.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 3440 strings out of 493118
- 44908 string characters out of 6135459
- 132575 words of memory out of 5000000
- 6765 multiletter control sequences out of 15000+600000
- 42323 words of font info for 121 fonts, out of 8000000 for 9000
- 1145 hyphenation exceptions out of 8191
- 42i,14n,32p,1878b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 3433 strings out of 493482
+ 44496 string characters out of 3134983
+ 134888 words of memory out of 3000000
+ 6601 multiletter control sequences out of 15000+200000
+ 41804 words of font info for 120 fonts, out of 3000000 for 9000
+ 961 hyphenation exceptions out of 8191
+ 42i,14n,32p,1874b,467s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on manuscript.dvi (7 pages, 66792 bytes).
+Output written on manuscript.dvi (7 pages, 67960 bytes).

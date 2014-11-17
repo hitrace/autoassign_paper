@@ -35,22 +35,21 @@
 \newlabel{ss:preproc}{{{2.3}}{2}}
 \newlabel{e:gamma}{{1}{2}}
 \citation{hofacker2003vienna}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Prediction matrix. (\textbf  {a}) Definition of the values appearing in the peak prediction matrix. 1 means that a band is expected in that residue position, whereas 0 means that no band is expected. (\textbf  {b}) Example target sequence and its structure predicted by the Vienna RNA package\nobreakspace  {}\citep  {hofacker2003vienna}. (\textbf  {c}) The prediction matrix for the example in (\textbf  {b}).}}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Prediction matrix. (\textbf  {a}) Definition of the values appearing in the peak prediction matrix. 1 means that a band is expected in that residue position, whereas 0 means that no band is expected. $^a$The bands on ddTTP are expected to be at positions right before where $\mathtt  {A}$s are located. (\textbf  {b}) Example target sequence and its structure predicted by the Vienna RNA package\nobreakspace  {}\citep  {hofacker2003vienna}. (\textbf  {c}) The prediction matrix for the example in (\textbf  {b}).}}{3}}
 \newlabel{f:pred-mat}{{2}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {{2.4}}Formulation as dynamic programming}{3}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.4}.1}}Basic motivation}{3}}
 \newlabel{e:F}{{2}{3}}
-\newlabel{sss:primary_profile}{{{{2.4}.2}}{3}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Formulation as dynamic programming. (\textbf  {a}) ${\mathbf  {F}}(n,k,p)$ depends on ${\mathbf  {F}}(n-1,k',p')$ in the previous column and the gap bonus $S(n,k',k,n)$ between them. The best tuple $(k',p')$ that maximizes ${\mathbf  {F}}(n,k,p)$ is searched for in the range $k-2.5\rho \le k' < k; k'+p' < k+p$ and is stored in the backtracking matrices ${\mathbf  {L}}_k(n,k,p)$, ${\mathbf  {L}}_p(n,k,p)$. The computation of $S(n,k',k,p)$ is based on the bonus matrix ${\mathbf  {B}}$ and the prediction matrix ${\mathbf  {P}}$ (Section\nobreakspace  {}{2.5}\hbox {}). (\textbf  {b}) Example. The data set used is `FMN Apatamer with single binding site.' $N=88$, $M=5$, $K=1324$. The backtracking path is represented by a series of red circles superimposed on the score matrix ${\mathbf  {F}}$; since ${\mathbf  {F}}$ is 3-dimensional, the figure alternatively represents a reduced matrix ${\mathbf  {F}}'$ defined by ${\mathbf  {F}}'(n,k)=\qopname  \relax m{max}_{p'} {\mathbf  {F}}(n,k,p')$. The output array ${\mathbf  {y}}_k$, which stores the position of each circle, indicates the band locations.}}{3}}
 \newlabel{f:dp-formulation}{{3}{3}}
+\newlabel{sss:primary_profile}{{{{2.4}.2}}{3}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.4}.2}}Primary profile}{3}}
 \newlabel{e:F2}{{3}{3}}
 \citation{lee2014eterna}
-\citation{lee2012eterna}
+\citation{lee2014eterna}
 \citation{Karabiber2013}
 \citation{Karabiber2013}
 \citation{lee2014eterna}
-\citation{Kladwang2014}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.4}.3}}Backtracking}{4}}
 \newlabel{e:L}{{4}{4}}
 \newlabel{e:y}{{5}{4}}
@@ -66,10 +65,11 @@
 \newlabel{s:result}{{3}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {{3.1}}Robust determination of band positions}{4}}
 \newlabel{ss:band-position}{{{3.1}}{4}}
+\citation{Kladwang2014}
 \citation{Yoon2011}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces High-throughput RNA structure mapping data sets analyzed by the proposed method (total 522 profiles and 47210 bands). Excluding the last line, there are 95 data sets. More details of these 95 data sets are described in \citet  {lee2014eterna}. }}{5}}
 \newlabel{t:data}{{1}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Determination of band locations. (A) Reference (manual) annotation. Red circles represent band locations. (B) The band locations determined by the proposed method. (C) The band locations found by QuShape\nobreakspace  {}\citep  {Karabiber2013}. (D) Mean squared error (MSE) (E) Pearson's correlation coefficient (F) KL divergence}}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Determination of band locations. (\textbf  {a}) Reference (manual) annotation. Red horizontal lines represent all determined locations corresponding to RNA sequence. Red circles represent band locations. (\textbf  {b}) The band locations determined by the proposed method. (\textbf  {c}) The band locations found by QuShape\nobreakspace  {}\citep  {Karabiber2013}. (\textbf  {d}) Mean squared error (MSE) (\textbf  {e}) Pearson's correlation coefficient (\textbf  {f}) KL divergence}}{5}}
 \newlabel{f:band-assign}{{4}{5}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Accuracy of quantifying peak areas. (\textbf  {a}) The left box plot represents the distribution of the Pearson's correlation coefficients between the manually quantified areas and those quantified by the proposed method over the 95 data sets. The right box plot shows the distribution of the correlation coefficients between the areas quantified manually and by QuShape. (\textbf  {b}--\textbf  {c}) Correlation of the reference and the quantified areas by the proposed method for data set `FMN Binding Branches' is shown for profiles 1 (SHAPE) and 3 (DMS). (\textbf  {d}--\textbf  {e}) Correlation of the reference and the areas quantified by QuShape for the same data set. }}{5}}
 \newlabel{f:peak-area}{{5}{5}}
@@ -98,23 +98,24 @@
 \bibcite{Karabiber2013}{{5}{2013}{{Karabiber {\em  et~al.}}}{{Karabiber, McGinnis, Favorov, and Weeks}}}
 \bibcite{kladwangmutatemap2011}{{6}{2011}{{Kladwang {\em  et~al.}}}{{Kladwang, VanLang, Cordero, and Das}}}
 \bibcite{Kladwang2014}{{7}{2014}{{Kladwang {\em  et~al.}}}{{Kladwang, Mann, Becka, Tian, Kim, Yoon, and Das}}}
-\bibcite{lee2012eterna}{{8}{2012}{{Lee {\em  et~al.}}}{{Lee, Kladwang, Lee, Cantu, Azizyan, Kim, Limpaecher, Yoon, Treuille, and Das}}}
-\bibcite{lee2014pnas}{{9}{2014}{{Lee {\em  et~al.}}}{{Lee, Kladwang, Lee, Cantu, Azizyan, Kim, Limpaecher, Yoon, Treuille, Das, and Participants}}}
-\bibcite{weeksbiochemistry}{{10}{2014}{{McGinnis and Weeks}}{{McGinnis and Weeks}}}
-\bibcite{wilkinson2005}{{11}{2005}{{Merino {\em  et~al.}}}{{Merino, Wilkinson, Coughlan, and Weeks}}}
-\bibcite{mitra2008high}{{12}{2008}{{Mitra {\em  et~al.}}}{{Mitra, Shcherbakova, Altman, Brenowitz, and Laederach}}}
-\bibcite{Pang2011}{{13}{2011}{{Pang {\em  et~al.}}}{{Pang, Elazar, Pham, and Glenn}}}
-\bibcite{Shi2009}{{14}{2009}{{Shi {\em  et~al.}}}{{Shi, Mollova, Pljevaljčić, Millar, and Herschlag}}}
-\bibcite{tian2014nature}{{15}{2014}{{Tian {\em  et~al.}}}{{Tian, Cordero, Kladwang, and Das}}}
-\bibcite{tijerina2007dms}{{16}{2007}{{Tijerina {\em  et~al.}}}{{Tijerina, Mohr, and Russell}}}
-\bibcite{vasa2008shapefinder}{{17}{2008}{{Vasa {\em  et~al.}}}{{Vasa, Guex, Wilkinson, Weeks, and Giddings}}}
-\bibcite{walczak}{{18}{1996}{{Walczak {\em  et~al.}}}{{Walczak, Westhof, Carbon, and Krol}}}
-\bibcite{weeksnature2009}{{19}{2009}{{Watts {\em  et~al.}}}{{Watts, Dang, Gorelick, Leonard, Bess, Swanstrom, Burch, and Weeks}}}
-\bibcite{weeks2010}{{20}{2010a}{{Weeks}}{{Weeks}}}
-\bibcite{Weeks2010295}{{21}{2010b}{{Weeks}}{{Weeks}}}
-\bibcite{weeksplos2009}{{22}{2008}{{Wilkinson {\em  et~al.}}}{{Wilkinson, Gorelick, Vasa, Guex, Rein, Mathews, Giddings, and Weeks}}}
-\bibcite{Wochner08042011}{{23}{2011}{{Wochner {\em  et~al.}}}{{Wochner, Attwater, Coulson, and Holliger}}}
-\bibcite{Yoon2011}{{24}{2011}{{Yoon {\em  et~al.}}}{{Yoon, Kim, Hum, Kim, Park, Kladwang, and Das}}}
+\bibcite{lee2014pnas}{{8}{2014a}{{Lee {\em  et~al.}}}{{Lee, Kladwang, Lee, Cantu, Azizyan, Kim, Limpaecher, Yoon, Treuille, Das, and Participants}}}
+\bibcite{lee2014eterna}{{9}{2014b}{{Lee {\em  et~al.}}}{{Lee, Kladwang, Lee, Cantu, Azizyan, Kim, Limpaecher, Yoon, Treuille, Das, and Participants}}}
+\bibcite{Lucks2011}{{10}{2011}{{Lucks {\em  et~al.}}}{{Lucks, Mortimer, Trapnell, Luo, Aviran, Schroth, Pachter, Doudna, and Arkin}}}
+\bibcite{weeksbiochemistry}{{11}{2014}{{McGinnis and Weeks}}{{McGinnis and Weeks}}}
+\bibcite{wilkinson2005}{{12}{2005}{{Merino {\em  et~al.}}}{{Merino, Wilkinson, Coughlan, and Weeks}}}
+\bibcite{mitra2008high}{{13}{2008}{{Mitra {\em  et~al.}}}{{Mitra, Shcherbakova, Altman, Brenowitz, and Laederach}}}
+\bibcite{Pang2011}{{14}{2011}{{Pang {\em  et~al.}}}{{Pang, Elazar, Pham, and Glenn}}}
+\bibcite{Shi2009}{{15}{2009}{{Shi {\em  et~al.}}}{{Shi, Mollova, Pljevaljčić, Millar, and Herschlag}}}
+\bibcite{tian2014nature}{{16}{2014}{{Tian {\em  et~al.}}}{{Tian, Cordero, Kladwang, and Das}}}
+\bibcite{tijerina2007dms}{{17}{2007}{{Tijerina {\em  et~al.}}}{{Tijerina, Mohr, and Russell}}}
+\bibcite{vasa2008shapefinder}{{18}{2008}{{Vasa {\em  et~al.}}}{{Vasa, Guex, Wilkinson, Weeks, and Giddings}}}
+\bibcite{walczak}{{19}{1996}{{Walczak {\em  et~al.}}}{{Walczak, Westhof, Carbon, and Krol}}}
+\bibcite{weeksnature2009}{{20}{2009}{{Watts {\em  et~al.}}}{{Watts, Dang, Gorelick, Leonard, Bess, Swanstrom, Burch, and Weeks}}}
+\bibcite{weeks2010}{{21}{2010a}{{Weeks}}{{Weeks}}}
+\bibcite{Weeks2010295}{{22}{2010b}{{Weeks}}{{Weeks}}}
+\bibcite{weeksplos2009}{{23}{2008}{{Wilkinson {\em  et~al.}}}{{Wilkinson, Gorelick, Vasa, Guex, Rein, Mathews, Giddings, and Weeks}}}
+\bibcite{Wochner08042011}{{24}{2011}{{Wochner {\em  et~al.}}}{{Wochner, Attwater, Coulson, and Holliger}}}
+\bibcite{Yoon2011}{{25}{2011}{{Yoon {\em  et~al.}}}{{Yoon, Kim, Hum, Kim, Park, Kladwang, and Das}}}
 \global\@namedef{@lastpage@}{7}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{7}}
 \newlabel{s:conclusion}{{5}{7}}
