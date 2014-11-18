@@ -3,37 +3,47 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centering
-\includegraphics[width=0.9\linewidth]{figures/result_band_assign5}
-\caption{Determination of band locations. (\textbf{a}) Reference (manual) annotation. Red horizontal lines represent all determined locations corresponding to RNA sequence. Red circles represent band locations. (\textbf{b}) The band locations determined by the proposed method. (\textbf{c}) The band locations found by QuShape~\citep{Karabiber2013}. (\textbf{d}) Mean squared error (MSE) (\textbf{e}) Pearson's correlation coefficient (\textbf{f}) KL divergence}
+\includegraphics[width=0.9\linewidth]{figures/result_band_assign6}
+\caption{Determination of band locations for data set `ViennaRNA design 03.' (\textbf{a}) Reference (manual) annotation. Red horizontal lines represent all determined locations corresponding to RNA sequence. Red circles represent band locations. (\textbf{b}) The band locations determined by the proposed method. (\textbf{c}) The band locations found by QuShape~\citep{Karabiber2013}. (\textbf{d}) Mean squared error (MSE) (\textbf{e}) Pearson's correlation coefficient (\textbf{f}) KL divergence}
 \label{f:band-assign}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BOX PLOTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{figures/boxplots}
+\caption{Proposed method (left) vs. QuShape (right). Each plot represents a certain distribution across 95 data sets. (\textbf{a}) Mean squared error (MSE) for band locations (\textbf{b}) Pearson's correlation coefficient for band locations (\textbf{c}) KL divergence for band locations (\textbf{a}) Pearson's correlation coefficients for area quantification.}
+\label{f:boxplots}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\bP}{{\mathbf{P}}}
+
+\subsection{Robust determination of band positions}\label{ss:band-position}
+Figure~\ref{f:band-assign}(a)--(c) shows the electrophoretic profiles annotated with band locations by three different methods: reference, proposed, and QuShape~\citep{Karabiber2013}, respectively. The reference annotation was based on expert assignments carried out at the time of data acquisition~\citep{lee2014eterna} QuShape was chosen as the comparison target for its superior accuracy in band annotation relative to other software we tested, FAST and ShapeFinder (data not shown); nomod and ddTTP profiles were used as references (RXS1, BGS1) while running QuShape. Visual inspection suggests that the proposed method produces annotations more compatible with the reference. In this profile, the annotation determined by QuShape deviates from the reference position, particularly near the beginning of sequence.
+
+To generally and quantitatively assess the accuracy of automated band annotation, we applied the proposed method and QuShape to 95 data sets acquired in the EteRNA project (Table \ref{t:data}). For both methods, we computed the mean squared error (MSE) of the band locations determined by the proposed method with respect to the reference locations, in units of average distance between locations. For a sense of scale, the typical MSE achieved by expert annotation is 0.15, based on comparisons of different experts' annotations with each other and to next-generation-sequencing-based measurements, where sequence annotation is unambiguous \citep{Kladwang2014}; see Supplemental Fig. S1. In our experience, a band annotation result with MSE lower than 0.5 typically requires no or a small number single-click corrections. The box plots in Figure~\ref{f:boxplots}(a)--(c) and individual MSE values (Supplemental Tables S1 and S2) reveal that the proposed method outperforms QuShape across the data sets. For example, the median MSE of the proposed method is 0.21, under the target value of 0.5, compared to 0.72 from QuSHAPE. As separate metrics of accuracy, we measured the Pearson's correlation coefficient and the Kullback-Leibler (KL) divergence between the reference and computationally determined band positions.  Again, the average correlation coefficient of the proposed method is 1.68 times closer to 1, and the average KL divergence is 5.84 times smaller. These results quantitatively confirm what we observed qualitatively on using these tools: significantly less manual intervention is needed with the proposed method compared to QuShape.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PEAK AREA
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centering
-\includegraphics[width=0.9\linewidth]{figures/result_peak_area4}
-\caption{Accuracy of quantifying peak areas. (\textbf{a}) The left box plot represents the distribution of the Pearson's correlation coefficients between the manually quantified areas and those quantified by the proposed method over the 95 data sets. The right box plot shows the distribution of the correlation coefficients between the areas quantified manually and by QuShape. (\textbf{b}--\textbf{c}) Correlation of the reference and the quantified areas by the proposed method for data set `FMN Binding Branches' is shown for profiles 1 (SHAPE) and 3 (DMS). (\textbf{d}--\textbf{e}) Correlation of the reference and the areas quantified by QuShape for the same data set.
+\includegraphics[width=0.9\linewidth]{figures/result_peak_area5}
+\caption{Accuracy of quantifying peak areas for data set `FMN Binding Branches'. (\textbf{a}--\textbf{b}) Correlation of the reference and the quantified areas by the proposed method is shown for profiles 1 (SHAPE) and 3 (DMS). (\textbf{c}--\textbf{d}) Correlation of the reference and the areas quantified by QuShape.
 }
 \label{f:peak-area}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\bP}{{\mathbf{P}}}
-
-
-\subsection{Robust determination of band positions}\label{ss:band-position}
-Figure~\ref{f:band-assign}(a)--(c) shows the electrophoretic profiles annotated with band locations by three different methods: reference, proposed, and QuShape~\citep{Karabiber2013}, respectively. The reference annotation was based on expert assignments carried out at the time of data acquisition~\citep{lee2014eterna} QuShape was chosen as the comparison target for its superior accuracy in band annotation relative to other software we tested, FAST and ShapeFinder (data not shown); nomod and ddTTP profiles were used as references (RXS1, BGS1) while running QuShape. Visual inspection suggests that the proposed method produces annotations more compatible with the reference. In this profile, the annotation determined by QuShape deviates from the reference position, particularly near the beginning of sequence.
-
-To generally and quantitatively assess the accuracy of automated band annotation, we applied the proposed method and QuShape to 95 data sets acquired in the EteRNA project (Table \ref{t:data}). For both methods, we computed the mean squared error (MSE) of the band locations determined by the proposed method with respect to the reference locations, in units of average distance between locations. For a sense of scale, the typical MSE achieved by expert annotation is 0.15, based on comparisons of different experts' annotations with each other and to next-generation-sequencing-based measurements, where sequence annotation is unambiguous \citep{Kladwang2014}; see Supplemental Fig. S1. In our experience, a band annotation result with MSE lower than 0.5 typically requires no or a small number single-click corrections. The box plots in Figure~\ref{f:band-assign}(d)--(f) and individual MSE values (Supplemental Tables S1 and S2) reveal that the proposed method outperforms QuShape across the data sets. For example, the median MSE of the proposed method is 0.21, under the target value of 0.5, compared to 0.72 from QuSHAPE. As separate metrics of accuracy, we measured the Pearson's correlation coefficient and the Kullback-Leibler (KL) divergence between the reference and computationally determined band positions.  Again, the average correlation coefficient of the proposed method is 1.68 times closer to 1, and the average KL divergence is 5.84 times smaller. These results quantitatively confirm what we observed qualitatively on using these tools: significantly less manual intervention is needed with the proposed method compared to QuShape.
-
-
 \subsection{Accurate peak-area quantification}\label{ss:peak-area}
 In the RNA structure mapping pipeline, the band annotation is followed by peak deconvolution, which fits each band with a Gaussian curve and outputs the quantified area of the band. To see how these final band quantification results are impacted by the band annotation method, we calculated Pearson's correlation coefficients between band areas quantified based on the band annotation found by the proposed method and those quantified based on the reference annotation. We also repeated the calculation with the band intensities quantified by QuShape. For fair comparison, we applied the same peak deconvolution software (HiTRACE; \citealp{Yoon2011}) to these three methods.
 
-As one example, Figure~\ref{f:peak-area}(b) and (c) shows the correlation of results between the proposed method and reference for a specific data set (FMN Binding Branches) for two chemical modification strategies (SHAPE and DMS).and Figure~\ref{f:peak-area}(d) and (e) shows the correlation between the QuShape and reference results, which is visually worse than the proposed method in both cases. Over all the data sets, Figure~\ref{f:peak-area}(a) and Supplemental Table S1 gives the distribution of the Pearson's correlation coefficients. The median correlation coefficient for the proposed method is 0.976, which is higher than that for QuShape (0.939) and the distribution for the proposed method shows smaller variance. This observation suggests that using the proposed band annotation can significantly enhance the accuracy of band quantification. 
+As one example, Figure~\ref{f:peak-area}(a)--(b) shows the correlation of results between the proposed method and reference for a specific data set (FMN Binding Branches) for two chemical modification strategies (SHAPE and DMS).and Figure~\ref{f:peak-area}(c)--(d) shows the correlation between the QuShape and reference results, which is visually worse than the proposed method in both cases. Over all the data sets, Figure~\ref{f:boxplots}(d) and Supplemental Table S1 gives the distribution of the Pearson's correlation coefficients. The median correlation coefficient for the proposed method is 0.976, which is higher than that for QuShape (0.939) and the distribution for the proposed method shows smaller variance. This observation suggests that using the proposed band annotation can significantly enhance the accuracy of band quantification. 
 
 
 \begin{comment}

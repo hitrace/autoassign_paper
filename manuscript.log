@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=latex 2013.3.9)  17 NOV 2014 17:26
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=latex 2013.3.9)  18 NOV 2014 18:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -549,17 +549,10 @@ data sets
  []
 
 ) (./result.tex
-File: figures/result_band_assign5.eps Graphic file (type eps)
- <figures/result_band_assign5.eps>
-File: figures/result_peak_area4.eps Graphic file (type eps)
-
-<figures/result_peak_area4.eps>
-Underfull \hbox (badness 1895) in paragraph at lines 19--19
-\OT1/ptm/m/n/8 the distribution of the Pearson's correlation coefficients betwe
-en the
- []
-
-
+File: figures/result_band_assign6.eps Graphic file (type eps)
+ <figures/result_band_assign6.eps>
+File: figures/boxplots.eps Graphic file (type eps)
+ <figures/boxplots.eps>
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
  []
@@ -573,17 +566,18 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
  []
 
 [4]
-Underfull \hbox (badness 1184) in paragraph at lines 30--31
+Underfull \hbox (badness 1184) in paragraph at lines 29--30
 \OT1/ptm/m/n/9 proposed method is 1.68 times closer to 1, and the average
  []
 
 
-Underfull \hbox (badness 1237) in paragraph at lines 30--31
+Underfull \hbox (badness 1237) in paragraph at lines 29--30
 \OT1/ptm/m/n/9 confirm what we observed qualitatively on using these tools:
  []
 
-
-Underfull \hbox (badness 1062) in paragraph at lines 34--35
+File: figures/result_peak_area5.eps Graphic file (type eps)
+<figures/result_peak_area5.eps>
+Underfull \hbox (badness 1062) in paragraph at lines 44--45
 \OT1/ptm/m/n/9 coefficients between band areas quantified based on the band
  []
 
@@ -599,31 +593,31 @@ Overfull \vbox (1.0pt too high) has occurred while \output is active []
 File: figures/result_escore_mse4.eps Graphic file (type eps)
 
 <figures/result_escore_mse4.eps>
-Underfull \hbox (badness 1320) in paragraph at lines 85--85
-[]\OT1/ptm/b/n/8 Fig. 6. \OT1/ptm/m/n/8 (\OT1/ptm/b/n/8 a\OT1/ptm/m/n/8 ) Distr
+Underfull \hbox (badness 1320) in paragraph at lines 95--95
+[]\OT1/ptm/b/n/8 Fig. 7. \OT1/ptm/m/n/8 (\OT1/ptm/b/n/8 a\OT1/ptm/m/n/8 ) Distr
 ibution of MSE for the results with 1 $[]$-score. (\OT1/ptm/b/n/8 b\OT1/ptm/m/n
 /8 )
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 90.
+(Font)              size <7> substituted on input line 100.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <7.5> not available
-(Font)              size <7> substituted on input line 90.
+(Font)              size <7> substituted on input line 100.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 90.
+(Font)              size <7> substituted on input line 100.
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 135--136
+Underfull \hbox (badness 1033) in paragraph at lines 145--146
 \OT1/ptm/m/n/9 In an effort to test the proposed method's compatibility with
  []
 
 
-Underfull \hbox (badness 1005) in paragraph at lines 135--136
+Underfull \hbox (badness 1005) in paragraph at lines 145--146
 \OT1/ptm/m/n/9 derived RNAs. These additional 21 data sets include Class I
  []
 
@@ -693,14 +687,22 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:11.44545pt when 615.98044pt
-Extra height:0.0pt when 616.98044pt
-(2)Left:616.98044pt Right:616.96089pt Output:616.98044pt
+Extra height:11.44545pt when 626.98044pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:11.44545pt when 627.98044pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:11.44545pt when 628.98044pt
+Extra height:0.0pt when 629.98044pt
+(2)Left:629.98044pt Right:625.96089pt Output:629.98044pt
 - LAST -
 Extra skip:0.0pt
-Left:616.98044pt
-Right:616.96089pt
-Output:616.98044pt
+Left:629.98044pt
+Right:625.96089pt
+Output:629.98044pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -720,12 +722,12 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 3433 strings out of 493482
- 44496 string characters out of 3134983
- 134888 words of memory out of 3000000
- 6601 multiletter control sequences out of 15000+200000
+ 3436 strings out of 493482
+ 44540 string characters out of 3134983
+ 136249 words of memory out of 3000000
+ 6603 multiletter control sequences out of 15000+200000
  41804 words of font info for 120 fonts, out of 3000000 for 9000
  961 hyphenation exceptions out of 8191
  42i,14n,32p,1874b,467s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on manuscript.dvi (7 pages, 67960 bytes).
+Output written on manuscript.dvi (7 pages, 68124 bytes).
