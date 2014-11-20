@@ -53,7 +53,7 @@
 \begin{document}
 \firstpage{1}
 
-\title[Automated band annotation for capillary electrophoresis]{Automated band annotation for capillary electrophoresis based high-throughput RNA structure probing}
+\title[Automated band annotation for capillary electrophoresis]{Automated band annotation for RNA structure probing experiments with numerous capillary electrophoresis profiles}
 \author[Lee \textit{et~al}]
 {
 Seungmyung~Lee$^{1}$,
@@ -79,6 +79,17 @@ $^{4}$Department of Physics, Stanford University, Stanford, CA 94305, USA
 \maketitle
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OLD VS NEW
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{figures/supp_old_new_comparison}
+\caption{The distribution of mean squared error (MSE) for the results from the proposed method and an older method without explicit peak-matching, respectively, over the 95 data sets. MSE units are normalized so that average distance between band locations is unity.}
+\label{f:old_vs_new}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ETERNA COMPARISON
@@ -86,14 +97,9 @@ $^{4}$Department of Physics, Stanford University, Stanford, CA 94305, USA
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{figures/supp_eterna_comparison}
-\caption{Reactivity results from CE analysis and illumina-based sequencing experiments, over 38 data sets. The heatmap presents results from two methods alternatingly from left to right; CE analysis results are presented on odd numbered x-positions and MySeq results are shown on even numbered x-positions.}
+\caption{Reactivity results from CE analysis and Illumina (next-generation-sequencing)-based structure mapping experiments, over 38 data sets from the EteRNA project. The heatmap presents results from two methods, presented in alternating order from left to right on each RNA sequence; CE analysis results are presented on odd numbered x-positions and Illlumina results are shown on even numbered x-positions. Visual inspection suggests concordance over most positions, except in the rectangular region.The original manually band-annotated CE data and Illumina data consistently show the highest intensity at different positions (41 and 39, respectively) higlighting an error in the manual CE annotation.}
 \label{f:eterna_comparison}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\section{ Rectification step in the preparation of reference band location }
-As discussed in Section 3.1, the reference band locations were prepared by manual annotation followed by the rectification step where possible human errors are discovered and corrected through a comparison between two separate experiments. One example of such process is well illustrated by Figure~\ref{f:eterna_comparison}. Visual inspection suggests that in the rectangular region, CE analysis and MySeq consistently show the highest intensity at residue 41 and 39 respectively. This discrepancy gave us an inkling of inaccurate determination of band locations around the corresponding sequence position, leading to rectification of such errors.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -107,36 +113,6 @@ As discussed in Section 3.1, the reference band locations were prepared by manua
 \label{f:hdv-result-detail}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\section{ Band annotation over all prepared data sets }
-The accuracy of band locations determined by the proposed method was discussed and assessed with 95 data sets in Section 3.1 and with additional data sets in Section 3.4. Figure~\ref{f:hdv-result-detail} visualizes the distribution of errors in predicted band locations over the position of residues in the HDV data set.
-All other results from experiments in Section 3.1 and Section 3.4 are provided respectively in Table~\ref{t:95_data_sets} and in Table~\ref{t:additional_data_sets}.
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% OLD VS NEW
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{figures/supp_old_new_comparison}
-\caption{The distribution of MSE for the results from the proposed method and the old method respectively, over the 95 data sets.}
-\label{f:old_vs_new}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\section{ Proposed method vs. Earlier HiTrace band annotation method }
-With $\escore$-score as a quality indicator for its results, the proposed method becomes more practical compared to the original method provided by HiTrace-Web~\citep{Kim2013}. Furthermore, the accuracy of results improved (about 40\% in terms of median MSE) in the proposed method as shown in Figure~\ref{f:old_vs_new}.
-
-
-\section{ Peak-area quantification experiment results }
-The influence of accuracy in band annotation on the results of peak deconvolution was discussed in Section 3.3 and a representative result was presented in Fig.4. All the results are listed in Table~\ref{t:peak_deconvolution}.
-
-
 
 
 
