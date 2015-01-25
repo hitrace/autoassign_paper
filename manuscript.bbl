@@ -4,8 +4,9 @@
   Bartel]{Bagby01122009}
 Bagby, S.~C., Bergman, N.~H., Shechner, D.~M., Yen, C., and Bartel, D.~P.
   (2009).
-\newblock A class i ligase ribozyme with reduced mg2+ dependence: Selection,
-  sequence analysis, and identification of functional tertiary interactions.
+\newblock A class {I} ligase ribozyme with reduced {Mg}${^{2+}}$ dependence:
+  Selection, sequence analysis, and identification of functional tertiary
+  interactions.
 \newblock {\em RNA\/}, {\bf 15}(12), 2129--2146.
 
 \bibitem[Cruz {\em et~al.}(2012)Cruz, Blanchet, Boniecki, Bujnicki, Chen, Cao,
@@ -20,16 +21,9 @@ Cruz, J.~A., Blanchet, M.-F., Boniecki, M., Bujnicki, J.~M., Chen, S.-J., Cao,
   Serganov, A., Skorupski, M., Soltysinski, T., Sripakdeevong, P., Tuszynska,
   I., Weeks, K.~M., Waldsich, C., Wildauer, M., Leontis, N.~B., and Westhof, E.
   (2012).
-\newblock Rna-puzzles: A casp-like evaluation of rna three-dimensional
+\newblock {RNA}-puzzles: A {CASP}-like evaluation of rna three-dimensional
   structure prediction.
 \newblock {\em RNA\/}, {\bf 18}(4), 610--625.
-
-\bibitem[Das {\em et~al.}(2010)Das, Karanicolas, and
-  Baker]{daskaranicolasbaker2010}
-Das, R., Karanicolas, J., and Baker, D. (2010).
-\newblock Atomic accuracy in predicting and designing noncanonical {RNA}
-  structure.
-\newblock {\em Nature Methods\/}, {\bf 7}(4), 291--294.
 
 \bibitem[Hofacker(2003)Hofacker]{hofacker2003vienna}
 Hofacker, I. (2003).
@@ -46,8 +40,8 @@ Karabiber, F., McGinnis, J.~L., Favorov, O.~V., and Weeks, K.~M. (2013).
 \bibitem[Kladwang {\em et~al.}(2011)Kladwang, VanLang, Cordero, and
   Das]{kladwangmutatemap2011}
 Kladwang, W., VanLang, C.~C., Cordero, P., and Das, R. (2011).
-\newblock A two-dimensional mutate-and-map strategy for non-coding rna
-  structure.
+\newblock {A two-dimensional mutate-and-map strategy for non-coding RNA
+  structure}.
 \newblock {\em Nat Chem\/}, {\bf 3}(12), 954--962.
 \newblock 10.1038/nchem.1176.
 
@@ -58,32 +52,22 @@ Kladwang, W., Mann, T.~H., Becka, A., Tian, S., Kim, H., Yoon, S., and Das, R.
 \newblock Standardization of rna chemical mapping experiments.
 \newblock {\em Biochemistry\/}, {\bf 53}(19), 3063--3065.
 
-\bibitem[Lee {\em et~al.}(2012)Lee, Kladwang, Lee, Cantu, Azizyan, Kim,
-  Limpaecher, Yoon, Treuille, and Das]{lee2012eterna}
-Lee, J., Kladwang, W., Lee, M., Cantu, D., Azizyan, M., Kim, H., Limpaecher,
-  A., Yoon, S., Treuille, A., and Das, R. (2012).
-\newblock {RNA} design rules from a massively multiplayer cloud laboratory.
-\newblock {\em under review\/}.
-
 \bibitem[Lee {\em et~al.}(2014)Lee, Kladwang, Lee, Cantu, Azizyan, Kim,
-  Limpaecher, Yoon, Treuille, Das, and Participants]{lee2014pnas}
+  Limpaecher, Yoon, Treuille, Das, and Participants]{lee2014eterna}
 Lee, J., Kladwang, W., Lee, M., Cantu, D., Azizyan, M., Kim, H., Limpaecher,
   A., Yoon, S., Treuille, A., Das, R., and Participants, E. (2014).
-\newblock Rna design rules from a massive open laboratory.
+\newblock {RNA} design rules from a massive open laboratory.
 \newblock {\em Proceedings of the National Academy of Sciences\/}, {\bf
   111}(6), 2122--2127.
 
-\bibitem[McGinnis and Weeks(2014)McGinnis and Weeks]{weeksbiochemistry}
-McGinnis, J.~L. and Weeks, K.~M. (2014).
-\newblock Ribosome rna assembly intermediates visualized in living cells.
-\newblock {\em Biochemistry\/}, {\bf 53}(19), 3237--3247.
-\newblock PMID: 24818530.
-
-\bibitem[Merino {\em et~al.}(2005)Merino, Wilkinson, Coughlan, and
-  Weeks]{wilkinson2005}
-Merino, E., Wilkinson, K., Coughlan, J., and Weeks, K. (2005).
-\newblock {Advances in RNA structure analysis by chemical probing}.
-\newblock {\em J. Am. Chem. Soc.}, {\bf 127}, 4223--4231.
+\bibitem[Lucks {\em et~al.}(2011)Lucks, Mortimer, Trapnell, Luo, Aviran,
+  Schroth, Pachter, Doudna, and Arkin]{Lucks2011}
+Lucks, J.~B., Mortimer, S.~A., Trapnell, C., Luo, S., Aviran, S., Schroth,
+  G.~P., Pachter, L., Doudna, J.~A., and Arkin, A.~P. (2011).
+\newblock Multiplexed rna structure characterization with selective
+  2′-hydroxyl acylation analyzed by primer extension sequencing (shape-seq).
+\newblock {\em Proceedings of the National Academy of Sciences\/}, {\bf
+  108}(27), 11063--11068.
 
 \bibitem[Mitra {\em et~al.}(2008)Mitra, Shcherbakova, Altman, Brenowitz, and
   Laederach]{mitra2008high}
@@ -99,15 +83,12 @@ Pang, P.~S., Elazar, M., Pham, E.~a., and Glenn, J.~S. (2011).
   data analysis.}
 \newblock {\em Nucleic Acids Research\/}, {\bf 39}(22), e151.
 
-\bibitem[Shi {\em et~al.}(2009)Shi, Mollova, Pljevaljčić, Millar, and
-  Herschlag]{Shi2009}
-Shi, X., Mollova, E.~T., Pljevaljčić, G., Millar, D.~P., and Herschlag, D.
-  (2009).
-\newblock Probing the dynamics of the p1 helix within the tetrahymena group i
-  intron.
-\newblock {\em Journal of the American Chemical Society\/}, {\bf 131}(27),
-  9571--9578.
-\newblock PMID: 19537712.
+\bibitem[Russell {\em et~al.}(2006)Russell, Das, Suh, Travers, A, MA, and
+  D]{russell2006}
+Russell, R., Das, R., Suh, H., Travers, K., A, L., MA, E., and D, H. (2006).
+\newblock The paradoxical behavior of a highly structured misfolded
+  intermediate in rna folding.
+\newblock {\em J. Mol. Biol.}, {\bf 363}(2), 531--44.
 
 \bibitem[Tian {\em et~al.}(2014)Tian, Cordero, Kladwang, and
   Das]{tian2014nature}
@@ -115,12 +96,6 @@ Tian, S., Cordero, P., Kladwang, W., and Das, R. (2014).
 \newblock High-throughput mutate-map-rescue evaluates shape-directed rna
   structure and uncovers excited states.
 \newblock {\em RNA\/}.
-
-\bibitem[Tijerina {\em et~al.}(2007)Tijerina, Mohr, and
-  Russell]{tijerina2007dms}
-Tijerina, P., Mohr, S., and Russell, R. (2007).
-\newblock {DMS footprinting of structured RNAs and RNA--protein complexes}.
-\newblock {\em Nature Protocols\/}, {\bf 2}(10), 2608--2623.
 
 \bibitem[Vasa {\em et~al.}(2008)Vasa, Guex, Wilkinson, Weeks, and
   Giddings]{vasa2008shapefinder}
@@ -130,44 +105,31 @@ Vasa, S., Guex, N., Wilkinson, K., Weeks, K., and Giddings, M. (2008).
   electrophoresis}.
 \newblock {\em RNA\/}, {\bf 14}(10), 1979--1990.
 
-\bibitem[Walczak {\em et~al.}(1996)Walczak, Westhof, Carbon, and Krol]{walczak}
-Walczak, R., Westhof, E., Carbon, P., and Krol, A. (1996).
-\newblock {A novel RNA structural motif in the selenocysteine insertion element
-  of eukaryotic selenoprotein mRNAs}.
-\newblock {\em Current opinion in structural biology\/}, {\bf 2}, 367--379.
-
 \bibitem[Watts {\em et~al.}(2009)Watts, Dang, Gorelick, Leonard, Bess,
   Swanstrom, Burch, and Weeks]{weeksnature2009}
 Watts, J.~M., Dang, K.~K., Gorelick, R.~J., Leonard, C.~W., Bess, J.~W.,
   Swanstrom, R., Burch, C.~L., and Weeks, K.~M. (2009).
-\newblock Architecture and secondary structure of an entire hiv-1 rna genome.
+\newblock Architecture and secondary structure of an entire {HIV}-1 {RNA}
+  genome.
 \newblock {\em Nature\/}, {\bf 460}(7256), 711--716.
 
-\bibitem[Weeks(2010a)Weeks]{weeks2010}
-Weeks, K. (2010a).
+\bibitem[Weeks(2010)Weeks]{weeks2010}
+Weeks, K. (2010).
 \newblock {Advances in RNA structure analysis by chemical probing}.
 \newblock {\em Current opinion in structural biology\/}, {\bf 20}, 295--304.
-
-\bibitem[Weeks(2010b)Weeks]{Weeks2010295}
-Weeks, K.~M. (2010b).
-\newblock Advances in \{RNA\} structure analysis by chemical probing.
-\newblock {\em Current Opinion in Structural Biology\/}, {\bf 20}(3), 295 --
-  304.
-\newblock Nucleic acids / Sequences and topology.
-
-\bibitem[Wilkinson {\em et~al.}(2008)Wilkinson, Gorelick, Vasa, Guex, Rein,
-  Mathews, Giddings, and Weeks]{weeksplos2009}
-Wilkinson, K.~A., Gorelick, R.~J., Vasa, S.~M., Guex, N., Rein, A., Mathews,
-  D.~H., Giddings, M.~C., and Weeks, K.~M. (2008).
-\newblock High-throughput {SHAPE} analysis reveals structures in {HIV-1}
-  genomic {RNA} strongly conserved across distinct biological states.
-\newblock {\em PLoS Biol\/}, {\bf 6}(4), e96+.
 
 \bibitem[Wochner {\em et~al.}(2011)Wochner, Attwater, Coulson, and
   Holliger]{Wochner08042011}
 Wochner, A., Attwater, J., Coulson, A., and Holliger, P. (2011).
 \newblock Ribozyme-catalyzed transcription of an active ribozyme.
 \newblock {\em Science\/}, {\bf 332}(6026), 209--212.
+
+\bibitem[Xue {\em et~al.}(2014)Xue, Tian, Fujii, Kladwang, Das, and
+  Barna]{xue2014}
+Xue, S., Tian, S., Fujii, K., Kladwang, W., Das, R., and Barna, M. (2014).
+\newblock {RNA regulons in Hox $5~{\prime}$ UTRs confer ribosome specificity to
+  gene regulation}.
+\newblock {\em Nature\/}, page 10.1038/nature14010 (in press).
 
 \bibitem[Yoon {\em et~al.}(2011)Yoon, Kim, Hum, Kim, Park, Kladwang, and
   Das]{Yoon2011}

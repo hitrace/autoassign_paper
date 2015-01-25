@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=latex 2013.3.9)  12 NOV 2014 17:06
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=latex 2013.3.9)  20 NOV 2014 17:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -333,141 +333,162 @@ LaTeX Font Info:    Try loading font information for OT1+ptm on input line 53.
  (c:/usr/texlive/2012/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 78.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 79.
  (c:/usr/texlive/2012/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 78.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 79.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <9> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 78.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 79.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <9> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 78.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 79.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <19> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 78.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 79.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <19> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 78.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 79.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 78.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 79.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 78.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 79.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <16> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 78.
-LaTeX Font Info:    Calculating math sizes for size <13> on input line 78.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 79.
+LaTeX Font Info:    Calculating math sizes for size <13> on input line 79.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 78.
+(Font)              size <12> substituted on input line 79.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 78.
+(Font)              size <6> substituted on input line 79.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <13> not available
-(Font)              size <12> substituted on input line 78.
+(Font)              size <12> substituted on input line 79.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.5> not available
-(Font)              size <6> substituted on input line 78.
+(Font)              size <6> substituted on input line 79.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 78.
+(Font)              size <12> substituted on input line 79.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 78.
+(Font)              size <6> substituted on input line 79.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 78.
+LaTeX Font Info:    Try loading font information for U+msa on input line 79.
 (c:/usr/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 78.
+LaTeX Font Info:    Try loading font information for U+msb on input line 79.
 
 (c:/usr/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Calculating math sizes for size <9.09996> on input line 78.
+LaTeX Font Info:    Calculating math sizes for size <9.09996> on input line 79.
 
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 78.
+(Font)              size <5> substituted on input line 79.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.54997> not available
-(Font)              size <5> substituted on input line 78.
+(Font)              size <5> substituted on input line 79.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 78.
+(Font)              size <5> substituted on input line 79.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 78.
+(Font)              size <7> substituted on input line 79.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <7.5> not available
-(Font)              size <7> substituted on input line 78.
+(Font)              size <7> substituted on input line 79.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 78.
+(Font)              size <7> substituted on input line 79.
 
 
-Underfull \hbox (badness 10000) detected at line 78
+Underfull \hbox (badness 10000) detected at line 79
 []
  []
 
-File: ../figures/eterna_comparison.eps Graphic file (type eps)
-<../figures/eterna_comparison.eps>
+File: figures/supp_old_new_comparison.eps Graphic file (type eps)
+<figures/supp_old_new_comparison.eps>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 88.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 93.
+File: figures/supp_eterna_comparison.eps Graphic file (type eps)
+ <figures/supp_eterna_comparison.eps>
+File: figures/result_hdv_result_detail2.eps Graphic file (type eps)
 
-Underfull \hbox (badness 1424) in paragraph at lines 96--97
-\OT1/ptm/m/n/9 consistently show the highest intensity at residue 41 and 39
+<figures/result_hdv_result_detail2.eps>
+Underfull \hbox (badness 1533) in paragraph at lines 112--112
+[]\OT1/ptm/b/n/8 Fig. S3. \OT1/ptm/m/n/8 Error in band positions with respect t
+o the reference band
  []
 
-File: ../figures/supp_old_new_comparison.eps Graphic file (type eps)
-<../figures/supp_old_new_comparison.eps>
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 127.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 119.
 
 
 (c:/usr/texlive/2012/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 127.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 119.
  [1
 
 
 
 ]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 232.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 119.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 232.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 119.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 232.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 119.
+
+Overfull \hbox (261.0pt too wide) has occurred while \output is active
+[][] 
+ []
+
 
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
- [2
+
+Overfull \hbox (261.0pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[2
 
 ]
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
- [3]
+ [3
+
+]
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
  [4]
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
  [5]
-Underfull \hbox (badness 1173) in paragraph at lines 383--383
+Overfull \vbox (1.0pt too high) has occurred while \output is active []
+
+ [6]
+Underfull \hbox (badness 1173) in paragraph at lines 375--375
 []\OT1/ptm/m/n/9 Table S4: Name and type of data profile, and the Pearson's cor
 relation
  []
@@ -475,14 +496,16 @@ relation
 
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
- [6]
-Overfull \vbox (1.0pt too high) has occurred while \output is active []
-
  [7]
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
  [8]
+Overfull \vbox (1.0pt too high) has occurred while \output is active []
+
+ [9]
 (./supplemental.bbl
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
 )
@@ -551,23 +574,27 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
 
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
- [9
+
+Overfull \hbox (261.0pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[10
 
 
-]
-(./supplemental.aux)
+] (./supplemental.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 3261 strings out of 493482
- 42198 string characters out of 3134983
+ 3265 strings out of 493482
+ 42299 string characters out of 3134983
  113486 words of memory out of 3000000
- 6468 multiletter control sequences out of 15000+200000
- 29702 words of font info for 86 fonts, out of 3000000 for 9000
+ 6471 multiletter control sequences out of 15000+200000
+ 29183 words of font info for 85 fonts, out of 3000000 for 9000
  961 hyphenation exceptions out of 8191
- 42i,11n,28p,684b,343s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,11n,28p,809b,316s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on supplemental.dvi (9 pages, 33748 bytes).
+Output written on supplemental.dvi (10 pages, 33356 bytes).

@@ -3,75 +3,47 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centering
-\includegraphics[width=0.9\linewidth]{figures/result_band_assign4}
-\caption{Determination of band locations. (A) Reference (manual) annotation. Red circles represent band locations. (B) The band locations determined by the proposed method. (C) The band locations found by QuShape~\citep{Karabiber2013}. (D) Mean squared error (MSE) (E) Pearson's correlation coefficient (F) KL divergence}
+\includegraphics[width=0.9\linewidth]{figures/result_band_assign6}
+\caption{Determination of band locations for data set `ViennaRNA design 03.' (\textbf{a}) Reference (manual) annotation. Red horizontal lines represent all determined locations corresponding to RNA sequence. Red circles represent band locations. (\textbf{b}) The band locations determined by the proposed method. (\textbf{c}) The band locations found by QuShape~\citep{Karabiber2013}.}
 \label{f:band-assign}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BOX PLOTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{figures/boxplots}
+\caption{Proposed method (left) vs. QuShape (right). Each plot represents a certain distribution across 95 data sets. (\textbf{a}) Mean squared error (MSE) for band locations (\textbf{b}) Pearson's correlation coefficient for band locations (\textbf{c}) KL divergence for band locations (\textbf{d}) Pearson's correlation coefficients for area quantification. MSE units are normalized so that average distance between band locations is unity.}
+\label{f:boxplots}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\bP}{{\mathbf{P}}}
+
+\subsection{Robust determination of band positions}\label{ss:band-position}
+Figure~\ref{f:band-assign}(a)--(c) shows the electrophoretic profiles annotated with band locations by three different methods: reference, proposed, and QuShape~\citep{Karabiber2013}, respectively. The reference annotation was based on expert assignments carried out at the time of data acquisition~\citep{lee2014eterna} QuShape was chosen as the comparison target for its superior accuracy in band annotation relative to other software we tested, FAST and ShapeFinder (data not shown); nomod and ddTTP profiles were used as references (RXS1, BGS1) while running QuShape. Visual inspection suggests that the proposed method produces annotations more compatible with the reference. In this profile, the annotation determined by QuShape deviates from the reference position, particularly near the beginning of sequence.
+
+To generally and quantitatively assess the accuracy of automated band annotation, we applied the proposed method and QuShape to 95 data sets acquired in the EteRNA project (Table \ref{t:data}). For both methods, we computed the mean squared error (MSE) of the band locations determined by the proposed method with respect to the reference locations, in units of average distance between locations. For a sense of scale, the typical MSE achieved by expert annotation is 0.15, based on comparisons of different experts' annotations with each other and to next-generation-sequencing-based measurements, where sequence annotation is unambiguous \citep{Kladwang2014}; see Supplemental Fig. S2. In our experience, a band annotation result with MSE lower than 0.5 typically requires no or a small number single-click corrections. The box plots in Figure~\ref{f:boxplots}(a)--(c) and individual MSE values (Supplemental Tables S1 and S2) reveal that the proposed method outperforms QuShape across the data sets. For example, the median MSE of the proposed method is 0.21, well under our target value of 0.5, compared to 0.72 from QuSHAPE. As separate metrics of accuracy, we measured the Pearson's correlation coefficient and the Kullback-Leibler (KL) divergence between the reference and computationally determined band positions.  Again, the average correlation coefficient of the proposed method is 1.68 times closer to 1, and the average KL divergence is 5.84 times smaller. These results quantitatively confirm what we observed qualitatively on using these tools: significantly less manual intervention is needed with the proposed method compared to QuShape.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PEAK AREA
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centering
-\includegraphics[width=0.9\linewidth]{figures/result_peak_area4}
-\caption{Accuracy of quantifying peak areas. (\textbf{a}) The left box plot represents the distribution of the Pearson's correlation coefficients between the manually quantified areas and those quantified by the proposed method over the 95 data sets. The right box plot shows the distribution of the correlation coefficients between the areas quantified manually and by QuShape. (\textbf{b}--\textbf{c}) Correlation of the reference and the quantified areas by the proposed method for data set `FMN Binding Branches' is shown for profiles 1 (SHAPE) and 3 (DMS). (\textbf{d}--\textbf{e}) Correlation of the reference and the areas quantified by QuShape for the same data set.
+\includegraphics[width=0.9\linewidth]{figures/result_peak_area5}
+\caption{Accuracy of quantifying peak areas for data set `FMN Binding Branches'. (\textbf{a}--\textbf{b}) Correlation of the reference and the quantified areas by the proposed method is shown for profiles 1 (SHAPE) and 3 (DMS). (\textbf{c}--\textbf{d}) Correlation of the reference and the areas quantified by QuShape.
 }
 \label{f:peak-area}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\bP}{{\mathbf{P}}}
-
-
-\subsection{Robust determination of band positions}\label{ss:band-position}
-Figure~\ref{f:band-assign}(a)--(c) shows the electrophoretic profiles annotated with band locations by three different methods: reference, proposed, and QuShape~\citep{Karabiber2013}, respectively. The reference annotation was based an expert assignments carried out at the time of data acquisition~\citep{lee2014eterna} QuShape was chosen as the comparison target for its superior accuracy in band annotation relative to other software we tested, FAST and ShapeFinder (data not shown); nomod and ddTTP profiles were used as references (RXS1, BGS1) while running QuShape. Visual inspection suggests that the proposed method produces annotations more compatible with the reference. In this profile, the annotation determined by QuShape deviates from the reference position, particularly near the beginning of sequence.
-
-To generally and quantitatively assess the accuracy of automated band annotation, we applied the proposed method and QuShape to 95 data sets acquired in the EteRNA project (Table \ref{t:data}). For both methods, we computed the mean squared error (MSE) of the band locations determined by the proposed method with respect to the reference locations, in units of average distance between locations. For a sense of scale, the typical MSE achieved by expert annotation is 0.15, based on comparisons of different experts' annotations with each other and to next-generation-sequencing-based measurements, where sequence annotation is unambiguous \citep{Kladwang2014}; see Supplemental Fig. S1. In our experience, a band annotation result with MSE lower than 0.5 typically requires no or a small number single-click corrections. The box plots in Figure~\ref{f:band-assign}(d)--(f) and individual MSE values (Supplemental Tables S1 and S2) reveal that the proposed method outperforms QuShape across the data sets. For example, the median MSE of the proposed method is 0.37, under the target value of 0.5, compared to 1.8 from QuSHAPE. As separate metrics of accuracy, we measured the Pearson's correlation coefficient and the Kullback-Leibler (KL) divergence between the reference and computationally determined band positions.  Again, the average correlation coefficient of the proposed method is 1.92 times closer to 1, and the average KL divergence is 5.49 times smaller. These results quantitatively confirm what we observed qualitatively on using these tools: significantly less manual intervention is needed with the proposed method compared to QuShape.
-
-
 \subsection{Accurate peak-area quantification}\label{ss:peak-area}
 In the RNA structure mapping pipeline, the band annotation is followed by peak deconvolution, which fits each band with a Gaussian curve and outputs the quantified area of the band. To see how these final band quantification results are impacted by the band annotation method, we calculated Pearson's correlation coefficients between band areas quantified based on the band annotation found by the proposed method and those quantified based on the reference annotation. We also repeated the calculation with the band intensities quantified by QuShape. For fair comparison, we applied the same peak deconvolution software (HiTRACE; \citealp{Yoon2011}) to these three methods.
 
-As one example, Figure~\ref{f:peak-area}(b) and (c) shows the correlation of results between the proposed method and reference for a specific data set (FMN Binding Branches) for two chemical modification strategies (SHAPE and DMS).and Figure~\ref{f:peak-area}(d) and (e) shows the correlation between the QuShape and reference results, which is visually worse than the proposed method in both cases. Over all the data sets, Figure~\ref{f:peak-area}(a) and Supplemental Table S1 gives the distribution of the Pearson's correlation coefficients. The median correlation coefficient for the proposed method is 0.969, which is higher than that for QuShape (0.896) and the distribution for the proposed method shows smaller variance. This observation suggests that using the proposed band annotation can significantly enhance the accuracy of band quantification. 
-
-
-\begin{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% HDV RESULT
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{figures/result_hdv_result3}
-\caption{Assessing band annotation results from 187-nt HDV data set. (\textbf{a}--\textbf{c}) Correlation between the areas quantified manually and by FAST, ShapeFinder, and the proposed method over two profiles, respectively.}
-\label{f:hdv-result}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Results in longer RNAs}
-To test the proposed method with a longer RNA molecule, we used a chemical mapping data set from a study on the NMIA (SHAPE) modification of the hepatitis delta virus (HDV) ribozyme (187-bp). For this data set, we included the FAST software~\citep{Pang2011} in comparison. FAST has a hard-wired requirement for ddGTP as reference ladder and could not be used for the other 95 data sets presented earlier (they contained ddTTP profiles instead).
-
-We repeated the experiments presented in Sections~\ref{ss:band-position} and \ref{ss:peak-area} for this HDV data set. The proposed method substantially outperformed FAST and ShapeFinder in terms of MSE (proposed: 1.14, ShapeFinder: 321.03, and FAST: 142.12), although its MSE is higher than those for shorter sequences (Figure~\ref{f:band-assign}(d)). 
-
-
-\emph{I DON'T THINK WE SHOULD SHOW THESE R VALUES -- EVEN FOR OUR NEW METHOD, THEY ARE NOT ACCEPTABLE}
-Figure~\ref{f:hdv-result}(a)-(c) shows the correlation of the reference areas with band areas quantified by the proposed method, ShapeFinder, and FAST, respectively. The band areas quantified by the proposed method show a high degree of correlation with the reference ($r= 0.744$ and $0.785$), whereas the two other methods give unsatisfactory results ($r< 0.05$). 
-
-Figure~\ref{f:hdv-result-detail} shows the distribution of errors in predicted band locations over the position of residues in the HDV data set. This is to check if there is any systematic bias in band annotation on the residue position. The middle diagram represents the mapping between the reference band locations and those determined by the proposed method. The upper and lower plots show the position errors for the proposed method and FAST, respectively. For the proposed method, the errors near the start location tends to be larger than those in the middle. According to our experience, there exist very high-intensity bands in the starting and ending portion of a profile, which hinders even the manual band annotation. The larger error near these segments in a profile may be due to these high-intensity bands. The error pattern in the result from FAST shows a different pattern, and the largest errors appear near residues 40--50. Overall, the errors from the proposed method were consistently lower than those from FAST.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% HDV RESULT DETAIL
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-\centering
-	\psfrag{r}[][][0.5]{$\rho$}
-\includegraphics[width=\linewidth]{figures/result_hdv_result_detail2}
-\caption{Error in band positions with respect to the reference band locations for 187-nt HDV data. Upper plot: error over residue positions for the proposed method; middle: mapping between the reference and computationally predicted band locations; lower: error over residue positions for FAST.}
-\label{f:hdv-result-detail}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{comment}
+As one example, Figure~\ref{f:peak-area}(a)--(b) shows the correlation of results between the proposed method and reference for a specific data set (FMN Binding Branches) for two chemical modification strategies (SHAPE and DMS). Figure~\ref{f:peak-area}(c)--(d) shows the correlation between the QuShape and reference results, which is visually worse than the proposed method in both cases. Over all the data sets, Figure~\ref{f:boxplots}(d) and Supplemental Table S1 gives the distribution of the Pearson's correlation coefficients. The median correlation coefficient for the proposed method is 0.976, which is higher than that for QuShape (0.939) and the distribution for the proposed method shows smaller variance. This observation suggests that using the proposed band annotation can significantly enhance the accuracy of band quantification. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -132,7 +104,7 @@ L-21			& 20 & 413 & 2.00$^a$ & 0.98 \\
 \end{comment}
 
 \subsection{Results in longer, biological RNA sequences}
-In an effort to test the proposed method's compatibility with a wide array of high-throughput RNA structure mapping data sets, we prepared sample experimental datasets of biologically derived RNAs. These additional 21 data sets include Class I ligase ~\citep{Bagby01122009}, L-21 ScaI ribozyme ~\citep{Shi2009}, a four-way junction from E. coli 16S rRNA ~\citep{tian2014nature}, RNA replicases (C19, tC19 and tC19Z) ~\citep{Wochner08042011}, human Hox transcripts $5^\prime$ UTR (Hox5 and Hox9D189) (Nature, in press) and RNA Puzzle entries (\#5-10, and 12) ~\citep{Cruz01042012}. In each dataset, complete sets of chemical modifier reactions (nomod, SHAPE, DMS, CMCT) and reference ladders (ddNTPs) are present. In addition, an HDV ribozyme segment studied previously \citep{Pang2011} allowed direct comparison to the FAST software (Supplemental Fig. S2). These RNAs had lengths up to 400 nucleotides, significantly longer than the ~100-nt EteRNA designs (Table \ref{t:data}). Despite this increase length, the band annotation results from the proposed method were still highly consistent with the reference expert annotation. Excluding an abnormal result from L-21 caused by an experimental issue that disallowed alignment of sequencing ladders, the maximum of MSE is only 0.68. Furthermore, two worst MSE values (0.68 and 0.63) and two lowest $\escore$-scores (0.83 and 0.90) coincide in the results for AdoCbl(noref) and tRNA, confirming $\escore$-score's utility. 
+In an effort to test the proposed method's compatibility with a wide array of high-throughput RNA structure mapping data sets, we prepared sample experimental data sets of biologically derived RNAs. These additional 21 data sets include Class I ligase ~\citep{Bagby01122009}, the Tetrahymena L-21 ScaI ribozyme ~\citep{russell2006}, a four-way junction from the E. coli 16S ribsomal RNA ~\citep{tian2014nature}, RNA replicases (C19, tC19 and tC19Z) ~\citep{Wochner08042011}, human Hox transcripts $5^\prime$ UTR (Hox5 and Hox9D189) ~\citep{xue2014} and RNA Puzzle entries (\#5-10, and 12) ~\citep{Cruz01042012}. In each data set, complete sets of chemical modifier reactions (nomod, SHAPE, DMS, CMCT) and reference ladders (ddNTPs) are present. In addition, a hepatitis delta virus genomic segment studied previously allowed direct comparison to the FAST software (Supplemental Fig. S3) \citep{Pang2011}. These RNAs had lengths up to 400 nucleotides, significantly longer than the ~100-nt EteRNA designs (Table \ref{t:data}). Despite this increase in length, the band annotation results from the proposed method were still highly consistent with the reference expert annotation. Excluding an abnormal result from L-21 caused by an experimental issue that disallowed alignment of sequencing ladders, the maximum of MSE is only 0.68. Furthermore, the two worst MSE values (0.68 and 0.63) and two lowest $\escore$-scores (0.83 and 0.90) coincide in the results for AdoCbl(noref) and tRNA, confirming $\escore$-score's utility. 
 
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
