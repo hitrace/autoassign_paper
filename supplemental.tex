@@ -1,7 +1,7 @@
 \documentclass[letter]{bioinfo}
 
-\copyrightyear{2012}
-\pubyear{2012}
+\copyrightyear{2015}
+\pubyear{2015}
 
 %\usepackage{bibtex}
 %\usepackage[cmex10]{amsmath}
@@ -40,6 +40,9 @@
 \setcounter{figure}{0}
 \setcounter{table}{0}
 
+
+\newcommand{\hilightcolor}{red}
+\newcommand{\hilight}[1]{{\color{\hilightcolor}#1}}
 
 \newcommand{\eg}{{\it e.g.}}
 \newcommand{\ie}{{\it i.e.}}
@@ -85,7 +88,7 @@ $^{4}$Department of Physics, Stanford University, Stanford, CA 94305, USA
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{figures/supp_band_annotation_example}
-\caption{An example of band annotation. The left figure illustrates five profiles (SHAPE, DMS, CMCT, nomod, ddTTP) of CE data and an example of their band annotaion. Each band location is directed by red line from the corresponding row (nucleotide) of the prediction matrix on the right side. Basically the objective of band annotation is to determine band locations such that the ones in the prediction matrix correspond to high intensity values, and zeros to low values. It is also important to keep the locations fairly evenly distributed on the entire profile, as in this figure. }
+\caption{\hilight{An example of band annotation. The left figure illustrates five profiles (SHAPE, DMS, CMCT, nomod, ddTTP) of CE data and an example of their band annotaion. Each band location is directed by red line from the corresponding row (nucleotide) of the prediction matrix on the right side. Basically the objective of band annotation is to determine band locations such that the ones in the prediction matrix correspond to high intensity values, and zeros to low values. It is also important to keep the locations fairly evenly distributed on the entire profile, as in this figure.} }
 \label{f:old_vs_new}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -120,7 +123,7 @@ $^{4}$Department of Physics, Stanford University, Stanford, CA 94305, USA
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{figures/supp_multiple_vs_single}
-\caption{The use of multiple profiles is one of the most important features of the proposed method. In order to quantitatively measure the benifit from taking more than one profiles as input, we visualized the distribution of MSEs on every profiles: the left histogram represents the distribution of MSEs when the proposed method takes multiple profiles as input at the same time, whereas the other represents the same distribution when only single profile is taken into account each time. Clearly, unacceptably high MSEs are less likely to be seen in the left histogram compared to the right one, supporting our claim that the use of multiple profiles enhances the quality of results of the proposed method.}
+\caption{\hilight{The use of multiple profiles is one of the most important features of the proposed method. In order to quantitatively measure the benifit from taking more than one profiles as input, we visualized the distribution of MSEs on every profiles: the left histogram represents the distribution of MSEs when the proposed method takes multiple profiles as input at the same time, whereas the other represents the same distribution when only single profile is taken into account each time. Clearly, unacceptably high MSEs are less likely to be seen in the left histogram compared to the right one, supporting our claim that the use of multiple profiles enhances the quality of results of the proposed method.}}
 \label{f:multiple_vs_single}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

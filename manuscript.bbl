@@ -1,26 +1,14 @@
 \begin{thebibliography}{}
 
-\bibitem[Bagby {\em et~al.}(2009)Bagby, Bergman, Shechner, Yen, and
-  Bartel]{Bagby01122009}
-Bagby, S.~C., Bergman, N.~H., Shechner, D.~M., Yen, C., and Bartel, D.~P.
-  (2009).
+\bibitem[Bagby {\em et~al.}(2009)Bagby {\em et~al.}]{Bagby01122009}
+Bagby, S.~C. {\em et~al.} (2009).
 \newblock A class {I} ligase ribozyme with reduced {Mg}${^{2+}}$ dependence:
   Selection, sequence analysis, and identification of functional tertiary
   interactions.
 \newblock {\em RNA\/}, {\bf 15}(12), 2129--2146.
 
-\bibitem[Cruz {\em et~al.}(2012)Cruz, Blanchet, Boniecki, Bujnicki, Chen, Cao,
-  Das, Ding, Dokholyan, Flores, Huang, Lavender, Lisi, Major, Mikolajczak,
-  Patel, Philips, Puton, Santalucia, Sijenyi, Hermann, Rother, Rother,
-  Serganov, Skorupski, Soltysinski, Sripakdeevong, Tuszynska, Weeks, Waldsich,
-  Wildauer, Leontis, and Westhof]{Cruz01042012}
-Cruz, J.~A., Blanchet, M.-F., Boniecki, M., Bujnicki, J.~M., Chen, S.-J., Cao,
-  S., Das, R., Ding, F., Dokholyan, N.~V., Flores, S.~C., Huang, L., Lavender,
-  C.~A., Lisi, V., Major, F., Mikolajczak, K., Patel, D.~J., Philips, A.,
-  Puton, T., Santalucia, J., Sijenyi, F., Hermann, T., Rother, K., Rother, M.,
-  Serganov, A., Skorupski, M., Soltysinski, T., Sripakdeevong, P., Tuszynska,
-  I., Weeks, K.~M., Waldsich, C., Wildauer, M., Leontis, N.~B., and Westhof, E.
-  (2012).
+\bibitem[Cruz {\em et~al.}(2012)Cruz {\em et~al.}]{Cruz01042012}
+Cruz, J.~A. {\em et~al.} (2012).
 \newblock {RNA}-puzzles: A {CASP}-like evaluation of rna three-dimensional
   structure prediction.
 \newblock {\em RNA\/}, {\bf 18}(4), 610--625.
@@ -97,9 +85,8 @@ Tian, S., Cordero, P., Kladwang, W., and Das, R. (2014).
   structure and uncovers excited states.
 \newblock {\em RNA\/}.
 
-\bibitem[Vasa {\em et~al.}(2008)Vasa, Guex, Wilkinson, Weeks, and
-  Giddings]{vasa2008shapefinder}
-Vasa, S., Guex, N., Wilkinson, K., Weeks, K., and Giddings, M. (2008).
+\bibitem[Vasa {\em et~al.}(2008)Vasa {\em et~al.}]{vasa2008shapefinder}
+Vasa, S. {\em et~al.} (2008).
 \newblock {ShapeFinder: A software system for high-throughput quantitative
   analysis of nucleic acid reactivity information resolved by capillary
   electrophoresis}.
