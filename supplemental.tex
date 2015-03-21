@@ -1,7 +1,7 @@
 \documentclass[letter]{bioinfo}
 
-\copyrightyear{2012}
-\pubyear{2012}
+\copyrightyear{2015}
+\pubyear{2015}
 
 %\usepackage{bibtex}
 %\usepackage[cmex10]{amsmath}
@@ -85,7 +85,7 @@ $^{4}$Department of Physics, Stanford University, Stanford, CA 94305, USA
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{figures/supp_band_annotation_example}
-\caption{An example of band annotation. The left figure illustrates five profiles (SHAPE, DMS, CMCT, nomod, ddTTP) of CE data and an example of their band annotaion. Each band location is directed by red line from the corresponding row (nucleotide) of the prediction matrix on the right side. Basically the objective of band annotation is to determine band locations such that the ones in the prediction matrix correspond to high intensity values, and zeros to low values. It is also important to keep the locations fairly evenly distributed on the entire profile, as in this figure. }
+\caption{\textcolor{red}{An example of band annotation. The left figure illustrates five profiles (SHAPE, DMS, CMCT, nomod, ddTTP) of CE data and an example of their band annotaion. Each band location is directed by red line from the corresponding row (nucleotide) of the prediction matrix on the right side. Basically the objective of band annotation is to determine band locations such that the ones in the prediction matrix correspond to high intensity values, and zeros to low values. It is also important to keep the locations fairly evenly distributed on the entire profile, as in this figure. }}
 \label{f:old_vs_new}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,11 +97,10 @@ $^{4}$Department of Physics, Stanford University, Stanford, CA 94305, USA
 \begin{figure}
 \centering
 \includegraphics[width=0.95\linewidth]{figures/supp_old_new_comparison3}
-\caption{The distributions of mean squared error (MSE) for the results from the proposed method with/without information on the secondary structures, from the same method without 'short G bonus,' also from the proposed algorithm carried out per each individual profile, and from an older method without explicit peak-matching, respectively, over the 95 data sets. MSE units are normalized so that average distance between band locations is unity. The mean and median MSE for the proposed method (mean: 0.839, median: 0.198) are clearly lower than those for the others: no knowledge on secondary structures (mean:0.879, median:0.355), no short G bonus (mean:0.905, median:0.205), the proposed method carried out on individual profiles seperately (mean:0.973, median:0.257), the old method (mean:1.274, median:0.328).  }
+\caption{The distributions of mean squared error (MSE) for the results from the proposed method \textcolor{red}{with/without information on the secondary structures, from the same method without `short G bonus,' also from the proposed algorithm carried out per each individual profile, and from an alternative implementation of the proposed method that omits explicit peak-matching (see Section 2.4 in the main text), respectively, over the 95 data sets. MSE units are normalized so that average distance between band locations is unity. The mean and median MSE for the proposed method (mean: 0.839, median: 0.198) are clearly lower than those for the others: no knowledge on secondary structures (mean:0.879, median:0.355), no short G bonus (mean:0.905, median:0.205), the proposed method carried out on individual profiles separately (mean:0.973, median:0.257), the method without explicit peak-matching (mean:1.274, median:0.328).}}
 \label{f:old_vs_new}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -219,7 +218,7 @@ ViennaRNA design 01			&0.84 	&3.20 	&0.67 \\
 ViennaRNA design 03			&0.81 	&0.06 	&0.25 \\
 Fragments of Old Winners (4)	&1.00 	&0.09 	&0.21 \\
 GOOD SOLUTION					&1.00 	&0.15 	&0.57 \\
-Mod of Quasispecies design Fragments of old winners v2		&0.87 	&1.01 	&10.48 \\
+Mod of Quasispecies design Fragments of old winners v2		&0.87 	&1.01 	 &10.48 \\
 Combo - improved				&1.00 	&0.12 	&0.30 \\
 EteRNA ensemble design 0 (sparse 5) 		&1.00 	&0.08 	&0.59 \\
 EteRNA ensemble design 1 (sparse 5)		&0.97 	&0.20 	&0.75 \\
@@ -456,8 +455,8 @@ JP-14-0-17 (FMN-SBS II)	&	SHAPE	&	0.9441 	&	0.9762 	\\
 JP-14-0-17 (FMN-SBS II)	&	DMS	&	0.9827 	&	0.9684 	\\
 SBSII-2	&	SHAPE	&	0.9177 	&	0.9057 	\\
 SBSII-2	&	DMS	&	0.9570 	&	0.9093 	\\
-Mod of Quasispecies design Fragments of old winners	&	SHAPE	&	0.9422 	&	0.9724 	\\
-Mod of Quasispecies design Fragments of old winners	&	DMS	&	0.9649 	&	0.4340 	\\
+Mod of Quasispecies design Fragments of old winners	&	SHAPE	&	0.9422 	&	 0.9724 	\\
+Mod of Quasispecies design Fragments of old winners	&	DMS	&	0.9649 	&	 0.4340 	\\
 NUPACK design 01	&	SHAPE	&	0.9675 	&	0.9706 	\\
 NUPACK design 01	&	DMS	&	0.9858 	&	0.9842 	\\
 NUPACK design 02	&	SHAPE	&	0.8283 	&	0.5124 	\\
@@ -488,8 +487,8 @@ Fragments of Old Winners (4)	&	SHAPE	&	0.9743 	&	0.9742 	\\
 Fragments of Old Winners (4)	&	DMS	&	0.9932 	&	0.9890 	\\
 GOOD SOLUTION	&	SHAPE	&	0.9518 	&	0.9355 	\\
 GOOD SOLUTION	&	DMS	&	0.9840 	&	0.9714 	\\
-Mod of Quasispecies design Fragments of old winners v2	&	SHAPE	&	0.5981 	&	0.6670 	\\
-Mod of Quasispecies design Fragments of old winners v2	&	DMS	&	0.5231 	&	0.9051 	\\
+Mod of Quasispecies design Fragments of old winners v2	&	SHAPE	&	0.5981 	 &	0.6670 	\\
+Mod of Quasispecies design Fragments of old winners v2	&	DMS	&	0.5231 	&	 0.9051 	\\
 Combo - improved	&	SHAPE	&	0.9483 	&	0.9111 	\\
 Combo - improved	&	DMS	&	0.9960 	&	0.9854 	\\
 EteRNA ensemble design 0 (sparse 5)	&	SHAPE	&	0.9528 	&	0.9265 	\\
@@ -508,13 +507,13 @@ EteRNA ensemble design 6 (L2)	&	SHAPE	&	0.9795 	&	0.9049 	\\
 EteRNA ensemble design 6 (L2)	&	DMS	&	0.9885 	&	0.8338 	\\
 EteRNA ensemble design 7 (L2)	&	SHAPE	&	0.9676 	&	0.9730 	\\
 EteRNA ensemble design 7 (L2)	&	DMS	&	0.9512 	&	0.9526 	\\
-EteRNA ensemble design 08 (conventional)	&	SHAPE	&	0.9904 	&	0.9249 	\\
+EteRNA ensemble design 08 (conventional)	&	SHAPE	&	0.9904 	&	0.9249 	 \\
 EteRNA ensemble design 08 (conventional)	&	DMS	&	0.9947 	&	0.9326 	\\
-EteRNA ensemble design 09 (conventional)	&	SHAPE	&	0.9413 	&	0.9193 	\\
+EteRNA ensemble design 09 (conventional)	&	SHAPE	&	0.9413 	&	0.9193 	 \\
 EteRNA ensemble design 09 (conventional)	&	DMS	&	0.9930 	&	0.9218 	\\
-EteRNA ensemble design 10 (conventional)	&	SHAPE	&	0.6075 	&	0.8549 	\\
+EteRNA ensemble design 10 (conventional)	&	SHAPE	&	0.6075 	&	0.8549 	 \\
 EteRNA ensemble design 10 (conventional)	&	DMS	&	0.9651 	&	0.9046 	\\
-EteRNA ensemble design 11 (conventional)	&	SHAPE	&	0.9865 	&	0.9857 	\\
+EteRNA ensemble design 11 (conventional)	&	SHAPE	&	0.9865 	&	0.9857 	 \\
 EteRNA ensemble design 11 (conventional)	&	DMS	&	0.9881 	&	0.9845 	\\
 Wild Cross - 2	&	SHAPE	&	0.9936 	&	0.7966 	\\
 Wild Cross - 2	&	DMS	&	0.9957 	&	0.9414 	\\
@@ -524,7 +523,7 @@ Mod of brourds 1 st round -	&	SHAPE	&	0.9992 	&	0.8678 	\\
 Mod of brourds 1 st round -	&	DMS	&	0.9998 	&	0.9901 	\\
 Unique Stacks	&	SHAPE	&	0.9687 	&	0.8632 	\\
 Unique Stacks	&	DMS	&	0.9832 	&	0.8142 	\\
-G-C pairs in multloops in same direction	&	SHAPE	&	0.9857 	&	0.9698 	\\
+G-C pairs in multloops in same direction	&	SHAPE	&	0.9857 	&	0.9698 	 \\
 G-C pairs in multloops in same direction	&	DMS	&	0.9972 	&	0.9866 	\\
 Fisker's Binding branches	&	SHAPE	&	0.3513 	&	0.9764 	\\
 Fisker's Binding branches	&	DMS	&	0.2634 	&	0.9424 	\\
@@ -538,9 +537,9 @@ NUPACK design 04	&	SHAPE	&	0.7580 	&	0.9667 	\\
 NUPACK design 04	&	DMS	&	0.9234 	&	0.9888 	\\
 ViennaRNA design 04	&	SHAPE	&	0.8825 	&	0.8842 	\\
 ViennaRNA design 04	&	DMS	&	0.9937 	&	0.9872 	\\
-EteRNA ensemble design 02 (conventional)	&	SHAPE	&	0.9477 	&	0.9561 	\\
+EteRNA ensemble design 02 (conventional)	&	SHAPE	&	0.9477 	&	0.9561 	 \\
 EteRNA ensemble design 02 (conventional)	&	DMS	&	0.8835 	&	0.8607 	\\
-EteRNA ensemble design 04 (conventional)	&	SHAPE	&	0.9796 	&	0.9433 	\\
+EteRNA ensemble design 04 (conventional)	&	SHAPE	&	0.9796 	&	0.9433 	 \\
 EteRNA ensemble design 04 (conventional)	&	DMS	&	0.9903 	&	0.7494 	\\
 EteRNA ensemble design 05 (sparse 5)	&	SHAPE	&	0.8986 	&	0.9915 	\\
 EteRNA ensemble design 05 (sparse 5)	&	DMS	&	0.9937 	&	0.9961 	\\
@@ -564,7 +563,7 @@ wisdave's 2nd round	&	SHAPE	&	0.9796 	&	0.8770 	\\
 C - BACK	&	SHAPE	&	0.9705 	&	0.9441 	\\
 Beauty in Balance	&	SHAPE	&	0.9879 	&	0.7477 	\\
 Very Low Entropy <0.6 T-B-C \#5	&	SHAPE	&	0.9745 	&	0.8384 	\\
-Improves on Quasispecies UUU/GCA Triloop	&	SHAPE	&	0.9849 	&	0.9971 	\\
+Improves on Quasispecies UUU/GCA Triloop	&	SHAPE	&	0.9849 	&	0.9971 	 \\
 sta1	&	SHAPE	&	0.9954 	&	0.9117 	\\
 
 \end{longtable}
@@ -587,8 +586,6 @@ sta1	&	SHAPE	&	0.9954 	&	0.9117 	\\
 
 
 %\bibliographystyle{natbib}
-%\bibliographystyle{reference}
-%\bibliographystyle{unsrt}
 %\bibliography{reference}
 
 
