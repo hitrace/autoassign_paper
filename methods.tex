@@ -171,7 +171,7 @@ where \hilight{$S_\textrm{dist}$ and $\bold{S}_\textrm{peak}$ are functions retu
 
 \subsubsection{Distance bonus term}
 
-It is empirically supported that the length between consecutive locations, $k'$ and $k$, is quite evenly distributed. $S_{\textrm{dist}}$ is the bonus term that utilizes this fact and induces the dynamic programming to end up with regularly stretched output. In addition, observations on reference annotations suggest that a gap between two consecutive locations tends to be shorter when the preceding location corresponds to `$\mathtt{G}$' in the RNA sequence~\citep{mills1979structure,sasaki1998identification}. These observations lead to the definition of distance bonus term as follows:
+It is empirically supported that the length between consecutive locations, $k'$ and $k$, is quite evenly distributed. $S_{\textrm{dist}}$ is the bonus term that utilizes this fact and induces the dynamic programming to end up with regularly stretched output. In addition, observations on reference annotations suggest that a gap between two consecutive locations tends to be shorter when the preceding location corresponds to `$\mathtt{G}$' in the RNA sequence~\textcolor{red}{\citep{mills1979structure,sasaki1998identification}}. These observations lead to the definition of distance bonus term as follows:
 %
 \begin{equation}
 S_{\textrm{dist}} (n,d) = {{f_{(\rho', {\rho \over 2})}(d)} \over {f_{(\rho', {\rho \over 2})}(\hilight{\rho'})}}
