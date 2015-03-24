@@ -30,18 +30,20 @@
 \newlabel{ss:pred_mat}{{{2.2}}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {{2.3}}Initialization of candidate peaks from profiles}{2}}
 \newlabel{ss:preproc}{{{2.3}}{2}}
-\newlabel{e:gamma}{{1}{2}}
 \citation{hofacker2003vienna}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Prediction matrix. (\textbf  {a}) Definition of the values appearing in the peak prediction matrix. 1 means that a band is expected in that residue position, whereas 0 means that no band is expected. $^a$The bands on ddTTP are expected to be at positions right before where $\mathtt  {A}$s are located (and showing up right immediately afterward in electropherograms of complementary DNA). (\textbf  {b}) Example target sequence and its estimated secondary structure, here predicted by the Vienna RNA package\nobreakspace  {}\citep  {hofacker2003vienna}. (\textbf  {c}) The prediction matrix for the example in (\textbf  {b}).}}{3}}
 \newlabel{f:pred-mat}{{2}{3}}
+\newlabel{e:gamma}{{1}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {{2.4}}Formulation as dynamic programming}{3}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.4}.1}}Basic motivation}{3}}
 \newlabel{e:F}{{2}{3}}
 \newlabel{sss:primary_profile}{{{{2.4}.2}}{3}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.4}.2}}Primary profile}{3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.4}.2}}Degeneracy breaking and primary profile}{3}}
 \newlabel{e:F2}{{3}{3}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.4}.3}}Backtracking}{3}}
 \newlabel{e:L}{{4}{3}}
+\citation{mills1979structure}
+\citation{sasaki1998identification}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Formulation as dynamic programming. (\textbf  {a}) ${\mathbf  {F}}(n,k,p)$ depends on ${\mathbf  {F}}(n-1,k',p')$ in the previous column and the gap bonus {\color  {red}$S(n,k',k,p)$} between them. The best tuple $(k',p')$ that maximizes ${\mathbf  {F}}(n,k,p)$ is searched for in the range $k-2.5\rho \le k' < k; k'+p' < k+p$ and is stored in the backtracking matrices ${\mathbf  {L}}_k(n,k,p)$, ${\mathbf  {L}}_p(n,k,p)$. The computation of $S(n,k',k,p)$ is based on the bonus matrix ${\mathbf  {B}}$ and the prediction matrix ${\mathbf  {P}}$ (Section\nobreakspace  {}{2.5}\hbox {}). (\textbf  {b}) Example. The data set used is `FMN Apatamer with single binding site.' $N=88$, $M=5$, $K=1324$. The backtracking path is represented by a series of red circles superimposed on the score matrix ${\mathbf  {F}}$; since ${\mathbf  {F}}$ is 3-dimensional, the figure alternatively represents a reduced matrix ${\mathbf  {F}}'$ defined by ${\mathbf  {F}}'(n,k)=\qopname  \relax m{max}_{p'} {\mathbf  {F}}(n,k,p')$. The output array ${\mathbf  {y}}_k$, which stores the position of each circle, indicates the band locations.}}{4}}
 \newlabel{f:dp-formulation}{{3}{4}}
 \newlabel{e:y}{{5}{4}}
@@ -69,7 +71,7 @@
 \newlabel{s:result}{{3}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {{3.1}}Robust determination of band positions}{5}}
 \newlabel{ss:band-position}{{{3.1}}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Proposed method (left) vs. QuShape (right). Each plot represents a certain distribution across 95 data sets. (\textbf  {a}) Mean squared error (MSE) for band locations (\textbf  {b}) Pearson's correlation coefficient for band locations (\textbf  {c}) KL divergence for band locations (\textbf  {d}) Pearson's correlation coefficients for area quantification. MSE units are normalized so that average distance between band locations is unity.}}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Proposed method (left) vs. QuShape (right). Each plot represents each metric's distribution across 95 data sets. (\textbf  {a}) Mean squared error (MSE) for band locations (\textbf  {b}) Pearson's correlation coefficient for band locations (\textbf  {c}) KL divergence for band locations (\textbf  {d}) Pearson's correlation coefficients for area quantification. MSE units are normalized so that average distance between band locations is unity.}}{5}}
 \newlabel{f:boxplots}{{5}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {{3.2}}Accurate peak-area quantification}{5}}
 \newlabel{ss:peak-area}{{{3.2}}{5}}
@@ -90,27 +92,29 @@
 \citation{tian2014nature}
 \bibstyle{natbib}
 \bibdata{reference}
-\bibcite{Bagby01122009}{{1}{2009}{{Bagby {\em  et~al.}}}{{Bagby, Bergman, Shechner, Yen, and Bartel}}}
-\bibcite{Cruz01042012}{{2}{2012}{{Cruz {\em  et~al.}}}{{Cruz, Blanchet, Boniecki, Bujnicki, Chen, Cao, Das, Ding, Dokholyan, Flores, Huang, Lavender, Lisi, Major, Mikolajczak, Patel, Philips, Puton, Santalucia, Sijenyi, Hermann, Rother, Rother, Serganov, Skorupski, Soltysinski, Sripakdeevong, Tuszynska, Weeks, Waldsich, Wildauer, Leontis, and Westhof}}}
+\bibcite{Bagby01122009}{{1}{2009}{{Bagby {\em  et~al.}}}{{Bagby {\em  et~al.}}}}
+\bibcite{Cruz01042012}{{2}{2012}{{Cruz {\em  et~al.}}}{{Cruz {\em  et~al.}}}}
 \bibcite{hofacker2003vienna}{{3}{2003}{{Hofacker}}{{Hofacker}}}
 \bibcite{Karabiber2013}{{4}{2013}{{Karabiber {\em  et~al.}}}{{Karabiber, McGinnis, Favorov, and Weeks}}}
 \bibcite{kladwangmutatemap2011}{{5}{2011}{{Kladwang {\em  et~al.}}}{{Kladwang, VanLang, Cordero, and Das}}}
 \bibcite{Kladwang2014}{{6}{2014}{{Kladwang {\em  et~al.}}}{{Kladwang, Mann, Becka, Tian, Kim, Yoon, and Das}}}
 \bibcite{lee2014eterna}{{7}{2014}{{Lee {\em  et~al.}}}{{Lee, Kladwang, Lee, Cantu, Azizyan, Kim, Limpaecher, Yoon, Treuille, Das, and Participants}}}
 \bibcite{Lucks2011}{{8}{2011}{{Lucks {\em  et~al.}}}{{Lucks, Mortimer, Trapnell, Luo, Aviran, Schroth, Pachter, Doudna, and Arkin}}}
-\bibcite{mitra2008high}{{9}{2008}{{Mitra {\em  et~al.}}}{{Mitra, Shcherbakova, Altman, Brenowitz, and Laederach}}}
-\bibcite{Pang2011}{{10}{2011}{{Pang {\em  et~al.}}}{{Pang, Elazar, Pham, and Glenn}}}
-\bibcite{russell2006}{{11}{2006}{{Russell {\em  et~al.}}}{{Russell, Das, Suh, Travers, A, MA, and D}}}
-\bibcite{tian2014nature}{{12}{2014}{{Tian {\em  et~al.}}}{{Tian, Cordero, Kladwang, and Das}}}
-\bibcite{vasa2008shapefinder}{{13}{2008}{{Vasa {\em  et~al.}}}{{Vasa, Guex, Wilkinson, Weeks, and Giddings}}}
-\bibcite{weeksnature2009}{{14}{2009}{{Watts {\em  et~al.}}}{{Watts, Dang, Gorelick, Leonard, Bess, Swanstrom, Burch, and Weeks}}}
-\bibcite{weeks2010}{{15}{2010}{{Weeks}}{{Weeks}}}
-\bibcite{Wochner08042011}{{16}{2011}{{Wochner {\em  et~al.}}}{{Wochner, Attwater, Coulson, and Holliger}}}
-\bibcite{xue2014}{{17}{2014}{{Xue {\em  et~al.}}}{{Xue, Tian, Fujii, Kladwang, Das, and Barna}}}
+\bibcite{mills1979structure}{{9}{1979}{{Mills and Kramer}}{{Mills and Kramer}}}
+\bibcite{mitra2008high}{{10}{2008}{{Mitra {\em  et~al.}}}{{Mitra, Shcherbakova, Altman, Brenowitz, and Laederach}}}
+\bibcite{Pang2011}{{11}{2011}{{Pang {\em  et~al.}}}{{Pang, Elazar, Pham, and Glenn}}}
+\bibcite{russell2006}{{12}{2006}{{Russell {\em  et~al.}}}{{Russell, Das, Suh, Travers, A, MA, and D}}}
+\bibcite{sasaki1998identification}{{13}{1998}{{Sasaki {\em  et~al.}}}{{Sasaki, Izawa, Sugahara, Tanaka, Watahiki, Ohara, Funaki, Yoneda, Ozawa, Matsuura, {\em  et~al.}}}}
+\bibcite{tian2014nature}{{14}{2014}{{Tian {\em  et~al.}}}{{Tian, Cordero, Kladwang, and Das}}}
+\bibcite{vasa2008shapefinder}{{15}{2008}{{Vasa {\em  et~al.}}}{{Vasa {\em  et~al.}}}}
+\bibcite{weeksnature2009}{{16}{2009}{{Watts {\em  et~al.}}}{{Watts, Dang, Gorelick, Leonard, Bess, Swanstrom, Burch, and Weeks}}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Discussion}{7}}
 \newlabel{s:discussion}{{4}{7}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{7}}
 \newlabel{s:conclusion}{{5}{7}}
 \@writefile{toc}{\contentsline {paragraph}{Funding\text  {\rm  :}}{7}}
-\bibcite{Yoon2011}{{18}{2011}{{Yoon {\em  et~al.}}}{{Yoon, Kim, Hum, Kim, Park, Kladwang, and Das}}}
+\bibcite{weeks2010}{{17}{2010}{{Weeks}}{{Weeks}}}
+\bibcite{Wochner08042011}{{18}{2011}{{Wochner {\em  et~al.}}}{{Wochner, Attwater, Coulson, and Holliger}}}
+\bibcite{xue2014}{{19}{2014}{{Xue {\em  et~al.}}}{{Xue, Tian, Fujii, Kladwang, Das, and Barna}}}
+\bibcite{Yoon2011}{{20}{2011}{{Yoon {\em  et~al.}}}{{Yoon, Kim, Hum, Kim, Park, Kladwang, and Das}}}
 \global\@namedef{@lastpage@}{8}
