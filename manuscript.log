@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=latex 2013.3.9)  25 MAR 2015 01:01
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=latex 2013.3.9)  28 MAR 2015 22:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -539,12 +539,6 @@ Underfull \hbox (badness 1259) in paragraph at lines 167--170
  []
 
 
-Underfull \hbox (badness 1107) in paragraph at lines 211--214
-\OT1/ptm/m/n/8 computational expense. [A separate dynamic-programming-based ban
-d
- []
-
-
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
  []
@@ -558,7 +552,7 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
  []
 
 [4]
-Underfull \hbox (badness 1874) in paragraph at lines 256--256
+Underfull \hbox (badness 1874) in paragraph at lines 255--255
 []\OT1/ptm/b/n/8 Table 1. \OT1/ptm/m/n/8 High-throughput RNA structure mapping 
 data sets
  []
@@ -658,11 +652,7 @@ Underfull \hbox (badness 1540) in paragraph at lines 11--12
 \OT1/ptm/m/n/9 (The MathWorks, http://www.mathworks.com), and under the
  []
 
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-(./conclusion.tex) (./manuscript.bbl
+) (./conclusion.tex) (./manuscript.bbl
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 8.
 
@@ -694,52 +684,52 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 118.72272pt
+Extra height:10.0pt when 145.72272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 119.72272pt
+Extra height:10.0pt when 146.72272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 120.72272pt
+Extra height:10.0pt when 147.72272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 121.72272pt
+Extra height:10.0pt when 148.72272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 122.72272pt
+Extra height:10.0pt when 149.72272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 123.72272pt
+Extra height:10.0pt when 150.72272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 124.72272pt
+Extra height:10.0pt when 151.72272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 125.72272pt
+Extra height:10.0pt when 152.72272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 126.72272pt
+Extra height:10.0pt when 153.72272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:0.0pt when 127.72272pt
+Extra height:0.0pt when 154.72272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-(2)Left:127.72272pt Right:111.44545pt Output:127.72272pt
+(2)Left:154.72272pt Right:138.44545pt Output:154.72272pt
 - LAST -
 Extra skip:0.0pt
-Left:127.72272pt
-Right:111.44545pt
-Output:127.72272pt
+Left:154.72272pt
+Right:138.44545pt
+Output:154.72272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -767,10 +757,10 @@ LaTeX Font Warning: Size substitutions with differences
 Here is how much of TeX's memory you used:
  3420 strings out of 493482
  44261 string characters out of 3134983
- 109937 words of memory out of 3000000
+ 109938 words of memory out of 3000000
  6590 multiletter control sequences out of 15000+200000
  41804 words of font info for 120 fonts, out of 3000000 for 9000
  961 hyphenation exceptions out of 8191
  42i,14n,32p,1874b,468s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on manuscript.dvi (8 pages, 69680 bytes).
+Output written on manuscript.dvi (8 pages, 70220 bytes).

@@ -34,7 +34,7 @@ Figure~\ref{f:pred-mat}(b) shows an example RNA sequence with its secondary stru
 
 
 \subsection{Initialization of candidate peaks from profiles}\label{ss:preproc}
-\hilight{The first step is to locate prominent peaks on each profile (each column of $\bA$). As discussed in Section~\ref{ss:problem_definition}, peaks in CE profiles are the locations where significant reactivities are observed, implying that bands are more likely to exists at the same position. Thus, these peaks are matched with bands afterwards.} (Here and below, `peak' refers to a local maximum in each profile, \hilight{of which there may be many}; whereas `bands' refers to the desired $N$ band locations.) Let $\ba_j$ be the $j$-th column vector of $\bA, 1 \le j \le M$. Briefly, the following procedure is executed.
+\hilight{The first step is to locate prominent peaks on each profile (each column of $\bA$). As discussed in Section~\ref{ss:problem_definition}, peaks in CE profiles are the locations where significant reactivities are observed, implying that bands are more likely to exist at the same position. Thus, these peaks are matched with bands afterwards.} (Here and below, `peak' refers to a local maximum in each profile, \hilight{of which there may be many}; whereas `bands' refers to the desired $N$ band locations.) Let $\ba_j$ be the $j$-th column vector of $\bA, 1 \le j \le M$. Briefly, the following procedure is executed.
 %
 \begin{enumerate}
 \item Select candidates for the peaks in $\ba_j$ that can be mapped into elements of the sequence $\bs$. These peaks are selected to satisfy the following conditions. First, a peak $\ba_j(k)$ must have a higher intensity (a fundamental property of a peak) than those of its neighbors, $\ba_j(k-1)$ and $\ba_j(k+1)$. Second, a peak must be with a significant curvature which can be measured by the second derivative of time series; since the time series given are discrete, the curvature is estimated as belows:
@@ -207,11 +207,10 @@ S^m_{\textrm{peak}}(k) = \max_{\substack{|q| < \rho/2}} {{f_{(0, {\rho \over 5})
 for $m < M$, and
 %
 \begin{equation}\label{e:peak-matching}
-S^M_{\textrm{peak}}(k,p) = {{f_{(0, {\rho \over 5})}(p)} \over {f_{(0, {\rho \over 5})}(0)}} \cdot \bB(k+p, m) \cdot (M-1)
+S^M_{\textrm{peak}}(k,p) = {{f_{(0, {\rho \over 5})}(p)} \over {f_{(0, {\rho \over 5})}(0)}} \cdot \bB(k+p, \hilight{M}) \cdot (M-1)
 \end{equation}
 %
-As described above, this peak bonus is taken from the primary profile (typically a sequencing ladder) rather than searching for optimal peak/band matches across all profiles to allow degeneracy breaking at reasonable computational expense. [A separate dynamic-programming-based band annotation algorithm was also tested which does not carry out the peak/band degeneracy breaking of eq. (\ref{e:peak-matching}) and gave slightly worse performance; see Supplemental Figure S2.]
-
+As described above, this peak bonus is taken from the primary profile (typically a sequencing ladder) rather than searching for optimal peak/band matches across all profiles to allow degeneracy breaking at reasonable computational expense. \hilightb{This feature of peak bonus term strongly encourages (though does not strictly regulate) the software not to correspond bands to positions where no candidate peak exists on the primary profile, or equivalently, not to take $p$ such that $\bB(k+p, M) = 0$, because no peak bonus will be attained from the primary profile otherwise as defined in eq. (\ref{e:peak-matching}).} [A separate dynamic-programming-based band annotation algorithm was also tested which does not carry out the peak/band degeneracy breaking of eq. (\ref{e:peak-matching}) and gave slightly worse performance; see Supplemental Figure S2.]
 
 \subsection{Reliability evaluation}\label{ss:reliability-evaluation}
 While the presented band annotation method was found to be quite accurate, it was not perfect. We therefore sought a method to assess the reliability of automatically determined band locations prior to practical application. We devised a score to predict the quality of results. The idea behind the score is that when optimization of eq. (\ref{e:score-term}) fails to achieve the desirable solution, we typically see extraordinarily short or long distances between consecutive locations (little information from $S_\textrm{dist}$) or bands on the primary profile without proper matching to peaks (little information from $S_\textrm{peak}$). The $\escore$-score is defined with the following terms:
