@@ -1,26 +1,14 @@
 \begin{thebibliography}{}
 
-\bibitem[Bagby {\em et~al.}(2009)Bagby, Bergman, Shechner, Yen, and
-  Bartel]{Bagby01122009}
-Bagby, S.~C., Bergman, N.~H., Shechner, D.~M., Yen, C., and Bartel, D.~P.
-  (2009).
+\bibitem[Bagby {\em et~al.}(2009)Bagby {\em et~al.}]{Bagby01122009}
+Bagby, S.~C. {\em et~al.} (2009).
 \newblock A class {I} ligase ribozyme with reduced {Mg}${^{2+}}$ dependence:
   Selection, sequence analysis, and identification of functional tertiary
   interactions.
 \newblock {\em RNA\/}, {\bf 15}(12), 2129--2146.
 
-\bibitem[Cruz {\em et~al.}(2012)Cruz, Blanchet, Boniecki, Bujnicki, Chen, Cao,
-  Das, Ding, Dokholyan, Flores, Huang, Lavender, Lisi, Major, Mikolajczak,
-  Patel, Philips, Puton, Santalucia, Sijenyi, Hermann, Rother, Rother,
-  Serganov, Skorupski, Soltysinski, Sripakdeevong, Tuszynska, Weeks, Waldsich,
-  Wildauer, Leontis, and Westhof]{Cruz01042012}
-Cruz, J.~A., Blanchet, M.-F., Boniecki, M., Bujnicki, J.~M., Chen, S.-J., Cao,
-  S., Das, R., Ding, F., Dokholyan, N.~V., Flores, S.~C., Huang, L., Lavender,
-  C.~A., Lisi, V., Major, F., Mikolajczak, K., Patel, D.~J., Philips, A.,
-  Puton, T., Santalucia, J., Sijenyi, F., Hermann, T., Rother, K., Rother, M.,
-  Serganov, A., Skorupski, M., Soltysinski, T., Sripakdeevong, P., Tuszynska,
-  I., Weeks, K.~M., Waldsich, C., Wildauer, M., Leontis, N.~B., and Westhof, E.
-  (2012).
+\bibitem[Cruz {\em et~al.}(2012)Cruz {\em et~al.}]{Cruz01042012}
+Cruz, J.~A. {\em et~al.} (2012).
 \newblock {RNA}-puzzles: A {CASP}-like evaluation of rna three-dimensional
   structure prediction.
 \newblock {\em RNA\/}, {\bf 18}(4), 610--625.
@@ -69,6 +57,12 @@ Lucks, J.~B., Mortimer, S.~A., Trapnell, C., Luo, S., Aviran, S., Schroth,
 \newblock {\em Proceedings of the National Academy of Sciences\/}, {\bf
   108}(27), 11063--11068.
 
+\bibitem[Mills and Kramer(1979)Mills and Kramer]{mills1979structure}
+Mills, D.~R. and Kramer, F.~R. (1979).
+\newblock Structure-independent nucleotide sequence analysis.
+\newblock {\em Proceedings of the National Academy of Sciences\/}, {\bf 76}(5),
+  2232--2235.
+
 \bibitem[Mitra {\em et~al.}(2008)Mitra, Shcherbakova, Altman, Brenowitz, and
   Laederach]{mitra2008high}
 Mitra, S., Shcherbakova, I., Altman, R., Brenowitz, M., and Laederach, A.
@@ -90,6 +84,16 @@ Russell, R., Das, R., Suh, H., Travers, K., A, L., MA, E., and D, H. (2006).
   intermediate in rna folding.
 \newblock {\em J. Mol. Biol.}, {\bf 363}(2), 531--44.
 
+\bibitem[Sasaki {\em et~al.}(1998)Sasaki, Izawa, Sugahara, Tanaka, Watahiki,
+  Ohara, Funaki, Yoneda, Ozawa, Matsuura, {\em
+  et~al.}]{sasaki1998identification}
+Sasaki, N., Izawa, M., Sugahara, Y., Tanaka, T., Watahiki, M., Ohara, E.,
+  Funaki, H., Yoneda, Y., Ozawa, K., Matsuura, S., {\em et~al.} (1998).
+\newblock Identification of stable rna hairpins causing band compression in
+  transcriptional sequencing and their elimination by use of inosine
+  triphosphate.
+\newblock {\em Gene\/}, {\bf 222}(1), 17--24.
+
 \bibitem[Tian {\em et~al.}(2014)Tian, Cordero, Kladwang, and
   Das]{tian2014nature}
 Tian, S., Cordero, P., Kladwang, W., and Das, R. (2014).
@@ -97,9 +101,8 @@ Tian, S., Cordero, P., Kladwang, W., and Das, R. (2014).
   structure and uncovers excited states.
 \newblock {\em RNA\/}.
 
-\bibitem[Vasa {\em et~al.}(2008)Vasa, Guex, Wilkinson, Weeks, and
-  Giddings]{vasa2008shapefinder}
-Vasa, S., Guex, N., Wilkinson, K., Weeks, K., and Giddings, M. (2008).
+\bibitem[Vasa {\em et~al.}(2008)Vasa {\em et~al.}]{vasa2008shapefinder}
+Vasa, S. {\em et~al.} (2008).
 \newblock {ShapeFinder: A software system for high-throughput quantitative
   analysis of nucleic acid reactivity information resolved by capillary
   electrophoresis}.
