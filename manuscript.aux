@@ -40,12 +40,12 @@
 \newlabel{sss:primary_profile}{{{{2.4}.2}}{3}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.4}.2}}Degeneracy breaking and primary profile}{3}}
 \newlabel{e:F2}{{3}{3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.4}.3}}Backtracking}{3}}
+\newlabel{e:L}{{4}{3}}
 \citation{mills1979structure}
 \citation{sasaki1998identification}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Formulation as dynamic programming. (\textbf  {a}) ${\mathbf  {F}}(n,k,p)$ depends on ${\mathbf  {F}}(n-1,k',p')$ in the previous column and the gap bonus {\color  {red}$S(n,k',k,p)$} between them. The best tuple $(k',p')$ that maximizes ${\mathbf  {F}}(n,k,p)$ is searched for in the range $k-2.5\rho \le k' < k; k'+p' < k+p$ and is stored in the backtracking matrices ${\mathbf  {L}}_k(n,k,p)$, ${\mathbf  {L}}_p(n,k,p)$. The computation of $S(n,k',k,p)$ is based on the bonus matrix ${\mathbf  {B}}$ and the prediction matrix ${\mathbf  {P}}$ (Section\nobreakspace  {}{2.5}\hbox {}). (\textbf  {b}) Example. The data set used is `FMN Apatamer with single binding site.' $N=88$, $M=5$, $K=1324$. The backtracking path is represented by a series of red circles superimposed on the score matrix ${\mathbf  {F}}$; since ${\mathbf  {F}}$ is 3-dimensional, the figure alternatively represents a reduced matrix ${\mathbf  {F}}'$ defined by ${\mathbf  {F}}'(n,k)=\qopname  \relax m{max}_{p'} {\mathbf  {F}}(n,k,p')$. The output array ${\mathbf  {y}}_k$, which stores the position of each circle, indicates the band locations.}}{4}}
 \newlabel{f:dp-formulation}{{3}{4}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.4}.3}}Backtracking}{4}}
-\newlabel{e:L}{{4}{4}}
 \newlabel{e:y}{{5}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {{2.5}}Description of score term}{4}}
 \newlabel{ss:cost}{{{2.5}}{4}}
@@ -64,12 +64,12 @@
 \citation{Kladwang2014}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces High-throughput RNA structure mapping data sets analyzed by the proposed method (total 522 profiles and 47210 bands). Excluding the last line, there are 95 data sets. More details of these 95 data sets are described in \citet  {lee2014eterna}. }}{5}}
 \newlabel{t:data}{{1}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Determination of band locations for data set `ViennaRNA design 03.' (\textbf  {a}) Reference (manual) annotation. Red horizontal lines represent all determined band locations corresponding to RNA sequence. Red circles represent the bands reactive to chemical agents for each profile. (\textbf  {b}) The band locations determined by the proposed method. (\textbf  {c}) The band locations found by QuShape\nobreakspace  {}\citep  {Karabiber2013}.}}{5}}
+\newlabel{f:band-assign}{{4}{5}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Results}{5}}
 \newlabel{s:result}{{3}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {{3.1}}Robust determination of band positions}{5}}
 \newlabel{ss:band-position}{{{3.1}}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Determination of band locations for data set `ViennaRNA design 03.' (\textbf  {a}) Reference (manual) annotation. Red horizontal lines represent all determined band locations corresponding to RNA sequence. Red circles represent the bands reactive to chemical agents for each profile. (\textbf  {b}) The band locations determined by the proposed method. (\textbf  {c}) The band locations found by QuShape\nobreakspace  {}\citep  {Karabiber2013}.}}{5}}
-\newlabel{f:band-assign}{{4}{5}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Proposed method (left) vs. QuShape (right). Each plot represents each metric's distribution across 95 data sets. (\textbf  {a}) Mean squared error (MSE) for band locations (\textbf  {b}) Pearson's correlation coefficient for band locations (\textbf  {c}) KL divergence for band locations (\textbf  {d}) Pearson's correlation coefficients for area quantification. MSE units are normalized so that average distance between band locations is unity.}}{5}}
 \newlabel{f:boxplots}{{5}{5}}
 \citation{Yoon2011}
@@ -102,14 +102,14 @@
 \bibcite{Lucks2011}{{8}{2011}{{Lucks {\em  et~al.}}}{{Lucks, Mortimer, Trapnell, Luo, Aviran, Schroth, Pachter, Doudna, and Arkin}}}
 \bibcite{mills1979structure}{{9}{1979}{{Mills and Kramer}}{{Mills and Kramer}}}
 \bibcite{mitra2008high}{{10}{2008}{{Mitra {\em  et~al.}}}{{Mitra, Shcherbakova, Altman, Brenowitz, and Laederach}}}
+\bibcite{Pang2011}{{11}{2011}{{Pang {\em  et~al.}}}{{Pang, Elazar, Pham, and Glenn}}}
+\bibcite{russell2006}{{12}{2006}{{Russell {\em  et~al.}}}{{Russell, Das, Suh, Travers, A, MA, and D}}}
+\bibcite{sasaki1998identification}{{13}{1998}{{Sasaki {\em  et~al.}}}{{Sasaki, Izawa, Sugahara, Tanaka, Watahiki, Ohara, Funaki, Yoneda, Ozawa, Matsuura, {\em  et~al.}}}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Discussion}{7}}
 \newlabel{s:discussion}{{4}{7}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{7}}
 \newlabel{s:conclusion}{{5}{7}}
 \@writefile{toc}{\contentsline {paragraph}{Funding\text  {\rm  :}}{7}}
-\bibcite{Pang2011}{{11}{2011}{{Pang {\em  et~al.}}}{{Pang, Elazar, Pham, and Glenn}}}
-\bibcite{russell2006}{{12}{2006}{{Russell {\em  et~al.}}}{{Russell, Das, Suh, Travers, A, MA, and D}}}
-\bibcite{sasaki1998identification}{{13}{1998}{{Sasaki {\em  et~al.}}}{{Sasaki, Izawa, Sugahara, Tanaka, Watahiki, Ohara, Funaki, Yoneda, Ozawa, Matsuura, {\em  et~al.}}}}
 \bibcite{tian2014nature}{{14}{2014}{{Tian {\em  et~al.}}}{{Tian, Cordero, Kladwang, and Das}}}
 \bibcite{vasa2008shapefinder}{{15}{2008}{{Vasa {\em  et~al.}}}{{Vasa {\em  et~al.}}}}
 \bibcite{weeksnature2009}{{16}{2009}{{Watts {\em  et~al.}}}{{Watts, Dang, Gorelick, Leonard, Bess, Swanstrom, Burch, and Weeks}}}
