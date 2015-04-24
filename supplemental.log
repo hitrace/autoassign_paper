@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=latex 2013.3.9)  1 APR 2015 16:49
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=latex 2013.3.9)  24 APR 2015 15:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -429,6 +429,8 @@ File: figures/supp_band_annotation_example2.eps Graphic file (type eps)
 <figures/supp_band_annotation_example2.eps>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
+File: figures/supp_with_without_p.eps Graphic file (type eps)
+ <figures/supp_with_without_p.eps>
 File: figures/supp_old_new_comparison3.eps Graphic file (type eps)
 
 <figures/supp_old_new_comparison3.eps>
@@ -437,33 +439,35 @@ File: figures/supp_eterna_comparison.eps Graphic file (type eps)
 File: figures/result_hdv_result_detail2.eps Graphic file (type eps)
 
 <figures/result_hdv_result_detail2.eps>
-Underfull \hbox (badness 1533) in paragraph at lines 142--142
-[]\OT1/ptm/b/n/8 Fig. S4. \OT1/ptm/m/n/8 Error in band positions with respect t
+Underfull \hbox (badness 1533) in paragraph at lines 159--159
+[]\OT1/ptm/b/n/8 Fig. S5. \OT1/ptm/m/n/8 Error in band positions with respect t
 o the reference band
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 149.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 166.
 
 
 (c:/usr/texlive/2012/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 149.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 166.
  [1
 
 
 
 ]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 149.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 166.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 149.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 166.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 149.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 166.
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
@@ -477,9 +481,7 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
  []
 
-[2
-
-]
+[2]
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
  [3
@@ -494,7 +496,10 @@ Overfull \vbox (1.0pt too high) has occurred while \output is active []
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
  [6]
-Underfull \hbox (badness 1173) in paragraph at lines 405--405
+Overfull \vbox (1.0pt too high) has occurred while \output is active []
+
+ [7]
+Underfull \hbox (badness 1173) in paragraph at lines 422--422
 []\OT1/ptm/m/n/9 Table S4: Name and type of data profile, and the Pearson's cor
 relation
  []
@@ -502,13 +507,13 @@ relation
 
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
- [7]
-Overfull \vbox (1.0pt too high) has occurred while \output is active []
-
  [8]
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
  [9]
+Overfull \vbox (1.0pt too high) has occurred while \output is active []
+
+ [10]
 (./supplemental.aux)
 
 LaTeX Font Warning: Size substitutions with differences
@@ -519,12 +524,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3258 strings out of 493482
- 42249 string characters out of 3134983
+ 3261 strings out of 493482
+ 42321 string characters out of 3134983
  113486 words of memory out of 3000000
- 6466 multiletter control sequences out of 15000+200000
+ 6468 multiletter control sequences out of 15000+200000
  27073 words of font info for 81 fonts, out of 3000000 for 9000
  961 hyphenation exceptions out of 8191
- 42i,11n,28p,1037b,316s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,11n,28p,1035b,316s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on supplemental.dvi (9 pages, 34320 bytes).
+Output written on supplemental.dvi (10 pages, 36008 bytes).
