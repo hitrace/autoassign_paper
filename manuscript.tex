@@ -26,10 +26,14 @@
 \usepackage{epstopdf}
 \usepackage{color}
 
-\newcommand{\hilightcolor}{red}
+%\newcommand{\hilightcolor}{red}
+\newcommand{\hilightcolor}{black} % turn off highlights for the previous revision
 
-\newcommand{\hilight}[1]{{\color{\hilightcolor}#1}}
-\newcommand{\hilightb}[1]{{\color{\hilightcolor}#1}}
+\newcommand{\hilight}[1]{{\color{\hilightcolor}#1}} % major revision
+\newcommand{\hilightb}[1]{{\color{\hilightcolor}#1}} % major revision
+\newcommand{\hilightr}[1]{{\color{red}#1}} % minor revision
+%\newcommand{\hilightr}[1]{{\color{black}#1}} % minor revision
+
 \newcommand{\eg}{{\it e.g.}}
 \newcommand{\ie}{{\it i.e.}}
 %\newcommand{\argmax}{\operatornamewithlimits{arg\,max}}

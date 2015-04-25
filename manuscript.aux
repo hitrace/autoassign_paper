@@ -42,7 +42,7 @@
 \newlabel{e:F2}{{3}{3}}
 \citation{mills1979structure}
 \citation{sasaki1998identification}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Formulation as dynamic programming. (\textbf  {a}) ${\mathbf  {F}}(n,k,p)$ depends on ${\mathbf  {F}}(n-1,k',p')$ in the previous column and the gap bonus $S(n,k',k,p)$ between them. The best tuple $(k',p')$ that maximizes ${\mathbf  {F}}(n,k,p)$ is searched for in the range $k-2.5\rho \le k' < k; k'+p' < k+p$ and is stored in the backtracking matrices ${\mathbf  {L}}_k(n,k,p)$, ${\mathbf  {L}}_p(n,k,p)$. The computation of $S(n,k',k,p)$ is based on the bonus matrix ${\mathbf  {B}}$ and the prediction matrix ${\mathbf  {P}}$ (Section\nobreakspace  {}{2.5}\hbox {}). (\textbf  {b}) Example. The data set used is `FMN Apatamer with single binding site.' $N=88$, $M=5$, $K=1324$. The backtracking path is represented by a series of red circles superimposed on the score matrix ${\mathbf  {F}}$; since ${\mathbf  {F}}$ is 3-dimensional, the figure alternatively represents a reduced matrix ${\mathbf  {F}}'$ defined by ${\mathbf  {F}}'(n,k)=\qopname  \relax m{max}_{p'} {\mathbf  {F}}(n,k,p')$. The output array ${\mathbf  {y}}_k$, which stores the position of each circle, indicates the band locations.}}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Formulation as dynamic programming. (\textbf  {a}) ${\mathbf  {F}}(n,k,p)$ depends on ${\mathbf  {F}}(n-1,k',p')$ in the previous column and the gap bonus {\color  {black}$S(n,k',k,p)$} between them. The best tuple $(k',p')$ that maximizes ${\mathbf  {F}}(n,k,p)$ is searched for in the range $k-2.5\rho \le k' < k; k'+p' < k+p$ and is stored in the backtracking matrices ${\mathbf  {L}}_k(n,k,p)$, ${\mathbf  {L}}_p(n,k,p)$. The computation of $S(n,k',k,p)$ is based on the bonus matrix ${\mathbf  {B}}$ and the prediction matrix ${\mathbf  {P}}$ (Section\nobreakspace  {}{2.5}\hbox {}). (\textbf  {b}) Example. The data set used is `FMN Apatamer with single binding site.' $N=88$, $M=5$, $K=1324$. The backtracking path is represented by a series of red circles superimposed on the score matrix ${\mathbf  {F}}$; since ${\mathbf  {F}}$ is 3-dimensional, the figure alternatively represents a reduced matrix ${\mathbf  {F}}'$ defined by ${\mathbf  {F}}'(n,k)=\qopname  \relax m{max}_{p'} {\mathbf  {F}}(n,k,p')$. The output array ${\mathbf  {y}}_k$, which stores the position of each circle, indicates the band locations.}}{4}}
 \newlabel{f:dp-formulation}{{3}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.4}.3}}Backtracking}{4}}
 \newlabel{e:L}{{4}{4}}
@@ -54,8 +54,6 @@
 \newlabel{sss:peak_bonus_term}{{{{2.5}.2}}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {{{2.5}.2}}Peak bonus term}{4}}
 \newlabel{e:peak-matching}{{10}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {{2.6}}Reliability evaluation}{4}}
-\newlabel{ss:reliability-evaluation}{{{2.6}}{4}}
 \citation{lee2014eterna}
 \citation{lee2014eterna}
 \citation{Karabiber2013}
@@ -64,6 +62,8 @@
 \citation{Kladwang2014}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces High-throughput RNA structure mapping data sets analyzed by the proposed method (total 522 profiles and 47210 bands). Excluding the last line, there are 95 data sets. More details of these 95 data sets are described in \citet  {lee2014eterna}. }}{5}}
 \newlabel{t:data}{{1}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {{2.6}}Reliability evaluation}{5}}
+\newlabel{ss:reliability-evaluation}{{{2.6}}{5}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Results}{5}}
 \newlabel{s:result}{{3}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {{3.1}}Robust determination of band positions}{5}}
@@ -87,7 +87,6 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces (\textbf  {a}) Distribution of MSE for the results with 1 ${\emph  {E}}$-score. (\textbf  {b}) Distribution of MSE for the whole 95 results. (5 results with MSE $> 2$ are ommited for better demonstration) (\textbf  {c}) Trends of mean and standard deviation of MSE with respect to ${\emph  {E}}$-score over artificial data generated from a single original data set. (\textbf  {d}) Trends of mean and standard deviation of MSE with respect to ${\emph  {E}}$-score for artificial data generated from the whole 95 data sets. (\textbf  {e}) Distribution of ${\emph  {E}}$-score over 95 data sets.}}{6}}
 \newlabel{f:escore-mse}{{7}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {{3.3}}${\emph  {E}}$-score reliability metric predicts MSE accuracy}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {{3.4}}Results in longer, biological RNA sequences}{6}}
 \citation{Yoon2011}
 \citation{tian2014nature}
 \bibstyle{natbib}
@@ -100,6 +99,7 @@
 \bibcite{Kladwang2014}{{6}{2014}{{Kladwang {\em  et~al.}}}{{Kladwang, Mann, Becka, Tian, Kim, Yoon, and Das}}}
 \bibcite{lee2014eterna}{{7}{2014}{{Lee {\em  et~al.}}}{{Lee, Kladwang, Lee, Cantu, Azizyan, Kim, Limpaecher, Yoon, Treuille, Das, and Participants}}}
 \bibcite{Lucks2011}{{8}{2011}{{Lucks {\em  et~al.}}}{{Lucks, Mortimer, Trapnell, Luo, Aviran, Schroth, Pachter, Doudna, and Arkin}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {{3.4}}Results in longer, biological RNA sequences}{7}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Discussion}{7}}
 \newlabel{s:discussion}{{4}{7}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{7}}
